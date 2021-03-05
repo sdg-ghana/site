@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://open-sdg.org/open-sdg-data-starter/en',
+  remoteDataBaseUrl: 'https://sdg-ghana.github.io/data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -105,13 +105,13 @@ var translations = {
         
 
         <!--[if IE 9]>
-        <script src="/open-sdg-site-starter/assets/js/lib/classList.js"></script>
+        <script src="/site/assets/js/lib/classList.js"></script>
         <![endif]-->
 
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/open-sdg-site-starter/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/open-sdg-site-starter/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        <link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
         http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
         -->
 
@@ -121,7 +121,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/open-sdg-site-starter/assets/css/style.css?v=20210305162030">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20210305162953">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -153,8 +153,8 @@ var translations = {
   <div class="container">
 
     <div class="logo-and-mobile-widgets">
-      <a class="navbar-brand" href="/open-sdg-site-starter/" id="home">
-        <img src="/open-sdg-site-starter/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+      <a class="navbar-brand" href="/site/" id="home">
+        <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
       </a>
 
       <div class="mobile-widgets">
@@ -166,7 +166,7 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/open-sdg-site-starter/es/9/">
+            <a href="/site/es/9/">
               Español
             </a>
           </li></ul>
@@ -184,17 +184,17 @@ var translations = {
             aria-haspopup="true">
           <button data-target="menu-mobile" aria-expanded="false">Menu</button>
           <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
-    <a href="/open-sdg-site-starter/goals">Goals</a>
+    <a href="/site/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/reporting-status">Reporting Status</a>
+    <a href="/site/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/about">About</a>
+    <a href="/site/about">About</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/guidance">Guidance</a>
+    <a href="/site/guidance">Guidance</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/faq">FAQ</a>
+    <a href="/site/faq">FAQ</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/news">Updates</a>
+    <a href="/site/news">Updates</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -209,7 +209,7 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/open-sdg-site-starter/es/9/">
+            <a href="/site/es/9/">
               Español
             </a>
           </li></ul>
@@ -226,7 +226,7 @@ var translations = {
             aria-haspopup="true">
           <button data-target="search-mobile" aria-expanded="false">Search</button>
           <div id="search-mobile" class="menu-target">
-  <form action="/open-sdg-site-starter/search">
+  <form action="/site/search">
     <input type="text" name="q" id="indicator_search-mobile" title="Search" />
     <label class="sr-only" for="indicator_search-mobile">Search</label>
     <button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -237,7 +237,7 @@ var translations = {
       </ul>
 
       <div id="search" class="menu-target">
-  <form action="/open-sdg-site-starter/search">
+  <form action="/site/search">
     <input type="text" name="q" id="indicator_search" title="Search" />
     <label class="sr-only" for="indicator_search">Search</label>
     <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -246,17 +246,17 @@ var translations = {
 
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-    <a href="/open-sdg-site-starter/goals">Goals</a>
+    <a href="/site/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/reporting-status">Reporting Status</a>
+    <a href="/site/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/about">About</a>
+    <a href="/site/about">About</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/guidance">Guidance</a>
+    <a href="/site/guidance">Guidance</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/faq">FAQ</a>
+    <a href="/site/faq">FAQ</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/news">Updates</a>
+    <a href="/site/news">Updates</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -271,7 +271,7 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/open-sdg-site-starter/es/9/">
+            <a href="/site/es/9/">
               Español
             </a>
           </li></ul>
@@ -293,8 +293,8 @@ var translations = {
 <div class="container">
   <ol class="breadcrumb">
   
-  <li><a href="/open-sdg-site-starter/">Home</a></li>
-  <li><a href="/open-sdg-site-starter/goals">Goals</a></li>
+  <li><a href="/site/">Home</a></li>
+  <li><a href="/site/goals">Goals</a></li>
   
   
 </ol>
@@ -348,7 +348,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.1.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-1-1">Proportion of the rural population who live within 2 km of an all-season road</a></span>
+            <span class="indicator-name"><a href="/site/9-1-1">Proportion of the rural population who live within 2 km of an all-season road</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -370,7 +370,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.1.2</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-1-2">Passenger and freight volumes, by mode of transport</a></span>
+            <span class="indicator-name"><a href="/site/9-1-2">Passenger and freight volumes, by mode of transport</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -401,7 +401,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.2.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-2-1">Manufacturing value added as a proportion of GDP and per capita</a></span>
+            <span class="indicator-name"><a href="/site/9-2-1">Manufacturing value added as a proportion of GDP and per capita</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -423,7 +423,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.2.2</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-2-2">Manufacturing employment as a proportion of total employment</a></span>
+            <span class="indicator-name"><a href="/site/9-2-2">Manufacturing employment as a proportion of total employment</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -454,7 +454,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.3.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-3-1">Proportion of small-scale industries in total industry value added</a></span>
+            <span class="indicator-name"><a href="/site/9-3-1">Proportion of small-scale industries in total industry value added</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -476,7 +476,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.3.2</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-3-2">Proportion of small-scale industries with a loan or line of credit</a></span>
+            <span class="indicator-name"><a href="/site/9-3-2">Proportion of small-scale industries with a loan or line of credit</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -507,7 +507,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.4.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-4-1">CO2 emission per unit of value added</a></span>
+            <span class="indicator-name"><a href="/site/9-4-1">CO2 emission per unit of value added</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -538,7 +538,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.5.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-5-1">Research and development expenditure as a proportion of GDP</a></span>
+            <span class="indicator-name"><a href="/site/9-5-1">Research and development expenditure as a proportion of GDP</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -560,7 +560,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.5.2</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-5-2">Researchers (in full-time equivalent) per million inhabitants</a></span>
+            <span class="indicator-name"><a href="/site/9-5-2">Researchers (in full-time equivalent) per million inhabitants</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -591,7 +591,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.a.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-a-1">Total official international support (official development assistance plus other official flows) to infrastructure</a></span>
+            <span class="indicator-name"><a href="/site/9-a-1">Total official international support (official development assistance plus other official flows) to infrastructure</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -622,7 +622,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.b.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-b-1">Proportion of medium and high-tech industry value added in total value added</a></span>
+            <span class="indicator-name"><a href="/site/9-b-1">Proportion of medium and high-tech industry value added in total value added</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -653,7 +653,7 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 9.c.1</span>
             </h4>
-            <span class="indicator-name"><a href="/open-sdg-site-starter/9-c-1">Proportion of population covered by a mobile network, by technology</a></span>
+            <span class="indicator-name"><a href="/site/9-c-1">Proportion of population covered by a mobile network, by technology</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
@@ -690,7 +690,7 @@ var translations = {
                 
                 </li>
               <li>
-                <a href="/open-sdg-site-starter/about/cookies-and-privacy/">Cookies</a>
+                <a href="/site/about/cookies-and-privacy/">Cookies</a>
                 
                 </li>
               
@@ -727,12 +727,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/open-sdg-site-starter/assets/js/sdg.js?v=20210305162030'></script>
+<script src='/site/assets/js/sdg.js?v=20210305162953'></script>
 
 
     
     
-    <script src="/open-sdg-site-starter/assets/js/custom.js?v=20210305162030"></script><script>
+    <script src="/site/assets/js/custom.js?v=20210305162953"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

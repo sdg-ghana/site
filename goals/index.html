@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://open-sdg.org/open-sdg-data-starter/en',
+  remoteDataBaseUrl: 'https://sdg-ghana.github.io/data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -105,13 +105,13 @@ var translations = {
         
 
         <!--[if IE 9]>
-        <script src="/open-sdg-site-starter/assets/js/lib/classList.js"></script>
+        <script src="/site/assets/js/lib/classList.js"></script>
         <![endif]-->
 
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/open-sdg-site-starter/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/open-sdg-site-starter/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        <link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
         http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
         -->
 
@@ -121,7 +121,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/open-sdg-site-starter/assets/css/style.css?v=20210305162030">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20210305162953">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -153,8 +153,8 @@ var translations = {
   <div class="container">
 
     <div class="logo-and-mobile-widgets">
-      <a class="navbar-brand" href="/open-sdg-site-starter/" id="home">
-        <img src="/open-sdg-site-starter/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+      <a class="navbar-brand" href="/site/" id="home">
+        <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
       </a>
 
       <div class="mobile-widgets">
@@ -166,7 +166,7 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/open-sdg-site-starter/es/goals/">
+            <a href="/site/es/goals/">
               Español
             </a>
           </li></ul>
@@ -184,17 +184,17 @@ var translations = {
             aria-haspopup="true">
           <button data-target="menu-mobile" aria-expanded="false">Menu</button>
           <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link active">
-    <a href="/open-sdg-site-starter/goals">Goals</a>
+    <a href="/site/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/reporting-status">Reporting Status</a>
+    <a href="/site/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/about">About</a>
+    <a href="/site/about">About</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/guidance">Guidance</a>
+    <a href="/site/guidance">Guidance</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/faq">FAQ</a>
+    <a href="/site/faq">FAQ</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/news">Updates</a>
+    <a href="/site/news">Updates</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -209,7 +209,7 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/open-sdg-site-starter/es/goals/">
+            <a href="/site/es/goals/">
               Español
             </a>
           </li></ul>
@@ -226,7 +226,7 @@ var translations = {
             aria-haspopup="true">
           <button data-target="search-mobile" aria-expanded="false">Search</button>
           <div id="search-mobile" class="menu-target">
-  <form action="/open-sdg-site-starter/search">
+  <form action="/site/search">
     <input type="text" name="q" id="indicator_search-mobile" title="Search" />
     <label class="sr-only" for="indicator_search-mobile">Search</label>
     <button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -237,7 +237,7 @@ var translations = {
       </ul>
 
       <div id="search" class="menu-target">
-  <form action="/open-sdg-site-starter/search">
+  <form action="/site/search">
     <input type="text" name="q" id="indicator_search" title="Search" />
     <label class="sr-only" for="indicator_search">Search</label>
     <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -246,17 +246,17 @@ var translations = {
 
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link active">
-    <a href="/open-sdg-site-starter/goals">Goals</a>
+    <a href="/site/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/reporting-status">Reporting Status</a>
+    <a href="/site/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/about">About</a>
+    <a href="/site/about">About</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/guidance">Guidance</a>
+    <a href="/site/guidance">Guidance</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/faq">FAQ</a>
+    <a href="/site/faq">FAQ</a>
     </li><li class="nav-link ">
-    <a href="/open-sdg-site-starter/news">Updates</a>
+    <a href="/site/news">Updates</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -271,7 +271,7 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/open-sdg-site-starter/es/goals/">
+            <a href="/site/es/goals/">
               Español
             </a>
           </li></ul>
@@ -304,103 +304,103 @@ var translations = {
         <div class="row no-gutters">
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/1">
+                <a href="/site/1">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/1.png" id="goal-1" alt="No poverty - Goal 1" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/2">
+                <a href="/site/2">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/2.png" id="goal-2" alt="Zero hunger - Goal 2" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/3">
+                <a href="/site/3">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/3.png" id="goal-3" alt="Good health and well-being - Goal 3" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/4">
+                <a href="/site/4">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/4.png" id="goal-4" alt="Quality education - Goal 4" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/5">
+                <a href="/site/5">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/5.png" id="goal-5" alt="Gender equality - Goal 5" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/6">
+                <a href="/site/6">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/6.png" id="goal-6" alt="Clean water and sanitation - Goal 6" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/7">
+                <a href="/site/7">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/7.png" id="goal-7" alt="Affordable and clean energy - Goal 7" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/8">
+                <a href="/site/8">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/8.png" id="goal-8" alt="Decent jobs and economic growth - Goal 8" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/9">
+                <a href="/site/9">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/9.png" id="goal-9" alt="Industry, innovation and infrastructure - Goal 9" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/10">
+                <a href="/site/10">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/10.png" id="goal-10" alt="Reduced inequalities - Goal 10" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/11">
+                <a href="/site/11">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/11.png" id="goal-11" alt="Sustainable cities &amp; communities - Goal 11" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/12">
+                <a href="/site/12">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/12.png" id="goal-12" alt="Responsible consumption and production - Goal 12" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/13">
+                <a href="/site/13">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/13.png" id="goal-13" alt="Climate action - Goal 13" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/14">
+                <a href="/site/14">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/14.png" id="goal-14" alt="Life below water - Goal 14" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/15">
+                <a href="/site/15">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/15.png" id="goal-15" alt="Life on land - Goal 15" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/16">
+                <a href="/site/16">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/16.png" id="goal-16" alt="Peace and justice - strong institutions - Goal 16" />
                 </a>
             </div>
             
             <div class="col-xs-4 col-md-2 goal-tile">
-                <a href="/open-sdg-site-starter/17">
+                <a href="/site/17">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/17.png" id="goal-17" alt="Partnerships for the goals - Goal 17" />
                 </a>
             </div>
@@ -438,7 +438,7 @@ var translations = {
                 
                 </li>
               <li>
-                <a href="/open-sdg-site-starter/about/cookies-and-privacy/">Cookies</a>
+                <a href="/site/about/cookies-and-privacy/">Cookies</a>
                 
                 </li>
               
@@ -475,12 +475,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/open-sdg-site-starter/assets/js/sdg.js?v=20210305162030'></script>
+<script src='/site/assets/js/sdg.js?v=20210305162953'></script>
 
 
     
     
-    <script src="/open-sdg-site-starter/assets/js/custom.js?v=20210305162030"></script><script>
+    <script src="/site/assets/js/custom.js?v=20210305162953"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
