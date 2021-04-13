@@ -20,7 +20,6 @@ metadata_edit_url: http://prose.io/#sdg-ghana/data/edit/develop/meta/[id].md
 # The list of languages that are translated. The first one is the default.
 languages:
   - en
-  - es
 #
 # That's enough for the Quick Start! The remaining settings can be configured later.
 
