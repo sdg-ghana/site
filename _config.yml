@@ -24,9 +24,11 @@ languages:
 #
 # That's enough for the Quick Start! The remaining settings can be configured later.
 
-# Use site configuration form
-create_config_forms:
-  layout: config-builder
+# Use site and indicator configuration forms
+site_config_form:
+  enabled: true
+indicator_config_form:
+  enabled: true
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
 remote_theme: brockfanning/open-sdg@metadata-config-pages
