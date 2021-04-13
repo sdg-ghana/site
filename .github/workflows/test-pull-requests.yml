@@ -18,6 +18,6 @@ jobs:
         gem install bundler
         bundle config path vendor/bundle
         bundle install
-        bundle exec jekyll build
+        bundle exec jekyll build --trace
     - name: Test the HTML
       run: bash scripts/test/html_proofer_staging.sh
