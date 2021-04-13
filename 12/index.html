@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -19,11 +19,23 @@ var opensdg = {
     this.chartConfigAlterations.push(callback);
   },
 
+  tableConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Datatables.
+  tableConfigAlter: function(callback) {
+    this.tableConfigAlterations.push(callback);
+  },
+
   // A hook which can be replaced to alter whether/how the values that are
   // displayed on indicator tables/graphs get rounded.
   dataRounding: function(value) {
     // Alterations go here.
     return value;
+  },
+
+  // A hook which can be used to alter the data before it is displayed on charts/tables.
+  dataDisplayAlterations: [],
+  dataDisplayAlter: function(callback) {
+    this.dataDisplayAlterations.push(callback);
   },
 
   language: 'en',
@@ -121,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20210413012420">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20210413104537">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -134,6 +146,7 @@ var translations = {
     </head>
 <body class="language-en layout-goal-by-target-vertical">
 <!-- <div class="container"> -->
+
 
 <script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
@@ -149,17 +162,16 @@ var translations = {
 
 </div>
 
-<header role="banner">
+<header role="banner" class="header-default">
   <div class="container">
 
     <div class="logo-and-mobile-widgets">
       <a class="navbar-brand" href="/site/" id="home">
-        <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
-      </a>
-
+    <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+</a>
       <div class="mobile-widgets">
-        <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
-          <div class="language-toggle-container">
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+        <div class="language-toggle-container">
   
   <div class="btn-group language-toggle-dropdown ">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -173,29 +185,28 @@ var translations = {
   </div>
 </div>
 
-        </div></div>
+    </div></div>
     </div>
 
     <nav class="navbar navbar-default" id="main-nav">
-
       <ul class="top-level">
-        <li id="menuToggle"
-            aria-label="Menu toggle. Click to expand or collapse the menu."
-            aria-haspopup="true">
-          <button data-target="menu-mobile" aria-expanded="false">Menu</button>
-          <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
+    <li id="menuToggle"
+        aria-label="Menu toggle. Click to expand or collapse the menu."
+        aria-haspopup="true">
+        <button data-target="menu-mobile" aria-expanded="false">Menu</button>
+        <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
     <a href="/site/goals">Goals</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/reporting-status">Reporting Status</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/about">About</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/guidance">Guidance</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/faq">FAQ</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/news">Updates</a>
-    </li><li class="language-toggle-menu-header">
+</li><li class="language-toggle-menu-header">
     
 
 
@@ -218,46 +229,45 @@ var translations = {
 
 
 
-</li></ul>
+</li>
+</ul>
 
-        </li>
-        <li id="searchToggle"
-            aria-label="Search toggle. Click to expand or collapse the search bar."
-            aria-haspopup="true">
-          <button data-target="search-mobile" aria-expanded="false">Search</button>
-          <div id="search-mobile" class="menu-target">
+    </li>
+    <li id="searchToggle"
+        aria-label="Search toggle. Click to expand or collapse the search bar."
+        aria-haspopup="true">
+        <button data-target="search-mobile" aria-expanded="false">Search</button>
+        <div id="search-mobile" class="menu-target">
   <form action="/site/search">
-    <input type="text" name="q" id="indicator_search-mobile" title="Search" />
     <label class="sr-only" for="indicator_search-mobile">Search</label>
-    <button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+    <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
+    --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
-        </li>
-      </ul>
-
+    </li>
+</ul>
       <div id="search" class="menu-target">
   <form action="/site/search">
-    <input type="text" name="q" id="indicator_search" title="Search" />
     <label class="sr-only" for="indicator_search">Search</label>
-    <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+    <input type="text" name="q" id="indicator_search" title="Search" /><!--
+    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
-
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
     <a href="/site/goals">Goals</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/reporting-status">Reporting Status</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/about">About</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/guidance">Guidance</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/faq">FAQ</a>
-    </li><li class="nav-link ">
+</li><li class="nav-link ">
     <a href="/site/news">Updates</a>
-    </li><li class="language-toggle-menu-header">
+</li><li class="language-toggle-menu-header">
     
 
 
@@ -280,14 +290,16 @@ var translations = {
 
 
 
-</li></ul>
-
+</li>
+</ul>
 
     </nav>
   </div>
 
 </header>
 <div id="top" tabindex=-1></div>
+
+
 
 
 <div class="container">
@@ -299,13 +311,14 @@ var translations = {
   
 </ol>
 
+  
 </div>
 
 <div class="heading goal-banner goal-12">
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2 goal-tiles">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" id="goal-12"/>
+        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" id="goal-12" class="goal-icon-image goal-icon-image-" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -348,12 +361,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.1.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-1-1">Number of countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or a target into national policies</a></span>
+            <span class="indicator-name"><a href="/site/12-1-1">Number of countries developing, adopting or implementing policy instruments aimed at supporting the shift to sustainable consumption and production</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -385,6 +399,7 @@ var translations = {
               Exploring data sources
             </span>
             
+
           </div>
         
 
@@ -407,6 +422,7 @@ var translations = {
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -432,12 +448,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.3.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-3-1">Global food loss index</a></span>
+            <span class="indicator-name"><a href="/site/12-3-1">(a) Food loss index and (b) food waste index</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -469,6 +486,7 @@ var translations = {
               Exploring data sources
             </span>
             
+
           </div>
         
 
@@ -485,12 +503,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.4.2</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-4-2">Hazardous waste generated per capita and proportion of hazardous waste treated, by type of treatment</a></span>
+            <span class="indicator-name"><a href="/site/12-4-2">(a) Hazardous waste generated per capita; and (b) proportion of hazardous waste treated, by type of treatment</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -522,6 +541,7 @@ var translations = {
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -553,6 +573,7 @@ var translations = {
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -578,12 +599,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.7.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-7-1">Number of countries implementing sustainable public procurement policies and action plans</a></span>
+            <span class="indicator-name"><a href="/site/12-7-1">Degree of sustainable public procurement policies and action plan implementation</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -609,12 +631,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.8.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-8-1">Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment</a></span>
+            <span class="indicator-name"><a href="/site/12-8-1">Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -640,12 +663,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.a.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-a-1">Amount of support to developing countries on research and development for sustainable consumption and production and environmentally sound technologies</a></span>
+            <span class="indicator-name"><a href="/site/12-a-1">Installed renewable energy-generating capacity in developing countries (in watts per capita)</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -671,12 +695,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.b.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-b-1">Number of sustainable tourism strategies or policies and implemented action plans with agreed monitoring and evaluation tools</a></span>
+            <span class="indicator-name"><a href="/site/12-b-1">Implementation of standard accounting tools to monitor the economic and environmental aspects of tourism sustainability</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -702,12 +727,13 @@ var translations = {
             <h4>
               <span class="indicator-number"><span class="sr-only">Indicator</span> 12.c.1</span>
             </h4>
-            <span class="indicator-name"><a href="/site/12-c-1">Amount of fossil-fuel subsidies per unit of GDP (production and consumption) and as a proportion of total national expenditure on fossil fuels</a></span>
+            <span class="indicator-name"><a href="/site/12-c-1">Amount of fossil-fuel subsidies per unit of GDP (production and consumption)</a></span>
             <span class="sr-only">Indicator status</span>
             <span class="status notstarted">
               Exploring data sources
             </span>
             
+
           </div>
         
       </div>
@@ -762,7 +788,7 @@ var translations = {
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
@@ -776,12 +802,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20210413012420'></script>
+<script src='/site/assets/js/sdg.js?v=20210413104537'></script>
 
 
     
     
-    <script src="/site/assets/js/custom.js?v=20210413012420"></script><script>
+    <script src="/site/assets/js/custom.js?v=20210413104537"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -821,10 +847,13 @@ $(function() {
               stackedDisaggregation: domData.stackeddisaggregation,
               graphAnnotations: domData.graphannotations,
               indicatorDownloads: domData.indicatordownloads,
+              compositeBreakdownLabel: domData.compositebreakdownlabel,
+              precision: domData.precision,
             }),
             view  = new indicatorView(model, {
               rootElement: '#indicatorData',
               legendElement: '#plotLegend',
+              decimalSeparator: '',
               maxChartHeight: 420,
               tableColumnDefs: [
                 { maxCharCount: 25 }, // nowrap
