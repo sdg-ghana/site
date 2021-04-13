@@ -27,8 +27,10 @@ languages:
 # Use site and indicator configuration forms
 site_config_form:
   enabled: true
+  repository_link: https://github.com/sdg-ghana/site/tree/develop/_data
 indicator_config_form:
   enabled: true
+  repository_link: https://github.com/sdg-ghana/data/tree/develop/indicator-config
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
 remote_theme: brockfanning/open-sdg@metadata-config-pages
