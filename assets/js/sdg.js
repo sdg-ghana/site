@@ -1005,9 +1005,9 @@ var accessibilitySwitcher = function() {
 
 };
 opensdg.chartColors = function(indicatorId) {
-  var colorSet = null;
-  var numberOfColors = null;
-  var customColorList = null;
+  var colorSet = "default";
+  var numberOfColors = 0;
+  var customColorList = [];
 
   this.goalNumber = parseInt(indicatorId.slice(indicatorId.indexOf('_')+1,indicatorId.indexOf('-')));
   this.goalColors = [['e5243b', '891523', 'ef7b89', '2d070b', 'f4a7b0', 'b71c2f', 'ea4f62', '5b0e17', 'fce9eb'],
@@ -2690,8 +2690,8 @@ var mapView = function () {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
-      mapOptions: null,
-      mapLayers: null,
+      mapOptions: {"minZoom":5,"maxZoom":10,"tileURL":"","tileOptions":{"id":"","accessToken":"","attribution":""},"colorRange":"chroma.brewer.BuGn","noValueColor":"#f0f0f0","styleNormal":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#888888","dashArray":""},"styleHighlighted":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#111111","dashArray":""},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":"5,5"}},
+      mapLayers: [],
       precision: precision,
       decimalSeparator: decimalSeparator,
     });
@@ -3291,7 +3291,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
+    return this.isHighContrast(contrast) ? '#55a6e5' : '#004466';
   }
 
   this.getGridColor = function(contrast) {
