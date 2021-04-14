@@ -54,8 +54,8 @@ custom_js:
   - /assets/js/custom.js
 data_edit_url: 'http://prose.io/#sdg-ghana/data/edit/develop/data/indicator_[id].csv'
 data_fields:
-  units: ''
-  series: ''
+  units: UNIT_MEASURE
+  series: SERIES
 date_formats: []
 disclaimer:
   phase: ''
@@ -187,7 +187,7 @@ menu:
   - path: /news
     translation_key: menu.updates
     dropdown: []
-metadata_edit_url: 'http://prose.io/#sdg-ghana/data/edit/develop/meta/[id].md'
+metadata_edit_url: metadata
 metadata_tabs: []
 news:
   category_links: false
