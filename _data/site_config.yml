@@ -128,13 +128,16 @@ indicator_config_form:
   repository_link: 'https://github.com/sdg-ghana/data/tree/develop/indicator-config'
   translation_link: ''
 indicator_metadata_form:
-  enabled: false
+  enabled: true
   dropdowns: []
-  repository_link: ''
-  translation_link: ''
-  language: ''
-  scopes: []
-  exclude_fields: []
+  repository_link: 'https://github.com/sdg-ghana/data/tree/develop/meta'
+  translation_link: 'https://hosted.weblate.org/languages/fr/sdg-translations/'
+  language: en
+  scopes:
+    - national
+    - global
+  exclude_fields:
+    - indicator_name
 languages:
   - en
 languages_public: []
