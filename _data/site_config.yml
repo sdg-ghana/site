@@ -119,7 +119,6 @@ graph_color_headline_high_contrast: '#55a6e5'
 graph_color_set: default
 graph_color_list: []
 graph_color_number: 0
-graph_title_from_series: true
 header:
   include: header-default.html
 header_language_toggle: dropdown
@@ -144,9 +143,14 @@ languages:
   - en
 languages_public: []
 logos: []
-map_layers: []
+map_layers:
+  - subfolder: regions_10
+    label: 2010 Regions
+    min_zoom: 0
+    max_zoom: 10
+    staticBorders: false
 map_options:
-  minZoom: 5
+  minZoom: 0
   maxZoom: 10
   tileURL: ''
   tileOptions:
