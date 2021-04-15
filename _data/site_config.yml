@@ -49,7 +49,8 @@ create_pages:
     folder: /search
     layout: search
     title: ''
-custom_css: []
+custom_css:
+  - /assets/css/custom.css
 custom_js:
   - /assets/js/custom.js
 data_edit_url: 'http://prose.io/#sdg-ghana/data/edit/develop/data/indicator_[id].csv'
