@@ -112,8 +112,8 @@ frontpage_introduction_banner:
 goal_image_base: 'https://open-sdg.org/sdg-translations/assets/img/goals'
 goal_image_extension: ''
 goals_page:
-  title: ''
-  description: ''
+  title: Ghana's National Reporting Platform Sustainable Development Goals
+  description: Click on the *goals* below to see the most recent reported statistics.
 graph_color_headline: '#004466'
 graph_color_headline_high_contrast: '#55a6e5'
 graph_color_set: default
@@ -217,7 +217,7 @@ reporting_status:
   disaggregation_tabs: true
 search_index_boost: []
 search_index_extra_fields: []
-series_toggle: true
+series_toggle: false
 sharethis_property: ''
 site_config_form:
   enabled: true
