@@ -2126,4 +2126,20 @@
           "status": "complete"
         }]
     }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "gdp-1",
+          "title": "Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions",
+          "description": "",
+          "keywords": "",
+          "href": "/site//gdp-1",
+          "status": "notstarted"
+        }]
+    }
   }]
