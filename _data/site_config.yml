@@ -62,17 +62,17 @@ disclaimer:
   phase: ''
   message: ''
 email_contacts:
-  questions: test@example.com
-  suggestions: test@example.com
-  functional: test@example.com
+  questions: sdg.secretariat@statsghana.gov.gh
+  suggestions: sdg.secretariat@statsghana.gov.gh
+  functional: sdg.secretariat@statsghana.gov.gh
 environment: staging
 footer_language_toggle: none
 footer_menu:
-  - path: 'mailto:my-email-address@example.com'
+  - path: 'mailto:sdg.secretariat@statsghana.gov.gh'
     translation_key: menu.contact_us
-  - path: 'https://twitter.com/MyTwitterAccount'
+  - path: 'https://twitter.com/statsghana'
     translation_key: general.twitter
-  - path: 'https://facebook.com/MyFacebookAccount'
+  - path: 'https://www.facebook.com/statsghana/'
     translation_key: general.facebook
   - path: /about/cookies-and-privacy/
     translation_key: menu.cookies
