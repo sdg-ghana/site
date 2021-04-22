@@ -76,8 +76,6 @@ footer_menu:
     translation_key: general.facebook
   - path: /about/cookies-and-privacy/
     translation_key: menu.cookies
-  - path: /user-research
-    translation_key: User research
 frontpage_cards:
   - title: frontpage.download_all
     content: ''
@@ -206,9 +204,6 @@ menu:
     dropdown: []
   - path: /news
     translation_key: menu.updates
-    dropdown: []
-  - path: /user-research
-    translation_key: User research
     dropdown: []
 metadata_edit_url: metadata
 metadata_tabs: []
