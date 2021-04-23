@@ -1,7 +1,7 @@
 ---
 title: GDP indicators
 layout: standalone-indicators
-permalink: /gdp-indicators
+permalink: gdp-indicators/
 language: en
 standalone_indicators:
     - gdp-1
