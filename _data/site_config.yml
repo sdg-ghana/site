@@ -208,9 +208,9 @@ menu:
   - path: /about
     translation_key: Other indicators
     dropdown:
-      - path: /covid-indicators
+      - path: covid-indicators/
         translation_key: Covid indicators
-      - path: /gdp-indicators
+      - path: gdp-indicators/
         translation_key: GDP indicators
 metadata_edit_url: metadata
 metadata_tabs: []
