@@ -224,7 +224,7 @@ reporting_status:
   disaggregation_tabs: true
 search_index_boost: []
 search_index_extra_fields: []
-series_toggle: false
+series_toggle: true
 sharethis_property: ''
 site_config_form:
   enabled: true
