@@ -1056,7 +1056,7 @@ var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 // Note this headline color is overridden in indicatorView.js.
 var HEADLINE_COLOR = '#777777';
-var SERIES_TOGGLE = false;
+var SERIES_TOGGLE = true;
 var GRAPH_TITLE_FROM_SERIES = false;
 
   /**
