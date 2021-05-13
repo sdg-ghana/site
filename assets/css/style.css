@@ -2575,7 +2575,8 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
   font-weight: 700; }
 .layout-config-builder div[data-schemapath="root"] > .well > div > div > .row > div[data-schematype] > div a {
   margin-top: 15px;
-  display: inline-block; }
+  display: block;
+  margin-bottom: 15px; }
 .layout-config-builder div[data-schemapath="root"] > .je-header {
   display: none !important; }
 .layout-config-builder .help-block {
