@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20211105110950">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20211105120611">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20211105110950"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20211105120611"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-config-builder">
@@ -586,7 +586,119 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: national_metadata_update_url_text');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss</p>");
+        var propertyEditor = editor.getEditor('root.SDG_GOAL');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_GOAL');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 15.5: Take urgent and significant action to reduce the degradation of natural habitats, halt the loss of biodiversity and, by 2020, protect and prevent the extinction of threatened species</p>");
+        var propertyEditor = editor.getEditor('root.SDG_TARGET');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_TARGET');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Goal 15: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss</p>");
+        var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_INDICATOR');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Disaggregations of the Red List Index are also of particular relevance as indicators towards the following SDG targets (Brooks et al. 2015): SDG 2.4 Red List Index (species used for food and medicine); SDG 2.5 Red List Index (wild relatives and local breeds); SDG 12.2 Red List Index (impacts of utilisation) (Butchart 2008); SDG 12.4 Red List Index (impacts of pollution); SDG 13.1 Red List Index (impacts of climate change); SDG 14.1 Red List Index (impacts of pollution on marine species); SDG 14.2 Red List Index (marine species); SDG 14.3 Red List Index (reef-building coral species) (Carpenter et al. 2008); SDG 14.4 Red List Index (impacts of utilisation on marine species); SDG 15.1 Red List Index (terrestrial &amp; freshwater species); SDG 15.2 Red List Index (forest-specialist species); SDG 15.4 Red List Index (mountain species); SDG 15.7 Red List Index (impacts of utilisation) (Butchart 2008); and SDG 15.8 Red List Index (impacts of invasive alien species) (Butchart 2008, McGeoch et al. 2010).</p>");
+        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>International Union for Conservation of Nature (IUCN)</p><p>BirdLife International (BLI)</p>");
+        var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Forestry Commission</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+      try {
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The Red List Index measures change in aggregate extinction risk across groups of species. It is based on genuine changes in the number of species in each category of extinction risk on The IUCN Red List of Threatened Species (www.iucnredlist.org) is expressed as changes in an index ranging from 0 to 1.</p><p><strong>Concepts:</strong></p><p>Threatened species are those listed on The IUCN Red List of Threatened Species in the categories Vulnerable, Endangered, or Critically Endangered (i.e., species that are facing a high, very high, or extremely high risk of extinction in the wild in the medium-term future). Changes over time in the proportion of species threatened with extinction are largely driven by improvements in knowledge and changing taxonomy. The indicator excludes such changes to yield a more informative indicator than the simple proportion of threatened species. It therefore measures change in aggregate extinction risk across groups of species over time, resulting from genuine improvements or deteriorations in the status of individual species. It can be calculated for any representative set of species that have been assessed for The IUCN Red List of Threatened Species at least twice (Butchart et al. 2004, 2005, 2007). To calculate the Red List Index for individual countries and regions, each species contributing to the index is weighted by the proportion of its global range within the particular country or region. The resulting index therefore shows the aggregate extinction risk for species within the country or region relative to its potential contribution to global species extinction risk (within the taxonomic groups included).</p>");
+        var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: STAT_CONC_DEF');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
+      try {
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>RMSC, Forestry Commission, 2020</p>");
+        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SOURCE_TYPE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -716,12 +828,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20211105110950'></script>
+<script src='/site/assets/js/sdg.js?v=20211105120611'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20211105110950"></script><script>
+    <script src="/site/assets/js/custom.js?v=20211105120611"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

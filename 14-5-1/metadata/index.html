@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20211105110950">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20211105120611">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20211105110950"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20211105120611"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-config-builder">
@@ -586,7 +586,105 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: national_metadata_update_url_text');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 14: Conserve and sustainably use the oceans, seas and marine resources for sustainable development</p>");
+        var propertyEditor = editor.getEditor('root.SDG_GOAL');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_GOAL');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 14.5: By 2020, conserve at least 10 per cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information</p>");
+        var propertyEditor = editor.getEditor('root.SDG_TARGET');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_TARGET');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 14.5.1: Coverage of protected areas in relation to marine areas</p>");
+        var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_INDICATOR');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>In addition to the coverage by protected areas of important sites for marine biodiversity as an indicator towards SDG 14.5, other disaggregations of particular relevance as indicators towards SDG targets (Brooks et al. 2016) include:</p><p>SDG 15.1.2 Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type.</p><p>SDG 15.4.1 Coverage by protected areas of important sites for mountain biodiversity.</p>");
+        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+      try {
+        var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>UN Environment World Conservation Monitoring Centre (UNEP-WCMC)</p><p>BirdLife International (BLI)</p><p>International Union for Conservation of Nature (IUCN)</p>");
+        var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ocean Health Index</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
+      try {
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ocean Health Index (OHI), 2020</p>");
+        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SOURCE_TYPE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -716,12 +814,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20211105110950'></script>
+<script src='/site/assets/js/sdg.js?v=20211105120611'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20211105110950"></script><script>
+    <script src="/site/assets/js/custom.js?v=20211105120611"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
