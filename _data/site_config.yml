@@ -83,21 +83,31 @@ frontpage_cards:
     button_label: ''
     button_link: ''
     rule_color: ''
-  - title: Lorem ipsum
+  - title: Publications
     content: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis
-      cursus est sed dapibus.
+      
+      [UN Ghana Sustainable Development Partnership Framework with Ghana 2018-2022, June 2018](http://gh.one.un.org/content/dam/unct/ghana/docs/Delivering%20as%20One/UNCT-GH-UNSDP-2018.pdf)
+      
+      <br/>
+      
+      [National Strategy for the Development of Statistics, Ghana 2018-2022](http://www.statsghana.gov.gh/docfiles/publications/NSDS%20II%20Ghana_Revised_16.03.18.pdf)
+      
     include: ''
-    button_label: Read more
-    button_link: 'https://example.com'
+    button_label: More Publications
+    button_link: ''https://sdg-ghana.github.io/site/publications/''
     rule_color: ''
-  - title: Nam vestibulum
+  - title: Useful Resources
     content: |
-      Nam vestibulum, purus quis porttitor imperdiet, nisl sem mollis nisl, a
-      interdum risus enim vitae tortor. Donec feugiat accumsan rutrum.
+      
+       [The Sustainable Development Goals in Ghana](https://ghana.un.org/)
+       
+       [The Global Goals](https://www.globalgoals.org/)
+        
+       [UN Department of Economic and Social Affairs](https://sustainabledevelopment.un.org/)
+       
     include: ''
-    button_label: Read more
-    button_link: 'https://example.com'
+    button_label: ''
+    button_link: ''
     rule_color: ''
 frontpage_goals_grid:
   title: Ghana data for Sustainable Development Goal indicators
@@ -201,6 +211,9 @@ menu:
     dropdown: []
   - path: /faq
     translation_key: menu.faq
+    dropdown: []
+  - path: /publications/
+    translation_key: menu.publications
     dropdown: []
   - path: /news
     translation_key: menu.updates
