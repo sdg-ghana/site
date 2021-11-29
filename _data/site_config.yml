@@ -202,7 +202,7 @@ menu:
   - path: /faq
     translation_key: menu.faq
     dropdown: []
-  - path: /publications/
+  - path: /publications
     translation_key: menu.publications
     dropdown: []
   - path: /news
