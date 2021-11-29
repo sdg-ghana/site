@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20211129153602">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20211129154909">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20211129153602"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20211129154909"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-config-builder">
@@ -554,7 +554,19 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: breadcrumbs');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.breadcrumbs'));propertyEditorAccessibilityFixes(editor.getEditor('root.contrast_type'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.breadcrumbs'));
+      try {
+        var currentValue = normalizeCurrentValue('contrast_type', "default");
+        var propertyEditor = editor.getEditor('root.contrast_type');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: contrast_type');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.contrast_type'));
       try {
         var currentValue = normalizeCurrentValue('country', {"name":"Ghana","adjective":"Ghanaian"});
         var propertyEditor = editor.getEditor('root.country');
@@ -748,7 +760,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.footer_menu'));
       try {
-        var currentValue = normalizeCurrentValue('frontpage_cards', [{"title":"frontpage.download_all","content":"","include":"components/download-all-data.html","button_label":"","button_link":"","rule_color":""},{"title":"Lorem ipsum","content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis\ncursus est sed dapibus.\n","include":"","button_label":"Read more","button_link":"https://example.com","rule_color":""},{"title":"Nam vestibulum","content":"Nam vestibulum, purus quis porttitor imperdiet, nisl sem mollis nisl, a\ninterdum risus enim vitae tortor. Donec feugiat accumsan rutrum.\n","include":"","button_label":"Read more","button_link":"https://example.com","rule_color":""}]);
+        var currentValue = normalizeCurrentValue('frontpage_cards', [{"title":"frontpage.download_all","content":"","include":"components/download-all-data.html","button_label":"","button_link":"","rule_color":""},{"title":"Publications","content":"\n[UN Ghana Sustainable Development Partnership Framework with Ghana 2018-2022, June 2018](http://gh.one.un.org/content/dam/unct/ghana/docs/Delivering%20as%20One/UNCT-GH-UNSDP-2018.pdf)\n<br/>\n[National Strategy for the Development of Statistics, Ghana 2018-2022](http://www.statsghana.gov.gh/docfiles/publications/NSDS%20II%20Ghana_Revised_16.03.18.pdf)\n","include":"","button_label":"More Publications","button_link":"https://sdg-ghana.github.io/site/publications/","rule_color":""},{"title":"Useful resources","content":"\n[The Sustainable Development Goals in Ghana](https://ghana.un.org/)\n\n[The Global Goals](https://www.globalgoals.org/)\n\n[UN Department of Economic and Social Affairs](https://sustainabledevelopment.un.org/)\n","include":"","button_label":"","button_link":"","rule_color":""}]);
         var propertyEditor = editor.getEditor('root.frontpage_cards');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -950,9 +962,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: indicator_config_form');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_config_form'));propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_data_form'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_config_form'));
       try {
-        var currentValue = normalizeCurrentValue('indicator_metadata_form', {"enabled":true,"dropdowns":[],"repository_link":"https://github.com/sdg-ghana/data/tree/develop/meta","translation_link":"https://hosted.weblate.org/languages/fr/sdg-translations/","language":"en","scopes":["national","global"],"exclude_fields":["indicator_name"]});
+        var currentValue = normalizeCurrentValue('indicator_data_form', {"enabled":false,"repository_link":""});
+        var propertyEditor = editor.getEditor('root.indicator_data_form');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: indicator_data_form');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_data_form'));
+      try {
+        var currentValue = normalizeCurrentValue('indicator_metadata_form', {"enabled":true,"dropdowns":[],"repository_link":"https://github.com/sdg-ghana/data/tree/develop/meta","translation_link":"https://hosted.weblate.org/languages/fr/sdg-translations/","language":"en","scopes":["national","global"],"exclude_fields":["indicator_name"],"translated":false});
         var propertyEditor = editor.getEditor('root.indicator_metadata_form');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1356,12 +1380,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20211129153602'></script>
+<script src='/site/assets/js/sdg.js?v=20211129154909'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20211129153602"></script><script>
+    <script src="/site/assets/js/custom.js?v=20211129154909"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
