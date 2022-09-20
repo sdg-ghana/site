@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220920181357">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220920183848">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220920181357"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220920183848"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-config-builder">
@@ -606,7 +606,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/good-health-and-well-being\">Goal 3: Ensure healthy lives and promote well-being for all at all ages </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/good-health-and-well-being\">Goal 3: Ensure healthy lives and promote well-being for all at all ages. </a></h1>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -620,7 +620,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 3.1: By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births </p>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 3.1: By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births. </p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -648,7 +648,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Related to Target 3.1 on reducing maternal mortality, 3.2 on reducing neonatal mortality and 3.8 on achieving universal health coverage (coverage of essential health services)</p>");
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Related to Target 3.1 on reducing maternal mortality, 3.2 on reducing neonatal mortality and 3.8 on achieving universal health coverage (coverage of essential health services).</p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -730,7 +730,35 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SOURCE_TYPE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
       try {
         var currentValue = normalizeCurrentValue('RATIONALE', "<p>Having a skilled health care provider at the time of childbirth is an important lifesaving intervention for both women and newborns. Not having access to this key assistance is detrimental to women's and newborns health because it could cause the death of the women and/or the newborn or long lasting morbidity Achieving universal coverage for this indicator is therefore essential for reducing maternal and newborn mortality. </p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
@@ -902,12 +930,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220920181357'></script>
+<script src='/site/assets/js/sdg.js?v=20220920183848'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220920181357"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220920183848"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

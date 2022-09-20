@@ -406,6 +406,22 @@
           "status": "notstarted"
         },
         {
+          "id": "3-9-z1",
+          "title": "global_indicators.3-9-z1-title",
+          "description": "",
+          "keywords": "",
+          "href": "/site/3-9-z1",
+          "status": "notstarted"
+        },
+        {
+          "id": "3-9-z2",
+          "title": "global_indicators.3-9-z2-title",
+          "description": "",
+          "keywords": "",
+          "href": "/site/3-9-z2",
+          "status": "notstarted"
+        },
+        {
           "id": "3-a-1",
           "title": "Age-standardized prevalence of current tobacco use among persons aged 15 years and older",
           "description": "",

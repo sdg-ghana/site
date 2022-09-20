@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220920181357">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220920183848">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220920181357"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220920183848"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-config-builder">
@@ -592,7 +592,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/zero-hunger\">Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/zero-hunger\">Goal 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture. </a></h1>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -606,7 +606,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 2.a: Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries</p>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 2.a: Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries.</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -620,7 +620,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 2.a.1: The agriculture orientation index for government expenditures</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 2.a.1: The agriculture orientation index for government expenditures.</h2>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -660,9 +660,23 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Year 2008 to 2011 used AgPER methodology using the COFOG (Classification of the Functions of Government) classification of agric but year 2012 to 2015 used AgPER Lite methodology which is less comprehensive compared to the AgPER methodology. 1. Data is Collected at the Districts (Validated at disstrict level by the District Director of Agriculture) 2. Data is Aggregated at the Region (Validated at the regional level by the Regional Director of Agriculture) 3. Field Verification visits by the technical committee and consulting team 4. Validation (stakeholder validation workshop at the National level)</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana statistical service.</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+      try {
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> The Agriculture Orientation Index (AOI) for Government Expenditures is defined as the Agriculture Share of Government Expenditures, divided by the Agriculture Share of GDP, where Agriculture refers to the agriculture, forestry, fishing and hunting sector. The measure in a currency-free index, calculated as the ratio of these two shares. National governments are requested to compile Government Expenditures according to the international Classification of Functions of Government (COFOC), and Agriculture Share of GDP according to the System of National Accounts (SNA).</p><p>Year 2008 to 2011 used AgPER methodology using the COFOG (Classification of the Functions of Government) classification of agric but year 2012 to 2015 used AgPER Lite methodology which is less comprehensive compared to the AgPER methodology. </p><p>1. Data is Collected at the Districts (Validated at disstrict level by the District Director of Agriculture).</p><p>2. Data is Aggregated at the Region (Validated at the regional level by the Regional Director of Agriculture).</p><p>3. Field Verification visits by the technical committee and consulting team. </p><p>4. Validation (stakeholder validation workshop at the National level).</p><p>Concepts:</p><p>Agriculture refers to the agriculture, forestry, fishing and hunting sector, or Division A of ISIC Rev 4 (equal to Division A+B of ISIC Rev 3.2).</p><p>Government Expenditure comprise all expense and acquisition of non-financial assets associated with supporting a particular sector, as defined in the Government Finance Statistics Manual (GFSM) 2014 developed by the International Monetary Fund (IMF). NOTE: Transactions in assets and liabilities, such as loans by general government units (disbursement and repayment), are excluded when compiling COFOG data for GFS reporting purposes.</p><p>Government Expenditure are classified according to the Classification of the Functions of Government (COFOG), a classification developed by the Organisation for Economic Co-operation and Development (OECD) and published by the United Nations Statistical Division (UNSD).</p><p>Agriculture value-added and GDP are based on the System of National Accounts (SNA).</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -688,7 +702,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: UNIT_MEASURE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
+      try {
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana statistical service.</p><p>Ministry of Finance.</p>");
+        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SOURCE_TYPE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
       try {
         var currentValue = normalizeCurrentValue('REL_CAL_POLICY', "<p>June 2019</p>");
         var propertyEditor = editor.getEditor('root.REL_CAL_POLICY');
@@ -702,7 +730,49 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: REL_CAL_POLICY');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana statistical service.</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana statistical service.</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+      try {
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>An Agriculture Orientation Index (AOI) greater than 1 reflects a higher orientation towards the agriculture sector, which receives a higher share of government spending relative to its contribution to economic value-added. An AOI less than 1 reflects a lower orientation to agriculture, while an AOI equal to 1 reflects neutrality in a government’s orientation to the agriculture sector.</p><p>Government spending in agriculture includes spending on sector policies and programs; soil improvement and soil degradation control; irrigation and reservoirs for agricultural use; animal health management, livestock research and training in animal husbandry; marine/freshwater biological research; afforestation and other forestry projects; etc.</p><p>Spending in these agricultural activities helps to increase sector efficiency, productivity and income growth by increasing physical or human capital and/or reducing inter-temporal budget constraints.</p><p>However, the private sector typically under-invests in these activities due to the presence of market failure (e.g. the public good nature of research and development; the positive externalities from improved soil and water conditions; lack of access to competitive credit due to asymmetric information between producers and financial institutions, etc.). Similarly, the high risk faced by agricultural producers, particular smallholders unable to hedge against risk, often requires government intervention in terms of income redistribution to support smallholders in distress following crop failures and livestock loss from pests, droughts, floods, infrastructure failure, or severe price changes.</p><p>Government spending in agriculture is essential to address these market failures and the periodic need for income redistribution. This leads to several potential indicators for the SDGs, which include: a) the level of Government Expenditure on Agriculture (GEA); b) the Agriculture share of Government Expenditure, and c) the AOI for Government Expenditures.</p><p>An indicator that measures GEA levels fails to take into account the size of an economy. If two countries, A and B, have the same level of GEA, and the same agriculture contribution to GDP, but country A’s economy is 10 times that of country B, setting the same target levels for GEA fails to take economic size into account.</p><p>An indicator that measures the Agriculture share of Government Expenditure fails to take into account the relative contributions of the agricultural sector to a country’s GDP. Consider two countries with the same economic size, C and D, where agriculture contributes 2 percent to C’s GDP, and 10 per cent to country D’s GDP. If total Government Expenditures were equal in both countries, C would experience greater relative investment in Agriculture than D. If total Government Expenditures differed, the result could be magnified or diluted.</p><p>The AOI index takes into account a country’s economic size, Agriculture’s contribution to GDP, and the total amount of Government Expenditure. While the indicator does not allow setting of a universal and achievable target, it is useful to interpret the AOI in combination with its numerator and denominator separately: the Agriculture share of Government Expenditure and the Agriculture value-added Share of GDP.</p>");
+        var propertyEditor = editor.getEditor('root.RATIONALE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: RATIONALE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
       try {
         var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Total Government Expenditure on Agriculture expressed as a percentage of Total Government (Public) expenditure.</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
@@ -716,7 +786,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: DATA_COMP');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p>Global SDG Indicator Platform</p><p>https://sdg.tracking-progress.org/indicator/2-a-1-agriculture-orientation-index-for-government-expenditures-2/ \" </p><p>https://sdg.tracking-progress.org/indicator/2-a-1-agriculture-orientation-index-for-government-expenditures-2/ </p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -846,12 +930,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220920181357'></script>
+<script src='/site/assets/js/sdg.js?v=20220920183848'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220920181357"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220920183848"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

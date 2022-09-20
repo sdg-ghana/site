@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220920181357">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220920183848">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220920181357"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220920183848"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-config-builder">
@@ -634,7 +634,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
       try {
-        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>0.d. Series</p><p>Number of seats held by women in national parliaments (number) SG_GEN_PARLN</p><p>Current number of seats in national parliaments (number) SG_GEN_PARLNT</p><p>Proportion of seats held by women in national parliaments (% of total number of seats) SG_GEN_PARL</p>");
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Number of seats held by women in national parliaments (number) SG_GEN_PARLN</p><p>Current number of seats in national parliaments (number) SG_GEN_PARLNT</p><p>Proportion of seats held by women in national parliaments (% of total number of seats) SG_GEN_PARL</p>");
         var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -646,7 +646,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SDG_SERIES_DESCR');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
+      try {
+        var currentValue = normalizeCurrentValue('META_LAST_UPDATE', "<p>2022-9-13</p>");
+        var propertyEditor = editor.getEditor('root.META_LAST_UPDATE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: META_LAST_UPDATE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
       try {
         var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Indicator 16.7.1: Proportions of positions (by age group, sex, persons with disabilities and population groups) in public institutions (national and local), including (a) the legislatures; (b) the public service; and (c) the judiciary, compared to national distributions.</p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
@@ -676,7 +690,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>The Ministry of Local Government and Rural Development</p><p>Parliament Of Ghana</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service (GSS)</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -718,7 +732,7 @@ var translations = {
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p><em>Parliamentary records, 2020 and MLGRD APR 2019</em></p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Parliamentary records, 2020 </p><p>Ministry of Local Government and Rural Development (MLGRD) APR 2019</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -730,7 +744,49 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SOURCE_TYPE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>The Ministry of Local Government and Rural Development</p><p>Parliament Of Ghana</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>GSS</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+      try {
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator measures the degree to which women have equal access to parliamentary decision making. Women’s participation in parliaments is a key aspect of women’s opportunities in political and public life, and is therefore linked to women’s empowerment. Equal numbers of women and men in lower chambers would give an indicator value of 50 per cent. A stronger presence of women in parliament allows new concerns to be highlighted on political agendas, and new priorities to be put into practice through the adoption and implementation of policies and laws. The inclusion of the perspectives and interests of women is a prerequisite for democracy and gender equality, and contributes to good governance. A representative parliament also allows the different experiences of men and women to affect the social, political and economic future of societies. Changes in the indicator have been tracked over time. Although the international community has supported and promoted women’s participation in political decision-making structures for several decades, improvement in women’s access to parliament has been slow. This has led to the introduction of special policy and legal measures to increase women’s shares of parliamentary seats in Ghana. </p>");
+        var propertyEditor = editor.getEditor('root.RATIONALE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: RATIONALE');
+      }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -860,12 +916,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220920181357'></script>
+<script src='/site/assets/js/sdg.js?v=20220920183848'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220920181357"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220920183848"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
