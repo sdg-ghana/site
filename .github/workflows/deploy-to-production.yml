@@ -8,10 +8,13 @@
 #
 # In order for this to work, you must replace PRODUCTION_ORGANISATION below
 # with the name of your production GitHub organisation, under REPOSITORY_NAME.
+# You must also replace PRODUCTION_REPOSITORY below with the name of your
+# production data repository.
 #
-# For example, if your production organisation is "my-stats-org", then use:
+# For example, if your production organisation is "my-stats-org", and your
+# production data repository is "sdg-data", then use:
 #
-# REPOSITORY_NAME: my-stats-org/my-stats-org.github.io
+# REPOSITORY_NAME: my-stats-org/sdg-data
 #
 # ****************************************************************************
 
@@ -28,22 +31,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - uses: actions/checkout@v2
       with:
-        ruby-version: 2.6.x
-    - name: Build the site
+        fetch-depth: 0
+        persist-credentials: false
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
       run: |
-        gem install bundler
-        bundle config path vendor/bundle
-        bundle install
-        bundle exec jekyll build --config _config.yml,_config_prod.yml
+        python -m pip install --upgrade pip
+        pip install -r scripts/requirements.txt
+    - name: Build data
+      run: |
+        python scripts/build_data.py
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
-        REPOSITORY_NAME: PRODUCTION_ORGANISATION/PRODUCTION_ORGANISATION.github.io
+        REPOSITORY_NAME: sdgs-ghana/production-data
         ACCESS_TOKEN: ${{ secrets.token }}
-        BRANCH: master
+        BRANCH: gh-pages
         FOLDER: _site
         CLEAN: true
