@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -114,49 +114,57 @@ var translations = {
         
         <link rel="canonical" href="/">
 
-        
-
         <!--[if IE 9]>
         <script src="/site/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        <!-- Favicons ================================================== -->
-        <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
-        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-        -->
-
         
 
+
+
+
+<link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png">
+
+
+        
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220921145232">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220921145751">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220921145232"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220921145751">
+        
+
+        
 
     </head>
-<body class="language-en layout-config-builder">
+<body class="language-en
+layout-config-builder
+">
 <!-- <div class="container"> -->
+
 
 
 <script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
-  <div class="container">
+  
+<div class="container">
   <div class="disclaimer-alert">
     <strong class="phase-tag">Alpha</strong>
     
     This is a development website. We welcome your <a href="mailto:sdg.secretariat@statsghana.gov.gh">feedback</a>.
+    
   </div>
 </div>
 
@@ -170,7 +178,36 @@ var translations = {
     <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
 </a>
       <div class="mobile-widgets">
-    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
+    <ul id='accessibility-nav' class='contrast-switcher'>
+        
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+    </ul></div>
     </div>
 
     <nav class="navbar navbar-default" id="main-nav">
@@ -198,6 +235,36 @@ var translations = {
 </li><li class="nav-link ">
     <a href="/site/gdp-indicators/">GDP indicators</a>
 </li>
+
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </li>
@@ -206,7 +273,7 @@ var translations = {
         aria-haspopup="true">
         <button data-target="search-mobile" aria-expanded="false">Search</button>
         <div id="search-mobile" class="menu-target">
-  <form action="/site/search">
+  <form action="/site/search/">
     <label class="sr-only" for="indicator_search-mobile">Search</label>
     <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
     --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -216,7 +283,7 @@ var translations = {
     </li>
 </ul>
       <div id="search" class="menu-target">
-  <form action="/site/search">
+  <form action="/site/search/">
     <label class="sr-only" for="indicator_search">Search</label>
     <input type="text" name="q" id="indicator_search" title="Search" /><!--
     --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -250,6 +317,36 @@ var translations = {
 </li></ul>
             </div>
         </li>
+
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </nav>
@@ -260,9 +357,12 @@ var translations = {
 
 
 
+
 <div id="main-content" class="container" role="main">
-  <div class="col-md-12"><h1>Edit Metadata: 3.9.z2</h1></div>
-  <div class="config-widgets col-md-12">
+  <div class="row">
+    <div class="col-md-12"><h1>Edit Metadata: 3.9.z2</h1></div>
+  </div>
+  <div class="config-widgets row">
     <div class="col-md-6" id="search_holder">
       <label for="config-search">Filter settings</label>
       <input id="config-search" />
@@ -272,6 +372,10 @@ var translations = {
     <div class="col-md-6" id="button_holder">
       <div><button class="btn btn-primary btn-download" id="export">Download configuration</button></div>
       
+      
+      
+      
+      
       <div>
         <a class="btn btn-primary btn-download" target="_blank" href="https://github.com/sdg-ghana/data/tree/develop/meta">
           Go to repository
@@ -280,8 +384,8 @@ var translations = {
       
     </div>
   </div>
-  <div class="col-md-12" id="results-status" role="status"></div>
-  <div class="col-md-12" id="editor_holder"></div>
+  <div class="row" id="results-status" role="status"></div>
+  <div class="row" id="editor_holder"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.0/dist/js-yaml.min.js"></script>
@@ -506,7 +610,12 @@ var translations = {
       }
     }
 
-    // Set values according to this site's configuration.propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_number'));propertyEditorAccessibilityFixes(editor.getEditor('root.target_name'));
+    // Set values according to this site's configuration.
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_number'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.target_name'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('target_id', "3.9");
         var propertyEditor = editor.getEditor('root.target_id');
@@ -520,7 +629,45 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: target_id');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.target_id'));propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_definition'));propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));propertyEditorAccessibilityFixes(editor.getEditor('root.un_custodian_agency'));propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link'));propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_description'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_definitions'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_calculations'));propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));propertyEditorAccessibilityFixes(editor.getEditor('root.quality_assurance'));propertyEditorAccessibilityFixes(editor.getEditor('root.international_comparability'));propertyEditorAccessibilityFixes(editor.getEditor('root.comments_limitations'));propertyEditorAccessibilityFixes(editor.getEditor('root.rationale_interpretation'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url_text'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.target_id'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_definition'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.un_custodian_agency'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link_text'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_description'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_definitions'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_calculations'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.quality_assurance'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.international_comparability'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.comments_limitations'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.rationale_interpretation'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url_text'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('national_metadata_update_url', "https://github.com/sdg-ghana/data/commit/cd5a753a29791268ecc43ed6783daa29760344fd");
         var propertyEditor = editor.getEditor('root.national_metadata_update_url');
@@ -535,6 +682,8 @@ var translations = {
         console.log('Unable to set config key: national_metadata_update_url');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('national_metadata_update_url_text', "2022-09-20: see changes on GitHub");
         var propertyEditor = editor.getEditor('root.national_metadata_update_url_text');
@@ -548,7 +697,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: national_metadata_update_url_text');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_GOAL', "<p><strong>Goal 3: </strong>Ensure healthy lives and promote well-being for all at all ages</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
@@ -563,6 +716,8 @@ var translations = {
         console.log('Unable to set config key: SDG_GOAL');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_TARGET', "<p><strong>Target 3.9: </strong>By 2030, substantially reduce the number of deaths and illnesses from hazardous</p><p>chemicals and air, water and soil pollution and contamination</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
@@ -577,6 +732,8 @@ var translations = {
         console.log('Unable to set config key: SDG_TARGET');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p><strong>Indicator (National): </strong>Level of CO2 emission from vehicles</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
@@ -590,7 +747,19 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SDG_INDICATOR');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>MESTI, EPA, DVLA</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
@@ -605,6 +774,8 @@ var translations = {
         console.log('Unable to set config key: CONTACT_ORGANISATION');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('CONTACT_NAME', "<p>Director of Environment (MESTI),</p><p> UNFCCC Focal Point (EPA), </p><p>Executive Director, DVLA</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_NAME');
@@ -618,7 +789,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: CONTACT_NAME');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The indicator measures the level of CO2 emissions from vehicles.</p><p><strong>Concepts:</strong></p><p><strong>Greenhouse gas emissions (GHG emissions)</strong></p><p>All gas emissions coming for 4 sectors – all energy (combustible and fugitive) including transport,</p><p>industrial process and product use, Agriculture, Forestry and Other Land Use (AFOLU), and waste.</p><p>Ghana’s total GHG emissions stood at 42.2 million tonnes (Mt) CO2-equivalent (CO2e) in 2016,</p><p>The 2012 emissions were 39.4 million tonnes (Mt) CO2-equivalent (CO2e) and 2000 - 27.3 million</p><p>tonnes (Mt) CO2-equivalent (CO2e).</p><p>Increases in the emission trends corresponded to the on-going structural economic transformation</p><p>agenda which has led to sustained growth and expansion of the national economy. The expansion</p><p>in the economy has resulted in notable rise in emissions from road transport, electricity generation</p><p>from crude oil-fired thermal plants, increasing demand for biomass use. With respect the gases,</p><p>CO2 was the most significant, accounting for 44% of total national emissions, followed by N2O and</p><p>CH4, which comprised 30.8% and 24.8% respectively</p><p><strong>Carbon dioxide emissions </strong>are those stemming from the burning of fossil fuels and the manufacture</p><p>of cement. They include carbon dioxide produced during consumption of solid, liquid, and gas fuels</p><p>and gas flaring. CO2 emission from transport has been increasing. It increased from 2.81(MtCO2e)</p><p>in 2000 to 4.68 (MtCO2e). The main driver for the increase in transport emissions is continuing</p><p>growth in the number of passenger vehicles and the expanding domestic aviation industry.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
@@ -632,7 +817,15 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: STAT_CONC_DEF');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Administrative (Assessment)</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
@@ -647,6 +840,8 @@ var translations = {
         console.log('Unable to set config key: SOURCE_TYPE');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('COLL_METHOD', "<p>Through physical measurements or modelling</p>");
         var propertyEditor = editor.getEditor('root.COLL_METHOD');
@@ -660,7 +855,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: COLL_METHOD');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('RATIONALE', "<p>CO2 emissions accounted for the largest share of gases in the energy sector. They accounted for 93%</p><p>of the total GHG emissions of which transport and electricity generation were the main sources.</p><p>Between 1990 and 2012, CO2 emissions rose by 79.3%; 2.6 Mt in 1990 to 12.59 Mt in 2012. The</p><p>increases in CO2 emissions were mainly due to the increasing emissions contributions from the</p><p>transport and energy industries categories. The rise in the CO2 emissions could be seen as a result</p><p>of the following factors (a) increasing traffic congestion in the urban centres (b) increasing thermal</p><p>electricity in the generation mix (c) increasing use of stand-by generators in commercial activities</p><p>during load shedding periods, by the utility companies and (d) kerosene use in both domestic</p><p>(non-electrified rural areas) and commercial (part of urban centers) lighting. Increases in CO2</p><p>emissions has adverse effects on the environment and health and so monitoring the indicator</p><p>will help achieve the Target 3.9 by 2030, which is, substantially reduce the number of deaths and</p><p>illnesses from hazardous chemicals and air, water and soil pollution and contamination.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
@@ -675,6 +884,8 @@ var translations = {
         console.log('Unable to set config key: RATIONALE');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p>The process of estimating GHG emissions has inherent uncertainties. The way the activity data and</p><p>emission factors are generated, either through physical measurements or modelling, carries certain</p><p>levels of uncertainty. Datasets that are produced through such processes introduce their inherent</p><p>uncertainties into the GHG accounting. Managing these uncertainties, and reducing them over</p><p>time, is recognized by the IPCC Good Practice reports (IPCC 2000, 2003) as an important element</p><p>of inventory preparation and development.</p>");
         var propertyEditor = editor.getEditor('root.REC_USE_LIM');
@@ -689,6 +900,8 @@ var translations = {
         console.log('Unable to set config key: REC_USE_LIM');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Two assessment approaches – level assessment (measurement of CO2 levels are taken in a particular</p><p>year) and trend assessment (gas levels from several years are taken and trend analysis made).</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
@@ -702,7 +915,21 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: DATA_COMP');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('QUALITY_ASSURE', "<p>Implementation of tier I quality control procedures which involved ensuring internal consistency</p><p>and proper documentation as well as internal and international review of documentation</p>");
         var propertyEditor = editor.getEditor('root.QUALITY_ASSURE');
@@ -716,7 +943,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: QUALITY_ASSURE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('COVERAGE', "<p><strong>Data availability and gaps:</strong></p><p>Data available from 1990</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
@@ -731,6 +962,8 @@ var translations = {
         console.log('Unable to set config key: COVERAGE');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('COMPARABILITY', "<p>Indicator is a nationally determined indicator</p>");
         var propertyEditor = editor.getEditor('root.COMPARABILITY');
@@ -745,6 +978,8 @@ var translations = {
         console.log('Unable to set config key: COMPARABILITY');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('OTHER_DOC', "<p>Ghana’s First Biennial Update Report: Ghana Government submission to the United Nations</p><p>Framework Convention on Climate Change, 2015 (MESTI)</p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
@@ -758,7 +993,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: OTHER_DOC');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
+
+    
+
+    function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -825,6 +1064,7 @@ var translations = {
     });
   </script>
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
@@ -860,107 +1100,49 @@ var translations = {
         </div>
       </div>
     </div>
+    
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<!-- /.container </div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+
+
+
+
+
+
+
 <script>translations['general'] = translations['general'] || {};
     translations['general']['hide'] = 'hide';</script>
 
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220921145232'></script>
+<script src='/site/assets/js/sdg.js?v=20220921145751'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220921145232"></script><script>
-$(function() {
-    if($('#indicatorData').length) {
-      var domData = $('#indicatorData').data();
-
-      if (domData.showdata) {
-
-        $('.async-loading').each(function(i, obj) {
-            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
-        });
-
-        var remoteUrl = '/comb/' + domData.id + '.json';
-        if (opensdg.remoteDataBaseUrl !== '/') {
-          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
-        }
-
-        $.ajax({
-          url: remoteUrl,
-          success: function(res) {
-
-            $('.async-loading').remove();
-            $('.async-loaded').show();
-
-            var model = new indicatorModel({
-              data: res.data,
-              edgesData: res.edges,
-              showMap: domData.showmap,
-              country: domData.country,
-              indicatorId: domData.indicatorid,
-              shortIndicatorId: domData.id,
-              chartTitle: domData.charttitle,
-              chartTitles: domData.charttitles,
-              measurementUnit: domData.measurementunit,
-              showData: domData.showdata,
-              graphType: domData.graphtype,
-              startValues: domData.startvalues,
-              graphLimits: domData.graphlimits,
-              stackedDisaggregation: domData.stackeddisaggregation,
-              graphAnnotations: domData.graphannotations,
-              indicatorDownloads: domData.indicatordownloads,
-              compositeBreakdownLabel: domData.compositebreakdownlabel,
-              precision: domData.precision,
-            }),
-            view  = new indicatorView(model, {
-              rootElement: '#indicatorData',
-              legendElement: '#plotLegend',
-              decimalSeparator: '',
-              maxChartHeight: 420,
-              tableColumnDefs: [
-                { maxCharCount: 25 }, // nowrap
-                { maxCharCount: 35, width: 200 },
-                { maxCharCount: Infinity, width: 250 }
-              ]
-            }),
-            controller = new indicatorController(model, view);
-            controller.initialise();
-          }
-        });
-      }
-    }
-
-    var switcher = new accessibilitySwitcher();
-
-
-});
+    <script src="/site/assets/js/custom.js?v=20220921145751"></script><script>
+    new indicatorInit();
+    new accessibilitySwitcher();
 </script>
-
-
 
 
 </body>

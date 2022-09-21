@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -114,49 +114,57 @@ var translations = {
         
         <link rel="canonical" href="/">
 
-        
-
         <!--[if IE 9]>
         <script src="/site/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        <!-- Favicons ================================================== -->
-        <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
-        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-        -->
-
         
 
+
+
+
+<link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png">
+
+
+        
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220921145232">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220921145751">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220921145232"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220921145751">
+        
+
+        
 
     </head>
-<body class="language-en layout-config-builder">
+<body class="language-en
+layout-config-builder
+">
 <!-- <div class="container"> -->
+
 
 
 <script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
-  <div class="container">
+  
+<div class="container">
   <div class="disclaimer-alert">
     <strong class="phase-tag">Alpha</strong>
     
     This is a development website. We welcome your <a href="mailto:sdg.secretariat@statsghana.gov.gh">feedback</a>.
+    
   </div>
 </div>
 
@@ -170,7 +178,36 @@ var translations = {
     <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
 </a>
       <div class="mobile-widgets">
-    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
+    <ul id='accessibility-nav' class='contrast-switcher'>
+        
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+    </ul></div>
     </div>
 
     <nav class="navbar navbar-default" id="main-nav">
@@ -198,6 +235,36 @@ var translations = {
 </li><li class="nav-link ">
     <a href="/site/gdp-indicators/">GDP indicators</a>
 </li>
+
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </li>
@@ -206,7 +273,7 @@ var translations = {
         aria-haspopup="true">
         <button data-target="search-mobile" aria-expanded="false">Search</button>
         <div id="search-mobile" class="menu-target">
-  <form action="/site/search">
+  <form action="/site/search/">
     <label class="sr-only" for="indicator_search-mobile">Search</label>
     <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
     --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -216,7 +283,7 @@ var translations = {
     </li>
 </ul>
       <div id="search" class="menu-target">
-  <form action="/site/search">
+  <form action="/site/search/">
     <label class="sr-only" for="indicator_search">Search</label>
     <input type="text" name="q" id="indicator_search" title="Search" /><!--
     --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -250,6 +317,36 @@ var translations = {
 </li></ul>
             </div>
         </li>
+
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Disable high contrast"
+           aria-label="Disable high contrast"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </nav>
@@ -260,9 +357,12 @@ var translations = {
 
 
 
+
 <div id="main-content" class="container" role="main">
-  <div class="col-md-12"><h1>Edit Metadata: 1.2.2</h1></div>
-  <div class="config-widgets col-md-12">
+  <div class="row">
+    <div class="col-md-12"><h1>Edit Metadata: 1.2.2</h1></div>
+  </div>
+  <div class="config-widgets row">
     <div class="col-md-6" id="search_holder">
       <label for="config-search">Filter settings</label>
       <input id="config-search" />
@@ -272,6 +372,10 @@ var translations = {
     <div class="col-md-6" id="button_holder">
       <div><button class="btn btn-primary btn-download" id="export">Download configuration</button></div>
       
+      
+      
+      
+      
       <div>
         <a class="btn btn-primary btn-download" target="_blank" href="https://github.com/sdg-ghana/data/tree/develop/meta">
           Go to repository
@@ -280,8 +384,8 @@ var translations = {
       
     </div>
   </div>
-  <div class="col-md-12" id="results-status" role="status"></div>
-  <div class="col-md-12" id="editor_holder"></div>
+  <div class="row" id="results-status" role="status"></div>
+  <div class="row" id="editor_holder"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-yaml@3.14.0/dist/js-yaml.min.js"></script>
@@ -507,6 +611,7 @@ var translations = {
     }
 
     // Set values according to this site's configuration.
+    
       try {
         var currentValue = normalizeCurrentValue('indicator_number', "1.2.2");
         var propertyEditor = editor.getEditor('root.indicator_number');
@@ -520,7 +625,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: indicator_number');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_number'));propertyEditorAccessibilityFixes(editor.getEditor('root.target_name'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_number'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.target_name'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('target_id', "1.2");
         var propertyEditor = editor.getEditor('root.target_id');
@@ -534,7 +643,23 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: target_id');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.target_id'));propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_definition'));propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));propertyEditorAccessibilityFixes(editor.getEditor('root.un_custodian_agency'));propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link'));propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_description'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.target_id'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_definition'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.un_custodian_agency'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.goal_meta_link_text'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_available'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_indicator_description'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('national_geographical_coverage', "");
         var propertyEditor = editor.getEditor('root.national_geographical_coverage');
@@ -549,6 +674,8 @@ var translations = {
         console.log('Unable to set config key: national_geographical_coverage');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_geographical_coverage'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('computation_units', "");
         var propertyEditor = editor.getEditor('root.computation_units');
@@ -562,7 +689,27 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: computation_units');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_definitions'));propertyEditorAccessibilityFixes(editor.getEditor('root.computation_calculations'));propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));propertyEditorAccessibilityFixes(editor.getEditor('root.quality_assurance'));propertyEditorAccessibilityFixes(editor.getEditor('root.international_comparability'));propertyEditorAccessibilityFixes(editor.getEditor('root.comments_limitations'));propertyEditorAccessibilityFixes(editor.getEditor('root.rationale_interpretation'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url'));propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url_text'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_units'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_definitions'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.computation_calculations'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.quality_assurance'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.international_comparability'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.comments_limitations'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.rationale_interpretation'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_update_url_text'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('national_metadata_update_url', "https://github.com/sdg-ghana/data/commit/9c27689778c79179108258bf1159544fcd175432");
         var propertyEditor = editor.getEditor('root.national_metadata_update_url');
@@ -577,6 +724,8 @@ var translations = {
         console.log('Unable to set config key: national_metadata_update_url');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('national_metadata_update_url_text', "2021-06-16: see changes on GitHub");
         var propertyEditor = editor.getEditor('root.national_metadata_update_url_text');
@@ -590,7 +739,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: national_metadata_update_url_text');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.national_metadata_update_url_text'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/no-poverty\">Goal 1: End poverty in all its forms everywhere</a></h1>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
@@ -605,6 +758,8 @@ var translations = {
         console.log('Unable to set config key: SDG_GOAL');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 1.2: By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
@@ -619,6 +774,8 @@ var translations = {
         console.log('Unable to set config key: SDG_TARGET');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 1.2.2: Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions.</h2>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
@@ -632,7 +789,15 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SDG_INDICATOR');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>The World Bank, UNICEF, UNDP</p>");
         var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
@@ -646,7 +811,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>UNICEF</p><p>Ghana Statistical Service </p><p>National Development Planning Commission (NDPC)</p><p> </p><p> </p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
@@ -660,7 +829,23 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: CONTACT_ORGANISATION');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The following four series are used to monitor the SDG 1.2.2.</p><p>1) Official multidimensional poverty headcount, by sex, and age (% of population)</p><p>- The percentage of people who are multidimensionally poor</p><p>2) Average share of weighted deprivations (intensity) for total population</p><p>- The average share of weighted dimensions in which poor people are deprived among total population</p><p>3) Official multidimensional poverty headcount (% of total households)</p><p>- The percentage of households who are multidimensionally poor</p><p>4) Average share of weighted deprivations (intensity) for total households</p><p>- The average share of weighted dimensions in which poor people are deprived among total households</p><p>5) Multidimensional deprivation for children (% of population under 18)</p><p>- The percentage of children who are simultaneously deprived in multiple dimensions of well-being</p><p><strong>Concepts:</strong></p><p>The design of a measure of multidimensional poverty is different in each country, but regardless of the exact methodology selected, it still follows a similar process to define the features of the measure, which include: i) the purpose of the measure; ii) the unit of identification (most frequently either the household or the individuals); iii) the dimensions and respective indicators that delimit which deprivations should be measured; iv) the methodology for developing the measure (including deprivation cut-offs, weights, and poverty cut-offs).</p><p>The most commonly used method is the Alkire Foster (AF) methodology which identifies dimensions, typically health, education and living standards and several indicators in each dimension. The unit of analysis could be either the individual or the household. The individuals or households are considered as multidimensionally poor if they are deprived in multiple dimensions, exceeding certain thresholds.</p><p>EU countries, North Macedonia and Turkey have a different approach to measure the multidimensional poverty using the concept of \"people at risk of poverty or social exclusion\" (AROPE) calculated by EUROSTAT using the data from EU statistics on income and living conditions (EU-SILC). AROPE consists of three indicators, and individuals are considered as \"at risk of poverty or social exclusion\" if they are \"at risk of poverty\" or \"severely materially deprived\" or \"living in a household with a very low work intensity\".</p><p>There is a multidimensional poverty measure specifically designed for children. A child is considered multidimensionally poor if s/he is simultaneously deprived in multiple dimensions. It identifies the dimensions of poverty and the indicators under each dimension, and has a similar structure to the AF methodology. However, it is different in that it focuses on the life-cycle of children, creating different sets of dimensions and indicators for different age groups (e.g., for ages 0-4, 5-11, 12-14, 15-17 years), and conducts analyses separately for each age group. In the global SDG database, the multidimensional poverty headcount (%) for the overall 0-17 age group has been used for countries reporting individual measures of child multidimensional poverty.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
@@ -675,6 +860,8 @@ var translations = {
         console.log('Unable to set config key: STAT_CONC_DEF');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage and local currency</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
@@ -688,7 +875,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: UNIT_MEASURE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SRC_TYPE_COLL_METHOD', "<p>Survey and primary sourced data</p>");
         var propertyEditor = editor.getEditor('root.SRC_TYPE_COLL_METHOD');
@@ -703,6 +894,8 @@ var translations = {
         console.log('Unable to set config key: SRC_TYPE_COLL_METHOD');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p><em>Multi-dimensional child Poverty in Ghana, 2020) -</em> UNICEF</p><p><em>Multidimensional poverty, Ghana living standards survey, Ghana Multiple indicator Cluster survey – </em>Ghana statistical service.<br/></p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
@@ -716,7 +909,15 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: SOURCE_TYPE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>UNICEF, GSS</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
@@ -731,6 +932,8 @@ var translations = {
         console.log('Unable to set config key: DATA_SOURCE');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical service</p>");
         var propertyEditor = editor.getEditor('root.COMPILING_ORG');
@@ -745,6 +948,8 @@ var translations = {
         console.log('Unable to set config key: COMPILING_ORG');
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('INST_MANDATE', "<p>Ghana Statistical service</p>");
         var propertyEditor = editor.getEditor('root.INST_MANDATE');
@@ -758,7 +963,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: INST_MANDATE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('RATIONALE', "<p>Poverty has traditionally been defined as the lack of money. However, the poor themselves consider their experience of poverty much more broadly. A person who is poor can suffer multiple disadvantages at the same time – for example, they may have poor health or malnutrition, a lack of clean water or electricity, poor quality of work or little schooling. Focusing on one factor alone, such as income, is not enough to capture the true reality of poverty. Therefore, multidimensional poverty measures described above have been developed to create a more comprehensive picture by looking at multiple dimensions such as health,</p><p>education, living standards. Official multidimensional poverty headcount (% population), official multidimensional poverty headcount (% of total households) and multidimensional deprivation for children (% of population under 18) are all about the headcount ratio trying to capture how many people, households, or children in the entire pool are regarded as multidimensionally poor. On the other hand, average share of weighted deprivation tries to capture the depth of multidimensional poverty. For instance, if there are 18 indicators to capture different dimensions of poverty, the person who is deprived in 5 indicators, and the person who is deprived in 15 indicators are considered to be both multidimensionally poor. However, the 'intensity' of the poverty is different between these two people, which is captured by the average share of weighted deprivation.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
@@ -772,7 +981,33 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: RATIONALE');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
+    propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.IMPUTATION'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.REG_AGG'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
+
+    
       try {
         var currentValue = normalizeCurrentValue('OTHER_DOC', "<p>Organization for Economic Cooperation and Development, poverty Rate 2022</p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
@@ -786,7 +1021,11 @@ var translations = {
         console.log(e.message);
         console.log('Unable to set config key: OTHER_DOC');
       }
-    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));function isTranslationKey(text) {
+    propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
+
+    
+
+    function isTranslationKey(text) {
       var parts = text.split('.');
       if (parts.length !== 2) {
         return false;
@@ -853,6 +1092,7 @@ var translations = {
     });
   </script>
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
@@ -888,107 +1128,49 @@ var translations = {
         </div>
       </div>
     </div>
+    
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<!-- /.container </div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+
+
+
+
+
+
+
 <script>translations['general'] = translations['general'] || {};
     translations['general']['hide'] = 'hide';</script>
 
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220921145232'></script>
+<script src='/site/assets/js/sdg.js?v=20220921145751'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220921145232"></script><script>
-$(function() {
-    if($('#indicatorData').length) {
-      var domData = $('#indicatorData').data();
-
-      if (domData.showdata) {
-
-        $('.async-loading').each(function(i, obj) {
-            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
-        });
-
-        var remoteUrl = '/comb/' + domData.id + '.json';
-        if (opensdg.remoteDataBaseUrl !== '/') {
-          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
-        }
-
-        $.ajax({
-          url: remoteUrl,
-          success: function(res) {
-
-            $('.async-loading').remove();
-            $('.async-loaded').show();
-
-            var model = new indicatorModel({
-              data: res.data,
-              edgesData: res.edges,
-              showMap: domData.showmap,
-              country: domData.country,
-              indicatorId: domData.indicatorid,
-              shortIndicatorId: domData.id,
-              chartTitle: domData.charttitle,
-              chartTitles: domData.charttitles,
-              measurementUnit: domData.measurementunit,
-              showData: domData.showdata,
-              graphType: domData.graphtype,
-              startValues: domData.startvalues,
-              graphLimits: domData.graphlimits,
-              stackedDisaggregation: domData.stackeddisaggregation,
-              graphAnnotations: domData.graphannotations,
-              indicatorDownloads: domData.indicatordownloads,
-              compositeBreakdownLabel: domData.compositebreakdownlabel,
-              precision: domData.precision,
-            }),
-            view  = new indicatorView(model, {
-              rootElement: '#indicatorData',
-              legendElement: '#plotLegend',
-              decimalSeparator: '',
-              maxChartHeight: 420,
-              tableColumnDefs: [
-                { maxCharCount: 25 }, // nowrap
-                { maxCharCount: 35, width: 200 },
-                { maxCharCount: Infinity, width: 250 }
-              ]
-            }),
-            controller = new indicatorController(model, view);
-            controller.initialise();
-          }
-        });
-      }
-    }
-
-    var switcher = new accessibilitySwitcher();
-
-
-});
+    <script src="/site/assets/js/custom.js?v=20220921145751"></script><script>
+    new indicatorInit();
+    new accessibilitySwitcher();
 </script>
-
-
 
 
 </body>

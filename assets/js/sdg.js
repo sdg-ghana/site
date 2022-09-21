@@ -412,15 +412,31 @@ opensdg.autotrack = function(preset, category, action, label) {
 
           // Keep track of the minimums and maximums.
           _.each(geoJson.features, function(feature) {
-            if (feature.properties.values && feature.properties.values.length) {
-              availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
-              minimumValues.push(_.min(Object.values(feature.properties.values[0])));
-              maximumValues.push(_.max(Object.values(feature.properties.values[0])));
+            if (feature.properties.values && feature.properties.values.length > 0) {
+              var validEntries = _.reject(Object.entries(feature.properties.values[0]), function(entry) {
+                return isMapValueInvalid(entry[1]);
+              });
+              if (validEntries.length > 0) {
+                var validKeys = validEntries.map(function(entry) {
+                  return entry[0];
+                });
+                var validValues = validEntries.map(function(entry) {
+                  return entry[1];
+                })
+                availableYears = availableYears.concat(validKeys);
+                minimumValues.push(_.min(validValues));
+                maximumValues.push(_.max(validValues));
+              }
             }
           });
         }
 
         // Calculate the ranges of values, years and colors.
+        function isMapValueInvalid(val) {
+          return _.isNaN(val) || val === '';
+        }
+        minimumValues = _.reject(minimumValues, isMapValueInvalid);
+        maximumValues = _.reject(maximumValues, isMapValueInvalid);
         plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
         plugin.colorScale = chroma.scale(plugin.options.colorRange)
           .domain(plugin.valueRange)
@@ -532,8 +548,16 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
       });
 
-      // Perform some last-minute tasks when the user clicks on the "Map" tab.
-      $('.map .nav-link').click(function() {
+      // Certain things cannot be done until the map is visible. Because our
+      // map is in a tab which might not be visible, we have to postpone those
+      // things until it becomes visible.
+      if ($('#map').is(':visible')) {
+        finalMapPreparation();
+      }
+      else {
+        $('#tab-mapview').parent().click(finalMapPreparation);
+      }
+      function finalMapPreparation() {
         setTimeout(function() {
           $('#map #loader-container').hide();
           // Leaflet needs "invalidateSize()" if it was originally rendered in a
@@ -552,12 +576,16 @@ opensdg.autotrack = function(preset, category, action, label) {
           }
           // Make sure the map is not too high.
           var heightPadding = 75;
+          var minHeight = 400;
           var maxHeight = $(window).height() - heightPadding;
+          if (maxHeight < minHeight) {
+            maxHeight = minHeight;
+          }
           if ($('#map').height() > maxHeight) {
             $('#map').height(maxHeight);
           }
         }, 500);
-      });
+      };
     },
 
     featureShouldDisplay: function(feature) {
@@ -589,6 +617,9 @@ opensdg.autotrack = function(preset, category, action, label) {
     });
   };
 })(jQuery);
+// This "crops" the charts so that empty years are not displayed
+// at the beginning or end of each dataset. This ensures that the
+// chart will fill all the available space.
 Chart.plugins.register({
   id: 'rescaler',
   beforeInit: function (chart, options) {
@@ -604,31 +635,34 @@ Chart.plugins.register({
   },
   afterUpdate: function (chart) {
 
+    // Ensure this only runs once.
     if (chart.isScaleUpdate) {
       chart.isScaleUpdate = false;
       return;
     }
 
-    var datasets = _.filter(chart.data.datasets, function (ds, index) {
-      var meta = chart.getDatasetMeta(index).$filler;
-      return meta && meta.visible;
-    });
-
-    var ranges = _.chain(datasets).map('allData').map(function (data) {
+    // For each dataset, create an object showing the
+    // index of the minimum value and the index of the
+    // maximum value (not counting empty/null values).
+    var ranges = _.chain(chart.data.datasets).map('allData').map(function (data) {
       return {
         min: _.findIndex(data, function(val) { return val !== null }),
         max: _.findLastIndex(data, function(val) { return val !== null })
       };
     }).value();
 
+    // Figure out the overal minimum and maximum
+    // considering all of the datasets.
     var dataRange = ranges.length ? {
       min: _.chain(ranges).map('min').min().value(),
       max: _.chain(ranges).map('max').max().value()
     } : undefined;
 
     if (dataRange) {
+      // "Crop" the labels according to the min/max.
       chart.data.labels = chart.data.allLabels.slice(dataRange.min, dataRange.max + 1);
 
+      // "Crop" the data of each dataset according to the min/max.
       chart.data.datasets.forEach(function (dataset) {
         dataset.data = dataset.allData.slice(dataRange.min, dataRange.max + 1);
       });
@@ -659,6 +693,7 @@ function getTextLinesOnCanvas(ctx, text, maxWidth) {
 
 // This plugin displays a message to the user whenever a chart has no data.
 Chart.plugins.register({
+  id: 'open-sdg-no-data-message',
   afterDraw: function(chart) {
     if (chart.data.datasets.length === 0) {
 
@@ -668,16 +703,19 @@ Chart.plugins.register({
       }
       // @deprecated end
 
+      
       var ctx = chart.chart.ctx;
       var width = chart.chart.width;
-      var height = chart.chart.height
+      var height = chart.chart.height;
+      
+
       chart.clear();
 
       ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.font = "normal 40px 'Open Sans', Helvetica, Arial, sans-serif";
-      var lines = getTextLinesOnCanvas(ctx, translations.indicator.data_not_available, chart.chart.width);
+      var lines = getTextLinesOnCanvas(ctx, translations.indicator.data_not_available, width);
       var numLines = lines.length;
       var lineHeight = 50;
       var xLine = width / 2;
@@ -695,8 +733,10 @@ Chart.plugins.register({
     }
   }
 });
+
 // This plugin allows users to cycle through tooltips by keyboard.
 Chart.plugins.register({
+    id: 'open-sdg-accessible-charts',
     afterInit: function(chart) {
         var plugin = this;
         plugin.chart = chart;
@@ -722,7 +762,8 @@ Chart.plugins.register({
             .attr('role', 'status')
             .appendTo('#chart');
         if (window.innerWidth <= 768) {
-            $(this.chart.canvas).text(translations.indicator.chart + '. ' + translations.indicator.data_tabular_alternative);
+            var mobileInstructions = translations.indicator.chart + '. ' + translations.indicator.data_tabular_alternative;
+            $(this.chart.canvas).html('<span class="hide-during-image-download">' + mobileInstructions + '</span>');
         }
         else {
             var keyboardInstructions = translations.indicator.data_keyboard_navigation;
@@ -847,6 +888,7 @@ Chart.plugins.register({
         }
     }
 });
+
 function event(sender) {
   this._sender = sender;
   this._listeners = [];
@@ -866,19 +908,42 @@ event.prototype = {
 };
 var accessibilitySwitcher = function() {
 
-  var contrastIdentifiers = ['default', 'high'];
+  var contrastIdentifiers = ['default', 'high'],
+      contrastType = "default" || "default",
+      singleToggle = (contrastType === 'long' || contrastType === 'single');
 
-  function setActiveContrast(contrast) {
-    var contrastType = "default"
-    _.each(contrastIdentifiers, function(id) {
-      $('body').removeClass('contrast-' + id);
-    });
-    if(contrastType === "long"){
-	    $("body").addClass("long");
+  if (contrastType === 'long') {
+    $('body').addClass('long');
+  }
+  function setActiveContrast(newContrast) {
+    var oldContrast = getActiveContrast();
+    if (oldContrast !== newContrast) {
+      _.each(contrastIdentifiers, function(id) {
+        $('body').removeClass('contrast-' + id);
+      });
+      $('body').addClass('contrast-' + newContrast);
+
+      createCookie("contrast", newContrast, 365);
+
+      if (singleToggle) {
+        flipAllContrastLinks(oldContrast, newContrast);
+      }
     }
-    $('body').addClass('contrast-' + contrast);
+  }
 
-    createCookie("contrast", contrast, 365);
+  function flipAllContrastLinks(newContrast, oldContrast) {
+    var title = getContrastToggleTitle(newContrast),
+        label = getContrastToggleLabel(newContrast);
+        gaAttributes = opensdg.autotrack('switch_contrast', 'Accessibility', 'Change contrast setting', newContrast);
+    $('[data-contrast-switch-to]')
+      .data('contrast-switch-to', newContrast)
+      .attr('title', title)
+      .attr('aria-label', title)
+      .attr(gaAttributes)
+      .html(label)
+      .parent()
+        .addClass('contrast-' + newContrast)
+        .removeClass('contrast-' + oldContrast);
   }
 
   function getActiveContrast() {
@@ -886,7 +951,7 @@ var accessibilitySwitcher = function() {
       return $('body').hasClass('contrast-' + id);
     });
 
-    return contrast ? contrast : contrastIdentifiers[0];
+    return contrast.length > 0 ? contrast[0] : contrastIdentifiers[0];
   }
 
   function createCookie(name,value,days) {
@@ -922,21 +987,16 @@ var accessibilitySwitcher = function() {
 
   ////////////////////////////////////////////////////////////////////////////////////
 
-  _.each(contrastIdentifiers, function(contrast) {
-    var gaAttributes = opensdg.autotrack('switch_contrast', 'Accessibility', 'Change contrast setting', contrast);
-    var contrastTitle = getContrastToggleTitle(contrast);
-    $('.contrast-switcher').append($('<li />').attr({
-      'class': 'nav-link contrast contrast-' + contrast
-    }).html($('<a />').attr(gaAttributes).attr({
-      'href': 'javascript:void(0)',
-      'title': contrastTitle,
-      'aria-label': contrastTitle,
-      'data-contrast': contrast,
-    }).html(getContrastToggleLabel(contrast).replace(" ", "<br/>")).click(function() {
-      setActiveContrast($(this).data('contrast'));
-      imageFix(contrast);
-      broadcastContrastChange(contrast, this);
-    })));
+  $('[data-contrast-switch-to]').click(function() {
+
+    var oldContrast = getActiveContrast();
+    var newContrast = $(this).data('contrast-switch-to');
+
+    if (oldContrast !== newContrast) {
+      setActiveContrast(newContrast);
+      imageFix(newContrast);
+      broadcastContrastChange(newContrast, this);
+    }
   });
 
   function broadcastContrastChange(contrast, elem) {
@@ -948,13 +1008,12 @@ var accessibilitySwitcher = function() {
   }
 
   function getContrastToggleLabel(identifier){
-    var contrastType = "default"
-    if(contrastType === "long") {
-      if(identifier === "default"){
-        return translations.header.default_contrast;
+    if (contrastType === "long") {
+      if (identifier === "default") {
+        return translations.header.default_contrast.replace(' ', '<br>');
       }
-      else if(identifier === "high"){
-        return translations.header.high_contrast;
+      else if (identifier === "high") {
+        return translations.header.high_contrast.replace(' ', '<br>');
       }
     }
     else {
@@ -963,10 +1022,10 @@ var accessibilitySwitcher = function() {
   }
 
   function getContrastToggleTitle(identifier){
-    if(identifier === "default"){
+    if (identifier === "default") {
       return translations.header.disable_high_contrast;
     }
-    else if(identifier === "high"){
+    else if (identifier === "high") {
       return translations.header.enable_high_contrast;
     }
   }
@@ -974,7 +1033,6 @@ var accessibilitySwitcher = function() {
 
   function imageFix(contrast) {
     var doNotSwitchTheseSuffixes = ['.svg'];
-    var doNotSwitchThesePrefixes = ['https://platform-cdn.sharethis.com/'];
     if (contrast == 'high')  {
       _.each($('img:not([src*=high-contrast])'), function(image) {
         var src = $(image).attr('src').toLowerCase();
@@ -982,12 +1040,6 @@ var accessibilitySwitcher = function() {
         for (var i = 0; i < doNotSwitchTheseSuffixes.length; i++) {
           var suffix = doNotSwitchTheseSuffixes[i];
           if (src.slice(0 - suffix.length) === suffix) {
-            switchThisImage = false;
-          }
-        }
-        for (var i = 0; i < doNotSwitchThesePrefixes.length; i++) {
-          var prefix = doNotSwitchThesePrefixes[i];
-          if (src.slice(0, prefix.length) === prefix) {
             switchThisImage = false;
           }
         }
@@ -1058,6 +1110,7 @@ var VALUE_COLUMN = 'Value';
 var HEADLINE_COLOR = '#777777';
 var SERIES_TOGGLE = true;
 var GRAPH_TITLE_FROM_SERIES = false;
+var CHARTJS_3 = false;
 
   /**
  * Model helper functions with general utility.
@@ -1074,7 +1127,7 @@ function getUniqueValuesByProperty(prop, rows) {
       uniques.add(row[prop])
     }
   });
-  return Array.from(uniques).sort();
+  return Array.from(uniques);
 }
 
 // Use as a callback to Array.prototype.filter to get unique elements
@@ -1126,6 +1179,10 @@ function nonFieldColumns() {
     'Unit multiplier',
     'Unit measure',
   ];
+  var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
+  timeSeriesAttributes.forEach(function(tsAttribute) {
+    columns.push(tsAttribute.field);
+  });
   if (SERIES_TOGGLE) {
     columns.push(SERIES_COLUMN);
   }
@@ -1196,34 +1253,7 @@ function getMatchesByUnitSeries(items, selectedUnit, selectedSeries) {
   return matches;
 }
 
-/**
- * Move an item from one position in an array to another, in place.
- */
-function arrayMove(arr, fromIndex, toIndex) {
-  while (fromIndex < 0) {
-    fromIndex += arr.length;
-  }
-  while (toIndex < 0) {
-    toIndex += arr.length;
-  }
-  var paddingAdded = [];
-  if (toIndex >= arr.length) {
-    var k = toIndex - arr.length;
-    while ((k--) + 1) {
-      arr.push(undefined);
-      paddingAdded.push(arr.length - 1);
-    }
-  }
-  arr.splice(toIndex, 0, arr.splice(fromIndex, 1)[0]);
-
-  // Get rid of the undefined elements that were added.
-  paddingAdded.sort();
-  while (paddingAdded.length > 0) {
-    var paddingIndex = paddingAdded.pop() - 1;
-    arr.splice(paddingIndex, 1);
-  }
-}
-
+  var arrayMove = deprecated('utils.arrayMove');
   /**
  * Model helper functions related to units.
  */
@@ -1397,12 +1427,17 @@ function getSeriesFromStartValues(startValues) {
  * @param {Array} edges
  * @return {Array} Field item states
  */
-function getInitialFieldItemStates(rows, edges, columns) {
-  var initial = getFieldColumnsFromData(columns).map(function(field) {
+
+function getInitialFieldItemStates(rows, edges, columns, dataSchema) {
+  var fields = getFieldColumnsFromData(columns);
+  sortFieldNames(fields, dataSchema);
+  var initial = fields.map(function(field) {
+    var values = getUniqueValuesByProperty(field, rows);
+    sortFieldValueNames(field, values, dataSchema);
     return {
       field: field,
       hasData: true,
-      values: getUniqueValuesByProperty(field, rows).map(function(value) {
+      values: values.map(function(value) {
         return {
           value: value,
           state: 'default',
@@ -1413,7 +1448,7 @@ function getInitialFieldItemStates(rows, edges, columns) {
     };
   }, this);
 
-  return sortFieldItemStates(initial, edges);
+  return sortFieldItemStates(initial, edges, dataSchema);
 }
 
 /**
@@ -1421,15 +1456,16 @@ function getInitialFieldItemStates(rows, edges, columns) {
  * @param {Array} edges
  * return {Array} Sorted field item states
  */
-function sortFieldItemStates(fieldItemStates, edges) {
+function sortFieldItemStates(fieldItemStates, edges, dataSchema) {
   if (edges.length > 0) {
-    var froms = getUniqueValuesByProperty('From', edges);
-    var tos = getUniqueValuesByProperty('To', edges);
+    var froms = getUniqueValuesByProperty('From', edges).sort();
+    var tos = getUniqueValuesByProperty('To', edges).sort();
     var orderedEdges = froms.concat(tos);
     var fieldsNotInEdges = fieldItemStates
       .map(function(fis) { return fis.field; })
       .filter(function(field) { return !orderedEdges.includes(field); });
     var customOrder = orderedEdges.concat(fieldsNotInEdges);
+    sortFieldNames(customOrder, dataSchema);
 
     return _.sortBy(fieldItemStates, function(item) {
       return customOrder.indexOf(item.field);
@@ -1546,7 +1582,9 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
           var fieldItemValue = fieldItem.values.find(function(valueItem) {
             return valueItem.value === selectedValue;
           });
-          fieldItemValue.checked = true;
+          if (fieldItemValue) {
+            fieldItemValue.checked = true;
+          }
         })
       }
     });
@@ -1568,27 +1606,60 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
 function sortFieldsForView(fieldItemStates, edges) {
   if (edges.length > 0 && fieldItemStates.length > 0) {
 
-    // We need to sort the edges so that we process parents before children.
     var parents = edges.map(function(edge) { return edge.From; });
-    edges.sort(function(a, b) {
-      if (!parents.includes(a.To) && parents.includes(b.To)) {
-        return 1;
+    var children = edges.map(function(edge) { return edge.To; });
+    var topLevelParents = [];
+    parents.forEach(function(parent) {
+      if (!(children.includes(parent)) && !(topLevelParents.includes(parent))) {
+        topLevelParents.push(parent);
       }
-      if (!parents.includes(b.To) && parents.includes(a.To)) {
-        return -1;
-      }
-      return 0;
     });
 
-    edges.forEach(function(edge) {
-      // This makes sure children are right after their parents.
-      var parentIndex = fieldItemStates.findIndex(function(fieldItem) {
-        return fieldItem.field == edge.From;
+    var topLevelParentsByChild = {};
+    children.forEach(function(child) {
+      var currentParent = edges.find(function(edge) { return edge.To === child; }),
+          currentChild = child;
+      while (currentParent) {
+        currentParent = edges.find(function(edge) { return edge.To === currentChild; });
+        if (currentParent) {
+          currentChild = currentParent.From;
+          topLevelParentsByChild[child] = currentParent.From;
+        }
+      }
+    });
+    fieldItemStates.forEach(function(fieldItem) {
+      if (topLevelParents.includes(fieldItem.field) || typeof topLevelParentsByChild[fieldItem.field] === 'undefined') {
+        fieldItem.topLevelParent = '';
+      }
+      else {
+        fieldItem.topLevelParent = topLevelParentsByChild[fieldItem.field];
+      }
+    });
+
+    // As an intermediary step, create a hierarchical structure grouped
+    // by the top-level parent.
+    var tempHierarchy = [];
+    var tempHierarchyHash = {};
+    fieldItemStates.forEach(function(fieldItem) {
+      if (fieldItem.topLevelParent === '') {
+        fieldItem.children = [];
+        tempHierarchyHash[fieldItem.field] = fieldItem;
+        tempHierarchy.push(fieldItem);
+      }
+    });
+    fieldItemStates.forEach(function(fieldItem) {
+      if (fieldItem.topLevelParent !== '') {
+        tempHierarchyHash[fieldItem.topLevelParent].children.push(fieldItem);
+      }
+    });
+
+    // Now we clear out the field items and add them back as a flat list.
+    fieldItemStates.length = 0;
+    tempHierarchy.forEach(function(fieldItem) {
+      fieldItemStates.push(fieldItem);
+      fieldItem.children.forEach(function(child) {
+        fieldItemStates.push(child);
       });
-      var childIndex = fieldItemStates.findIndex(function(fieldItem) {
-        return fieldItem.field == edge.To;
-      });
-      arrayMove(fieldItemStates, childIndex, parentIndex + 1);
     });
   }
 }
@@ -1639,28 +1710,44 @@ function getCombinationData(fieldItems) {
     });
   });
 
-  // Next get a list of each single pair combined with every other.
-  var fieldValuePairCombinations = {};
-  fieldValuePairs.forEach(function(fieldValuePair) {
-    var combinationsForCurrentPair = Object.assign({}, fieldValuePair);
-    fieldValuePairs.forEach(function(fieldValuePairToAdd) {
-      // The following conditional reflects that we're not interested in combinations
-      // within the same field. (Eg, not interested in combination of Female and Male).
-      if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {
-        Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);
-        var combinationKeys = Object.keys(combinationsForCurrentPair).sort();
-        var combinationValues = Object.values(combinationsForCurrentPair).sort();
-        var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));
-        if (!(combinationUniqueId in fieldValuePairCombinations)) {
-          fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair);
-        }
+  // Generate all possible subsets of these key/value pairs.
+  var powerset = [];
+  // Start off with an empty item.
+  powerset.push([]);
+  for (var i = 0; i < fieldValuePairs.length; i++) {
+    for (var j = 0, len = powerset.length; j < len; j++) {
+      var candidate = powerset[j].concat(fieldValuePairs[i]);
+      if (!hasDuplicateField(candidate)) {
+        powerset.push(candidate);
       }
-    });
-  });
-  fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
+    }
+  }
 
-  // Return a combination of both.
-  return fieldValuePairs.concat(fieldValuePairCombinations);
+  function hasDuplicateField(pairs) {
+    var fields = [], i;
+    for (i = 0; i < pairs.length; i++) {
+      var field = Object.keys(pairs[i])[0]
+      if (fields.includes(field)) {
+        return true;
+      }
+      else {
+        fields.push(field);
+      }
+    }
+    return false;
+  }
+
+  // Remove the empty item.
+  powerset.shift();
+
+  return powerset.map(function(combinations) {
+    // We want to merge these into a single object.
+    var combinedSubset = {};
+    combinations.forEach(function(keyValue) {
+      Object.assign(combinedSubset, keyValue);
+    });
+    return combinedSubset;
+  });
 }
 
 /**
@@ -1833,6 +1920,52 @@ function getDataBySelectedFields(rows, selectedFields) {
   });
 }
 
+/**
+ * @param {Array} fieldNames
+ * @param {Object} dataSchema
+ */
+function sortFieldNames(fieldNames, dataSchema) {
+  if (dataSchema && dataSchema.fields) {
+    var schemaFieldNames = dataSchema.fields.map(function(field) { return field.name; });
+    // If field names have been translated, we may need to use titles.
+    if (schemaFieldNames.length > 0 && !(fieldNames.includes(schemaFieldNames[0]))) {
+      schemaFieldNames = dataSchema.fields.map(function(field) { return field.title; });
+    }
+    fieldNames.sort(function(a, b) {
+      return schemaFieldNames.indexOf(a) - schemaFieldNames.indexOf(b);
+    });
+  }
+  else {
+    fieldNames.sort();
+  }
+}
+
+/**
+ * @param {string} fieldName
+ * @param {Array} fieldValues
+ * @param {Object} dataSchema
+ */
+function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
+  if (dataSchema && dataSchema.fields) {
+    var fieldSchema = dataSchema.fields.find(function(x) { return x.name == fieldName; });
+    // If field names have been translated, we may need to use titles.
+    if (!fieldSchema) {
+      fieldSchema = dataSchema.fields.find(function(x) { return x.title == fieldName; });
+    }
+    if (fieldSchema && fieldSchema.constraints && fieldSchema.constraints.enum) {
+      fieldValues.sort(function(a, b) {
+        return fieldSchema.constraints.enum.indexOf(a) - fieldSchema.constraints.enum.indexOf(b);
+      });
+    }
+    else {
+      fieldValues.sort();
+    }
+  }
+  else {
+    fieldValues.sort();
+  }
+}
+
   /**
  * Model helper functions related to charts and datasets.
  */
@@ -1847,6 +1980,25 @@ function getDataBySelectedFields(rows, selectedFields) {
 function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
   var match = getMatchByUnitSeries(allTitles, selectedUnit, selectedSeries);
   return (match) ? match.title : currentTitle;
+}
+
+/**
+ * @param {string} currentType
+ * @param {Array} allTypes Objects containing 'unit', 'series', and 'type'
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @param {Boolean} chartjs3
+ * @return {String} Updated type
+ */
+function getChartType(currentType, allTypes, selectedUnit, selectedSeries, chartjs3) {
+  if (!chartjs3) {
+    return currentType;
+  }
+  if (!currentType) {
+    currentType = 'line';
+  }
+  var match = getMatchByUnitSeries(allTypes, selectedUnit, selectedSeries);
+  return (match) ? match.type : currentType;
 }
 
 /**
@@ -1865,8 +2017,44 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
  * @param {String} selectedSeries
  * @return {Array} Graph annotations objects, if any
  */
-function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries) {
-  return getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
+function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries, graphTargetLines, graphSeriesBreaks) {
+  var annotations = getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
+  if (graphTargetLines) {
+    annotations = annotations.concat(getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries));
+  }
+  if (graphSeriesBreaks) {
+    annotations = annotations.concat(getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries));
+  }
+  return annotations;
+}
+
+/**
+ * @param {Array} graphTargetLines Objects containing 'unit' or 'series' or more
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Array} Graph annotations objects, if any
+ */
+function getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries) {
+  return getMatchesByUnitSeries(graphTargetLines, selectedUnit, selectedSeries).map(function(targetLine) {
+    targetLine.preset = 'target_line';
+    targetLine.label = { content: targetLine.label_content };
+    return targetLine;
+  });
+
+}
+
+/**
+ * @param {Array} graphSeriesBreaks Objects containing 'unit' or 'series' or more
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Array} Graph annotations objects, if any
+ */
+function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
+  return getMatchesByUnitSeries(graphSeriesBreaks, selectedUnit, selectedSeries).map(function(seriesBreak) {
+    seriesBreak.preset = 'series_break';
+    seriesBreak.label = { content: seriesBreak.label_content };
+    return seriesBreak;
+  });
 }
 
 /**
@@ -1927,7 +2115,6 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
   }, this);
 
-  datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel);
     datasets.unshift(dataset);
@@ -2123,6 +2310,8 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointBackgroundColor: background,
     borderDash: border,
     borderWidth: 2,
+    headline: false,
+    pointStyle: 'circle',
     data: prepareDataForDataset(years, rows),
     excess: excess,
   });
@@ -2137,7 +2326,8 @@ function getBaseDataset() {
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
-    spanGaps: true
+    spanGaps: true,
+    maxBarThickness: 150,
   });
 }
 
@@ -2147,7 +2337,7 @@ function getBaseDataset() {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  var keys = Object.keys(combination).sort();
+  var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
   }
@@ -2194,6 +2384,8 @@ function makeHeadlineDataset(years, rows, label) {
     pointBorderColor: getHeadlineColor(),
     pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
+    headline: true,
+    pointStyle: 'rect',
     data: prepareDataForDataset(years, rows),
   });
 }
@@ -2237,12 +2429,19 @@ function getHeadlineTable(rows, selectedUnit) {
 
 /**
  * @param {Object} data Object imported from JSON file
+ * @param {Array} dropKeys Array of keys to drop from the rows
  * @return {Array} Rows
  */
-function convertJsonFormatToRows(data) {
+function convertJsonFormatToRows(data, dropKeys) {
   var keys = Object.keys(data);
   if (keys.length === 0) {
     return [];
+  }
+
+  if (dropKeys && dropKeys.length > 0) {
+    keys = keys.filter(function(key) {
+      return !(dropKeys.includes(key));
+    });
   }
 
   return data[keys[0]].map(function(item, index) {
@@ -2315,6 +2514,50 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   return (match) ? match.decimals : false;
 }
 
+/**
+ * @param {Object} data Object imported from JSON file
+ * @return {Array} Rows
+ */
+function inputData(data) {
+  var dropKeys = [];
+  
+  return convertJsonFormatToRows(data, dropKeys);
+}
+
+/**
+ * @param {Object} edges Object imported from JSON file
+ * @return {Array} Rows
+ */
+function inputEdges(edges) {
+  var edgesData = convertJsonFormatToRows(edges);
+  
+  return edgesData;
+}
+
+/**
+ * @param {Array} rows
+ * @return {Array} Objects containing 'field' and 'value', to be placed in the footer.
+ */
+function getTimeSeriesAttributes(rows) {
+  if (rows.length === 0) {
+    return [];
+  }
+  var timeSeriesAttributes = [],
+      possibleAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}],
+      firstRow = rows[0],
+      firstRowKeys = Object.keys(firstRow);
+  possibleAttributes.forEach(function(possibleAttribute) {
+    var field = possibleAttribute.field;
+    if (firstRowKeys.includes(field) && firstRow[field]) {
+      timeSeriesAttributes.push({
+        field: field,
+        value: firstRow[field],
+      });
+    }
+  });
+  return timeSeriesAttributes;
+}
+
 
   function deprecated(name) {
     return function() {
@@ -2330,6 +2573,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     VALUE_COLUMN: VALUE_COLUMN,
     SERIES_TOGGLE: SERIES_TOGGLE,
     GRAPH_TITLE_FROM_SERIES: GRAPH_TITLE_FROM_SERIES,
+    CHARTJS_3: CHARTJS_3,
     convertJsonFormatToRows: convertJsonFormatToRows,
     getUniqueValuesByProperty: getUniqueValuesByProperty,
     dataHasUnits: dataHasUnits,
@@ -2341,6 +2585,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     getDataBySeries: getDataBySeries,
     getDataBySelectedFields: getDataBySelectedFields,
     getUnitFromStartValues: getUnitFromStartValues,
+    getSeriesFromStartValues: getSeriesFromStartValues,
     selectFieldsFromStartValues: selectFieldsFromStartValues,
     selectMinimumStartingFields: selectMinimumStartingFields,
     fieldsUsedByUnit: fieldsUsedByUnit,
@@ -2360,13 +2605,19 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     getUpdatedFieldItemStates: getUpdatedFieldItemStates,
     fieldItemStatesForView: fieldItemStatesForView,
     getChartTitle: getChartTitle,
+    getChartType: getChartType,
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
     tableDataFromDatasets: tableDataFromDatasets,
+    sortFieldNames: typeof sortFieldNames !== 'undefined' ? sortFieldNames : function() {},
+    sortFieldValueNames: typeof sortFieldValueNames !== 'undefined' ? sortFieldValueNames : function() {},
     getPrecision: getPrecision,
     getGraphLimits: getGraphLimits,
     getGraphAnnotations: getGraphAnnotations,
     getColumnsFromData: getColumnsFromData,
+    inputEdges: inputEdges,
+    getTimeSeriesAttributes: getTimeSeriesAttributes,
+    inputData: inputData,
     // Backwards compatibility.
     footerFields: deprecated('helpers.footerFields'),
   }
@@ -2386,8 +2637,8 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
 
   // general members:
   var that = this;
-  this.data = helpers.convertJsonFormatToRows(options.data);
-  this.edgesData = helpers.convertJsonFormatToRows(options.edgesData);
+  this.data = helpers.inputData(options.data);
+  this.edgesData = helpers.inputEdges(options.edgesData);
   this.hasHeadline = true;
   this.country = options.country;
   this.indicatorId = options.indicatorId;
@@ -2395,7 +2646,9 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.chartTitle = options.chartTitle,
   this.chartTitles = options.chartTitles;
   this.graphType = options.graphType;
+  this.graphTypes = options.graphTypes;
   this.measurementUnit = options.measurementUnit;
+  this.xAxisLabel = options.xAxisLabel;
   this.startValues = options.startValues;
   this.showData = options.showData;
   this.selectedFields = [];
@@ -2413,13 +2666,17 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.graphAnnotations = options.graphAnnotations;
+  this.graphTargetLines = options.graphTargetLines;
+  this.graphSeriesBreaks = options.graphSeriesBreaks;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
   this.precision = options.precision;
+  this.dataSchema = options.dataSchema;
 
   this.initialiseUnits = function() {
     if (this.hasUnits) {
       this.units = helpers.getUniqueValuesByProperty(helpers.UNIT_COLUMN, this.data);
+      helpers.sortFieldValueNames(helpers.UNIT_COLUMN, this.units, this.dataSchema);
       this.selectedUnit = this.units[0];
       this.fieldsByUnit = helpers.fieldsUsedByUnit(this.units, this.data, this.allColumns);
       this.dataHasUnitSpecificFields = helpers.dataHasUnitSpecificFields(this.fieldsByUnit);
@@ -2432,14 +2689,14 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
         this.chartTitle = this.selectedSeries;
       }
       this.data = helpers.getDataBySeries(this.allData, this.selectedSeries);
-      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
       this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data, this.allColumns);
       this.dataHasSeriesSpecificFields = helpers.dataHasSeriesSpecificFields(this.fieldsBySeries);
     }
   }
 
   this.initialiseFields = function() {
-    this.fieldItemStates = helpers.getInitialFieldItemStates(this.data, this.edgesData, this.allColumns);
+    this.fieldItemStates = helpers.getInitialFieldItemStates(this.data, this.edgesData, this.allColumns, this.dataSchema);
     this.validParentsByChild = helpers.validParentsByChild(this.edgesData, this.fieldItemStates, this.data);
     this.selectableFields = helpers.getFieldNames(this.fieldItemStates);
     this.allowedFields = helpers.getInitialAllowedFields(this.selectableFields, this.edgesData);
@@ -2452,6 +2709,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.serieses = this.hasSerieses ? helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.allData) : [];
   this.hasStartValues = Array.isArray(this.startValues) && this.startValues.length > 0;
   if (this.hasSerieses) {
+    helpers.sortFieldValueNames(helpers.SERIES_COLUMN, this.serieses, this.dataSchema);
     this.selectedSeries = this.serieses[0];
     if (this.hasStartValues) {
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
@@ -2460,7 +2718,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   }
   else {
     this.data = this.allData;
-    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
   }
 
   // calculate some initial values:
@@ -2495,6 +2753,10 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
 
   this.updateChartTitle = function() {
     this.chartTitle = helpers.getChartTitle(this.chartTitle, this.chartTitles, this.selectedUnit, this.selectedSeries);
+  }
+
+  this.updateChartType = function() {
+    this.graphType = helpers.getChartType(this.graphType, this.graphTypes, this.selectedUnit, this.selectedSeries, helpers.CHARTJS_3);
   }
 
   this.updateSelectedUnit = function(selectedUnit) {
@@ -2548,7 +2810,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
         var startingUnit = this.selectedUnit;
         if (this.hasStartValues) {
           var unitInStartValues = helpers.getUnitFromStartValues(this.startValues);
-          if (unitInStartValues) {
+          if (unitInStartValues && this.units.includes(unitInStartValues)) {
             startingUnit = unitInStartValues;
           }
         }
@@ -2647,6 +2909,14 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       filteredData = helpers.getDataByUnit(filteredData, this.selectedUnit);
     }
 
+    var timeSeriesAttributes = [];
+    if (filteredData.length > 0) {
+      timeSeriesAttributes = helpers.getTimeSeriesAttributes(filteredData);
+    }
+    else if (headline.length > 0) {
+      timeSeriesAttributes = helpers.getTimeSeriesAttributes(headline);
+    }
+
     filteredData = helpers.sortData(filteredData, this.selectedUnit);
     if (headline.length > 0) {
       headline = helpers.sortData(headline, this.selectedUnit);
@@ -2663,6 +2933,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     }
 
     this.updateChartTitle();
+    this.updateChartType();
 
     this.onFieldsStatusUpdated.notify({
       data: this.fieldItemStates,
@@ -2682,10 +2953,12 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       selectedSeries: this.selectedSeries,
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
-      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries),
+      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks),
       chartTitle: this.chartTitle,
+      chartType: this.graphType,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
+      timeSeriesAttributes: timeSeriesAttributes,
     });
   };
 };
@@ -2744,8 +3017,11 @@ var indicatorView = function (model, options) {
       }
     });
 
-    // Provide the hide/show functionality for the sidebar.
-    $('.data-view .nav-link').on('click', function(e) {
+    // Execute the hide/show functionality for the sidebar, both on
+    // the currently active tab, and each time a tab is clicked on.
+    $('.data-view .nav-item.active .nav-link').each(toggleSidebar);
+    $('.data-view .nav-link').on('click', toggleSidebar);
+    function toggleSidebar() {
       var $sidebar = $('.indicator-sidebar'),
           $main = $('.indicator-main'),
           hideSidebar = $(this).data('no-disagg'),
@@ -2764,7 +3040,7 @@ var indicatorView = function (model, options) {
         $sidebar.removeClass('indicator-sidebar-hidden');
         $main.removeClass('indicator-main-full');
       }
-    });
+    };
   });
 
   this._model.onDataComplete.attach(function (sender, args) {
@@ -2785,6 +3061,9 @@ var indicatorView = function (model, options) {
     view_obj.createSelectionsTable(args);
 
     view_obj.updateChartTitle(args.chartTitle);
+    view_obj.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
+    view_obj.updateUnitElements(args.selectedUnit);
+    view_obj.updateTimeSeriesAttributes(args.timeSeriesAttributes);
   });
 
   this._model.onFieldsComplete.attach(function(sender, args) {
@@ -2836,13 +3115,7 @@ var indicatorView = function (model, options) {
     // loop through the available fields:
     $('.variable-selector').each(function(index, element) {
       var currentField = $(element).data('field');
-
-      // any info?
-      var match = _.find(args.selectedFields, { field : currentField });
       var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + currentField + '"]');
-      var width = match ? (Number(match.values.length / element.find('.variable-options label').length) * 100) + '%' : '0';
-
-      $(element).find('.bar .selected').css('width', width);
 
       // is this an allowed field:
       if (args.allowedFields.includes(currentField)) {
@@ -2857,9 +3130,6 @@ var indicatorView = function (model, options) {
   });
 
   this._model.onFieldsStatusUpdated.attach(function (sender, args) {
-
-    // reset:
-    $(view_obj._rootElement).find('label').removeClass('selected possible excluded');
 
     _.each(args.data, function(fieldGroup) {
       _.each(fieldGroup.values, function(fieldItem) {
@@ -2881,14 +3151,6 @@ var indicatorView = function (model, options) {
 
       // Re-sort the items.
       view_obj.sortFieldGroup(fieldGroupElement);
-    });
-
-    _.each(args.selectionStates, function(ss) {
-      // find the appropriate 'bar'
-      var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + ss.field + '"]');
-      element.find('.bar .default').css('width', ss.fieldSelection.defaultState + '%');
-      element.find('.bar .possible').css('width', ss.fieldSelection.possibleState + '%');
-      element.find('.bar .excluded').css('width', ss.fieldSelection.excludedState + '%');
     });
   });
 
@@ -2949,8 +3211,8 @@ var indicatorView = function (model, options) {
 
   $(this._rootElement).on('click', ':checkbox', function(e) {
 
-    // don't permit excluded selections:
-    if($(this).parent().hasClass('excluded') || $(this).closest('.variable-selector').hasClass('disallowed')) {
+    // don't permit disallowed selections:
+    if ($(this).closest('.variable-selector').hasClass('disallowed')) {
       return;
     }
 
@@ -2960,29 +3222,21 @@ var indicatorView = function (model, options) {
   });
 
   $(this._rootElement).on('click', '.variable-selector', function(e) {
-    var currentSelector = e.target;
 
-    var currentButton = getCurrentButtonFromCurrentSelector(currentSelector);
+    var $button = $(e.target).closest('button');
+    var $options = $(this).find('.variable-options');
 
-    var options = $(this).find('.variable-options');
-    var optionsAreVisible = options.is(':visible');
-    $(options)[optionsAreVisible ? 'hide' : 'show']();
-    currentButton.setAttribute("aria-expanded", optionsAreVisible ? "true" : "false");
-
-    var optionsVisibleAfterClick = options.is(':visible');
-    currentButton.setAttribute("aria-expanded", optionsVisibleAfterClick ? "true" : "false");
+    if ($options.is(':visible')) {
+      $options.hide();
+      $button.attr('aria-expanded', 'false');
+    }
+    else {
+      $options.show();
+      $button.attr('aria-expanded', 'true');
+    }
 
     e.stopPropagation();
   });
-
-  function getCurrentButtonFromCurrentSelector(currentSelector){
-    if(currentSelector.tagName === "H5"){
-      return currentSelector.parentElement;
-    }
-    else if(currentSelector.tagName === "BUTTON"){
-      return currentSelector;
-    }
-  }
 
   this.initialiseFields = function(args) {
     var fieldsContainValues = args.fields.some(function(field) {
@@ -2998,6 +3252,7 @@ var indicatorView = function (model, options) {
       $('#fields').html(template({
         fields: args.fields,
         allowedFields: args.allowedFields,
+        childFields: _.uniq(args.edges.map(function(edge) { return edge.To })),
         edges: args.edges
       }));
 
@@ -3018,8 +3273,13 @@ var indicatorView = function (model, options) {
       selectedUnit: selectedUnit
     }));
 
-    if(!units.length) {
+    
+    if (units.length < 1) {
+    
       $(this._rootElement).addClass('no-units');
+    }
+    else {
+      $(this._rootElement).removeClass('no-units');
     }
   };
 
@@ -3035,7 +3295,9 @@ var indicatorView = function (model, options) {
         selectedSeries: selectedSeries
       }));
 
-      if(!serieses.length) {
+      
+      if (serieses.length < 1) {
+      
         $(this._rootElement).addClass('no-serieses');
       }
     }
@@ -3099,13 +3361,69 @@ var indicatorView = function (model, options) {
     }
   }
 
+  this.updateSeriesAndUnitElements = function(selectedSeries, selectedUnit) {
+    var hasSeries = typeof selectedSeries !== 'undefined',
+        hasUnit = typeof selectedUnit !== 'undefined',
+        hasBoth = hasSeries && hasUnit;
+    if (hasSeries || hasUnit || hasBoth) {
+      $('[data-for-series], [data-for-unit]').each(function() {
+        var elementSeries = $(this).data('for-series'),
+            elementUnit = $(this).data('for-unit'),
+            seriesMatches = elementSeries === selectedSeries,
+            unitMatches = elementUnit === selectedUnit;
+        if ((hasSeries || hasBoth) && !seriesMatches && elementSeries !== '') {
+          $(this).hide();
+        }
+        else if ((hasUnit || hasBoth) && !unitMatches && elementUnit !== '') {
+          $(this).hide();
+        }
+        else {
+          $(this).show();
+        }
+      });
+    }
+  }
+
+  this.updateUnitElements = function(selectedUnit) {
+    var hasUnit = typeof selectedUnit !== 'undefined';
+    var fallback = this._model.measurementUnit;
+    if (hasUnit || fallback) {
+        var unitToDisplay = selectedUnit || fallback;
+        $('.data-controlled-footer-field.unit-from-data').show();
+        $('dd.data-controlled-footer-field.unit-from-data').text(translations.t(unitToDisplay));
+    }
+    else {
+        $('.data-controlled-footer-field.unit-from-data').hide();
+    }
+  }
+
+  this.updateTimeSeriesAttributes = function(tsAttributeValues) {
+    var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
+    timeSeriesAttributes.forEach(function(tsAttribute) {
+      var field = tsAttribute.field,
+          valueMatch = tsAttributeValues.find(function(tsAttributeValue) {
+            return tsAttributeValue.field === field;
+          }),
+          value = (valueMatch) ? valueMatch.value : '',
+          $labelElement = $('dt[data-ts-attribute="' + field + '"]'),
+          $valueElement = $('dd[data-ts-attribute="' + field + '"]');
+
+      if (!value) {
+        $labelElement.hide();
+        $valueElement.hide();
+      }
+      else {
+        $labelElement.show();
+        $valueElement.show().text(translations.t(value));
+      }
+    });
+  }
+
   this.updatePlot = function(chartInfo) {
     this.updateIndicatorDataViewStatus(view_obj._chartInstance.data.datasets, chartInfo.datasets);
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
     view_obj._chartInstance.data.labels = chartInfo.labels;
     this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
-    // TODO: Investigate assets/js/chartjs/rescaler.js and why "allLabels" is needed.
-    view_obj._chartInstance.data.allLabels = chartInfo.labels;
 
     if(chartInfo.selectedUnit) {
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.labelString = translations.t(chartInfo.selectedUnit);
@@ -3158,6 +3476,13 @@ var indicatorView = function (model, options) {
             ticks: {
               fontColor: tickColor,
             },
+            scaleLabel: {
+              display: this._model.xAxisLabel ? true : false,
+              labelString: this._model.xAxisLabel,
+              fontColor: tickColor,
+              fontSize: 14,
+              fontFamily: "'Open Sans', Helvetica, Arial, sans-serif",
+            }
           }],
           yAxes: [{
             gridLines: {
@@ -3176,16 +3501,19 @@ var indicatorView = function (model, options) {
               display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               fontColor: tickColor,
+              fontSize: 14,
+              fontFamily: "'Open Sans', Helvetica, Arial, sans-serif",
             }
           }]
         },
         legendCallback: function(chart) {
             var text = [];
             text.push('<h5 class="sr-only">' + translations.indicator.plot_legend_description + '</h5>');
-            text.push('<ul id="legend">');
+            text.push('<ul id="legend" class="legend-for-' + chart.config.type + '-chart">');
             _.each(chart.data.datasets, function(dataset) {
               text.push('<li>');
-              text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.borderColor + '">');
+              text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + (dataset.headline ? ' headline' : '') + '" style="background-color: ' + dataset.borderColor + '">');
+              text.push('<span class="swatch-inner" style="background-color: ' + dataset.borderColor + '"></span>');
               text.push('</span>');
               text.push(translations.t(dataset.label));
               text.push('</li>');
@@ -3203,6 +3531,7 @@ var indicatorView = function (model, options) {
           scaler: {}
         },
         tooltips: {
+          backgroundColor: 'rgba(0,0,0,0.7)',
           callbacks: {
             label: function(tooltipItems, data) {
               return data.datasets[tooltipItems.datasetIndex].label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
@@ -3262,9 +3591,8 @@ var indicatorView = function (model, options) {
     $("#btnSave").click(function() {
       var filename = chartInfo.indicatorId + '.png',
           element = document.getElementById('chart-canvas'),
-          footer = document.getElementById('selectionChartFooter'),
-          height = element.clientHeight + 25 + ((footer) ? footer.clientHeight : 0),
-          width = element.clientWidth + 25;
+          height = element.clientHeight + 70,
+          width = element.clientWidth + 50;
       var options = {
         // These options fix the height, width, and position.
         height: height,
@@ -3275,13 +3603,14 @@ var indicatorView = function (model, options) {
         y: 0,
         scrollX: 0,
         scrollY: 0,
+        backgroundColor: view_obj.isHighContrast() ? '#000000' : '#FFFFFF',
         // Allow a chance to alter the screenshot's HTML.
-        onclone: function(clone) {
+        onclone: function (clone) {
           // Add a body class so that the screenshot style can be custom.
           clone.body.classList.add('image-download-in-progress');
         },
         // Decide which elements to skip.
-        ignoreElements: function(el) {
+        ignoreElements: function (el) {
           // Keep all style, head, and link elements.
           var keepTags = ['STYLE', 'HEAD', 'LINK'];
           if (keepTags.indexOf(el.tagName) !== -1) {
@@ -3297,9 +3626,9 @@ var indicatorView = function (model, options) {
         }
       };
       // First convert the target to a canvas.
-      html2canvas(element, options).then(function(canvas) {
+      html2canvas(element, options).then(function (canvas) {
         // Then download that canvas as a PNG file.
-        canvas.toBlob(function(blob) {
+        canvas.toBlob(function (blob) {
           saveAs(blob, filename);
         });
       });
@@ -3447,11 +3776,30 @@ var indicatorView = function (model, options) {
   this.createSelectionsTable = function(chartInfo) {
     this.createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
     $('#tableSelectionDownload').empty();
+    this.createTableTargetLines(chartInfo.graphAnnotations);
     this.createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload');
     this.createSourceButton(chartInfo.shortIndicatorId, '#tableSelectionDownload');
     this.createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#tableSelectionDownload');
   };
 
+  this.createTableTargetLines = function(graphAnnotations) {
+    var targetLines = graphAnnotations.filter(function(a) { return a.preset === 'target_line'; });
+    var $targetLines = $('#tableTargetLines');
+    $targetLines.empty();
+    targetLines.forEach(function(targetLine) {
+      var targetLineLabel = targetLine.label.content;
+      if (!targetLineLabel) {
+        targetLineLabel = opensdg.annotationPresets.target_line.label.content;
+      }
+      $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + targetLine.value + '</dd>');
+    });
+    if (targetLines.length === 0) {
+      $targetLines.hide();
+    }
+    else {
+      $targetLines.show();
+    }
+  }
 
   this.createDownloadButton = function(table, name, indicatorId, el) {
     if(window.Modernizr.blobconstructor) {
@@ -3711,6 +4059,71 @@ indicatorController.prototype = {
     this._model.initialise();
   }
 };
+var indicatorInit = function () {
+    if ($('#indicatorData').length) {
+        var domData = $('#indicatorData').data();
+
+        if (domData.showdata) {
+
+            $('.async-loading').each(function (i, obj) {
+                $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
+            });
+
+            var remoteUrl = '/comb/' + domData.id + '.json';
+            if (opensdg.remoteDataBaseUrl !== '/') {
+                remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
+            }
+
+            $.ajax({
+                url: remoteUrl,
+                success: function (res) {
+
+                    $('.async-loading').remove();
+                    $('.async-loaded').show();
+
+                    var model = new indicatorModel({
+                        data: res.data,
+                        edgesData: res.edges,
+                        showMap: domData.showmap,
+                        country: domData.country,
+                        indicatorId: domData.indicatorid,
+                        shortIndicatorId: domData.id,
+                        chartTitle: domData.charttitle,
+                        chartTitles: domData.charttitles,
+                        measurementUnit: domData.measurementunit,
+                        xAxisLabel: domData.xaxislabel,
+                        showData: domData.showdata,
+                        graphType: domData.graphtype,
+                        graphTypes: domData.graphtypes,
+                        startValues: domData.startvalues,
+                        graphLimits: domData.graphlimits,
+                        stackedDisaggregation: domData.stackeddisaggregation,
+                        graphAnnotations: domData.graphannotations,
+                        graphTargetLines: domData.graphtargetlines,
+                        graphSeriesBreaks: domData.graphseriesbreaks,
+                        indicatorDownloads: domData.indicatordownloads,
+                        dataSchema: domData.dataschema,
+                        compositeBreakdownLabel: domData.compositebreakdownlabel,
+                        precision: domData.precision,
+                    });
+                    var view = new indicatorView(model, {
+                        rootElement: '#indicatorData',
+                        legendElement: '#plotLegend',
+                        decimalSeparator: '',
+                        maxChartHeight: 420,
+                        tableColumnDefs: [
+                            { maxCharCount: 25 }, // nowrap
+                            { maxCharCount: 35, width: 200 },
+                            { maxCharCount: Infinity, width: 250 }
+                        ]
+                    });
+                    var controller = new indicatorController(model, view);
+                    controller.initialise();
+                }
+            });
+        }
+    }
+};
 $(document).ready(function() {
     $('.nav-tabs').each(function() {
         var tabsList = $(this);
@@ -3822,8 +4235,29 @@ $(document).ready(function() {
 });
 var indicatorSearch = function() {
 
+  function sanitizeInput(input) {
+    if (input === null) {
+      return null;
+    }
+    var doc = new DOMParser().parseFromString(input, 'text/html');
+    var stripped = doc.body.textContent || "";
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+        "`": '&grave;',
+    };
+    var reg = /[&<>"'/`]/ig;
+    return stripped.replace(reg, function(match) {
+      return map[match];
+    });
+  }
+
   var urlParams = new URLSearchParams(window.location.search);
-  var searchTerms = urlParams.get('q');
+  var searchTerms = sanitizeInput(urlParams.get('q'));
   if (searchTerms !== null) {
     document.getElementById('search-bar-on-page').value = searchTerms;
     document.getElementById('search-term').innerHTML = searchTerms;
@@ -3853,8 +4287,9 @@ var indicatorSearch = function() {
 
     var results = [];
     var alternativeSearchTerms = [];
+    var noTermsProvided = (searchTerms === '');
 
-    if (useLunr) {
+    if (useLunr && !noTermsProvided) {
       // Engish-specific tweak for words separated only by commas.
       if (opensdg.language == 'en') {
         lunr.tokenizer.separator = /[\s\-,]+/
@@ -3900,7 +4335,7 @@ var indicatorSearch = function() {
         }
       }
     }
-    else {
+    else if (!noTermsProvided) {
       // Non-Lunr basic search functionality.
       results = _.filter(opensdg.searchItems, function(item) {
         var i, match = false;
@@ -4022,6 +4457,9 @@ $(function() {
   if (typeof translations.general === 'undefined') {
     translations.general = { hide: 'Hide' };
   }
+  if (typeof translations.cookies === 'undefined') {
+    translations.cookies = { cookie_settings: 'Cookie settings' };
+  }
   // @deprecated end
 
   var topLevelSearchLink = $('.top-level span:eq(1), .top-level button:eq(1)');
@@ -4074,6 +4512,7 @@ $(function() {
     $(".top-level li button[data-target='" + target + "']").attr("aria-expanded", "false");
 
     if(target === 'search') {
+      // TODO: This is never used and needs to be revisited.
       $(this).toggleClass('open');
 
       if($(this).hasClass('open') || !wasVisible) {
@@ -4081,6 +4520,9 @@ $(function() {
       } else {
         $(this).text(translations.search.search);
       }
+    } else if (target === 'search-mobile') {
+      topLevelMenuToggle.setAttribute('aria-expanded', false);
+      $(topLevelMenuToggle).find('> button').attr('aria-expanded', false);
     } else {
       // menu click, always hide search:
       topLevelSearchLink.removeClass('open');
@@ -4112,6 +4554,9 @@ $(function() {
     // update the viewport width:
     $('body').data('vwidth', viewportWidth);
   });
+
+  // Add the cookie settings link in the footer.
+  
 });
 /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
 "document"in self&&("classList"in document.createElement("_")&&(!document.createElementNS||"classList"in document.createElementNS("http://www.w3.org/2000/svg","g"))||!function(t){"use strict";if("Element"in t){var e="classList",n="prototype",i=t.Element[n],s=Object,r=String[n].trim||function(){return this.replace(/^\s+|\s+$/g,"")},o=Array[n].indexOf||function(t){for(var e=0,n=this.length;n>e;e++)if(e in this&&this[e]===t)return e;return-1},a=function(t,e){this.name=t,this.code=DOMException[t],this.message=e},c=function(t,e){if(""===e)throw new a("SYNTAX_ERR","An invalid or illegal string was specified");if(/\s/.test(e))throw new a("INVALID_CHARACTER_ERR","String contains an invalid character");return o.call(t,e)},l=function(t){for(var e=r.call(t.getAttribute("class")||""),n=e?e.split(/\s+/):[],i=0,s=n.length;s>i;i++)this.push(n[i]);this._updateClassName=function(){t.setAttribute("class",""+this)}},u=l[n]=[],h=function(){return new l(this)};if(a[n]=Error[n],u.item=function(t){return this[t]||null},u.contains=function(t){return t+="",-1!==c(this,t)},u.add=function(){var t,e=arguments,n=0,i=e.length,s=!1;do t=e[n]+"",-1===c(this,t)&&(this.push(t),s=!0);while(++n<i);s&&this._updateClassName()},u.remove=function(){var t,e,n=arguments,i=0,s=n.length,r=!1;do for(t=n[i]+"",e=c(this,t);-1!==e;)this.splice(e,1),r=!0,e=c(this,t);while(++i<s);r&&this._updateClassName()},u.toggle=function(t,e){t+="";var n=this.contains(t),i=n?e!==!0&&"remove":e!==!1&&"add";return i&&this[i](t),e===!0||e===!1?e:!n},u.toString=function(){return this.join(" ")},s.defineProperty){var f={get:h,enumerable:!0,configurable:!0};try{s.defineProperty(i,e,f)}catch(g){(void 0===g.number||-2146823252===g.number)&&(f.enumerable=!1,s.defineProperty(i,e,f))}}else s[n].__defineGetter__&&i.__defineGetter__(e,h)}}(self),function(){"use strict";var t=document.createElement("_");if(t.classList.add("c1","c2"),!t.classList.contains("c2")){var e=function(t){var e=DOMTokenList.prototype[t];DOMTokenList.prototype[t]=function(t){var n,i=arguments.length;for(n=0;i>n;n++)t=arguments[n],e.call(this,t)}};e("add"),e("remove")}if(t.classList.toggle("c3",!1),t.classList.contains("c3")){var n=DOMTokenList.prototype.toggle;DOMTokenList.prototype.toggle=function(t,e){return 1 in arguments&&!this.contains(t)==!e?e:n.call(this,t)}}t=null}());/*! modernizr 3.5.0 (Custom Build) | MIT *
@@ -4451,6 +4896,7 @@ $(function() {
       var container = L.Control.Search.prototype.onAdd.call(this, map);
 
       this._input.setAttribute('aria-label', this._input.placeholder);
+      this._tooltip.setAttribute('aria-label', this._input.placeholder);
 
       this._button.setAttribute('role', 'button');
       this._accessibleCollapse();
@@ -4465,6 +4911,26 @@ $(function() {
 
       return container;
     },
+    _createInput: function (text, className) {
+      var input = L.Control.Search.prototype._createInput.call(this, text, className);
+      input.setAttribute('aria-autocomplete', 'list');
+      input.setAttribute('aria-controls', 'map-search-listbox');
+      var combobox = L.DomUtil.create('div', '', this._container);
+      combobox.setAttribute('role', 'combobox');
+      combobox.setAttribute('aria-expanded', 'false');
+      combobox.setAttribute('aria-owns', 'map-search-listbox');
+      combobox.setAttribute('aria-haspopup', 'listbox');
+      combobox.id = 'map-search-combobox';
+      combobox.append(input);
+      this._combobox = combobox;
+      return input;
+    },
+    _createTooltip: function(className) {
+      var tooltip = L.Control.Search.prototype._createTooltip.call(this, className);
+      tooltip.id = 'map-search-listbox';
+      tooltip.setAttribute('role', 'listbox');
+      return tooltip;
+    },
     _accessibleExpand: function() {
       this._accessibleDescription(translations.indicator.map_search_hide);
       this._button.setAttribute('aria-expanded', 'true');
@@ -4472,6 +4938,7 @@ $(function() {
     _accessibleCollapse: function() {
       this._accessibleDescription(translations.indicator.map_search_show);
       this._button.setAttribute('aria-expanded', 'false');
+      this._button.focus();
     },
     _accessibleDescription: function(description) {
       this._button.title = description;
@@ -4490,13 +4957,25 @@ $(function() {
     cancel: function() {
       L.Control.Search.prototype.cancel.call(this);
       this._accessibleExpand();
+      this._combobox.setAttribute('aria-expanded', 'false');
+      this._input.removeAttribute('aria-activedescendant');
       return this;
     },
     showTooltip: function(records) {
       L.Control.Search.prototype.showTooltip.call(this, records);
       this._accessibleDescription(translations.indicator.map_search);
       this._button.removeAttribute('aria-expanded');
+      this._combobox.setAttribute('aria-expanded', 'true');
+      if (this._countertips > 0) {
+        this._input.setAttribute('aria-activedescendant', this._tooltip.childNodes[0].id);
+      }
       return this._countertips;
+    },
+    _createTip: function(text, val) {
+      var tip = L.Control.Search.prototype._createTip.call(this, text, val);
+      tip.setAttribute('role', 'option');
+      tip.id = 'map-search-option-' + val.layer.feature.properties.geocode;
+      return tip;
     },
     _handleSubmit: function(e) {
       // Prevent the enter key from immediately collapsing the search bar.
@@ -4505,6 +4984,19 @@ $(function() {
       }
       L.Control.Search.prototype._handleSubmit.call(this, e);
     },
+    _handleArrowSelect: function(velocity) {
+      L.Control.Search.prototype._handleArrowSelect.call(this, velocity);
+      var searchTips = this._tooltip.hasChildNodes() ? this._tooltip.childNodes : [];
+			for (i=0; i<searchTips.length; i++) {
+			  searchTips[i].setAttribute('aria-selected', 'false');
+      }
+      var selectedTip = searchTips[this._tooltip.currentSelection];
+      if (typeof selectedTip === 'undefined') {
+        selectedTip = searchTips[0];
+      }
+      selectedTip.setAttribute('aria-selected', 'true');
+      this._input.setAttribute('aria-activedescendant', selectedTip.id);
+    },
     _createAlert: function(className) {
       var alert = L.Control.Search.prototype._createAlert.call(this, className);
       alert.setAttribute('role', 'alert');
@@ -4512,25 +5004,6 @@ $(function() {
     }
   });
 }());
-function initialiseGoogleAnalytics(){
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    sendPageviewToGoogleAnalytics();
-}
-
-function sendPageviewToGoogleAnalytics(){
-    ga('create', '', 'auto');
-    ga('require', 'eventTracker', {
-        attributePrefix: 'data-'
-    });
-    // anonymize user IPs (chops off the last IP triplet)
-    ga('set', 'anonymizeIp', true);
-    // forces SSL even if the page were somehow loaded over http://
-    ga('set', 'forceSSL', true);
-    ga('send', 'pageview');
-}
-
-
+$(document).ready(function() {
+    $('a[href="#top"]').prepend('<i class="fa fa-arrow-up"></i>');
+});
