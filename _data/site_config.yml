@@ -240,7 +240,7 @@ metadata_tabs: []
 news:
   category_links: false
 non_global_metadata: indicator.national_metadata
-remote_data_prefix: 'https://sdgs-ghana.github.io/production-data/'
+remote_data_prefix: 'https://sdg-ghana.github.io/data/'
 reporting_status:
   title: ''
   description: ''
