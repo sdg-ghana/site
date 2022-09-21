@@ -8,7 +8,7 @@
 baseurl: "/site"
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
-remote_theme: brockfanning/open-sdg@meta-config-plus-series-titles
+remote_theme: open-sdg/open-sdg@1.8.0
 
 # Replace this title as needed.
 title: Indicators For The Sustainable Development Goals
