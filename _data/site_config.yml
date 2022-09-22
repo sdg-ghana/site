@@ -17,7 +17,7 @@ breadcrumbs:
     - path: /
       label: general.home
     - path: /news
-      label: menu.updates
+      label: menu.news
 contrast_type: default
 country:
   name: Ghana
