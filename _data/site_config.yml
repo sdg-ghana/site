@@ -148,7 +148,7 @@ indicator_data_form:
   enabled: false
   repository_link: ''
 indicator_metadata_form:
-  enabled: false
+  enabled: true
   dropdowns: []
   repository_link: 'https://github.com/sdg-ghana/data/tree/develop/meta'
   translation_link: 'https://hosted.weblate.org/languages/fr/sdg-translations/'
