@@ -140,7 +140,7 @@ header:
 header_language_toggle: dropdown
 hide_empty_metadata: false
 indicator_config_form:
-  enabled: true
+  enabled: false
   dropdowns: []
   repository_link: 'https://github.com/sdg-ghana/data/tree/develop/indicator-config'
   translation_link: ''
@@ -148,7 +148,7 @@ indicator_data_form:
   enabled: false
   repository_link: ''
 indicator_metadata_form:
-  enabled: true
+  enabled: false
   dropdowns: []
   repository_link: 'https://github.com/sdg-ghana/data/tree/develop/meta'
   translation_link: 'https://hosted.weblate.org/languages/fr/sdg-translations/'
