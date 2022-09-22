@@ -175,7 +175,7 @@ map_layers:
     max_zoom: 8
     staticBorders: false
 map_options:
-  minZoom: 0
+  minZoom: 5
   maxZoom: 10
   tileURL: 'https://{s}.tile.jawg.io/{id}/{z}/{x}/{y}{r}.png?access-token={accessToken}'
   tileOptions:
