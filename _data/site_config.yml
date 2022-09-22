@@ -226,7 +226,7 @@ menu:
     translation_key: menu.publications
     dropdown: []
   - path: /news
-    translation_key: menu.updates
+    translation_key: menu.News
     dropdown: []
   - path: /about
     translation_key: Other indicators
