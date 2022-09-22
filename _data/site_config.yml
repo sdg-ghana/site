@@ -187,7 +187,7 @@ map_options:
       href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
       contributors
   colorRange: chroma.brewer.BuGn
-  noValueColor: '#f0f0f0'
+  noValueColor: '#ffffcc'
   styleNormal:
     weight: 1
     opacity: 1
