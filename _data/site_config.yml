@@ -258,16 +258,22 @@ remote_data_prefix: 'https://sdg-ghana.github.io/data/'
 reporting_status:
   title: 'Reporting Status'
   description: 'Reporting status provides an overview of how much Sustainable Development
-    Goal (SDG) data the UK reports. For more information, see [What does the
+    Goal (SDG) data Ghana reports. For more information, see [What does the
     reporting status
     mean?](https://sdgs-ghana.github.io/faq/#what-does-the-reporting-status-mean)
+    
+    
     Disaggregation status provides an overview of how many of the SDG indicators
     are disaggregated. For more information, see [What does the disaggregation
     status
     mean?](https://sdgs-ghana.github.io/faq/#what-does-the-disaggregation-status-mean)
+    
+    
     For details about all available disaggregations and how each indicator is
     disaggregated, see the [Ghana disaggregation
     report](https://sdgs-ghana.github.io/production-data/disaggregations.html).
+    
+    
     Note: These percentages have been rounded. As a result, adding them together
     may not equal exactly 100%.'
   disaggregation_tabs: true
