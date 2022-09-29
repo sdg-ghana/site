@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929101029">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929101029">
         
 
         
@@ -681,7 +681,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Forestry Commission, MoFA: National Coordinator for the Management of Animal Genetic</p><p>Resources (NCs).</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Forestry Commission, MoFA: National Coordinator for the Management of Animal Genetic Resources (NCs).</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -711,7 +711,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The indicator presents the percentage of livestock breeds classified as being at risk, not at risk or of</p><p>unknown risk of extinctions at a certain moment in time, as well as the trends for those percentages.</p><p><strong>Concept:</strong></p><p>Defined under method of computation</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The indicator presents the percentage of local livestock breeds among local breeds with known risk status classified as being at risk of extinctions at a certain moment in time, as well as the trends for this percentage.</p><p><strong>Concepts</strong>:</p><p>A similar indicator was originally proposed for the Target 15.5, and it serves also as an indicator for the Aichi Target 13 “Genetic Diversity of Terrestrial Domesticated Animals” under the Convention on Biological Diversity (CBD). It is described on the webpage of the Biodiversity Indicators Partnership (BIP), a network of organizations, which have come together to provide the most up-to date biodiversity</p><p>information possible for tracking progress towards the Aichi Targets (http://www.bipindicators.net/domesticatedanimals). Further, it is presented in the Global Biodiversity Outlook 4, page 91 (see https://www.cbd.int/gbo/gbo4/publication/gbo4-en.pdf ) which is an output of the processes under the CBD.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -725,6 +725,20 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent</p>");
+        var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: UNIT_MEASURE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
@@ -749,7 +763,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COLL_METHOD', "<p>The underlying data base DAD-IS is maintained by FAO/AGAG (see http://dad.fao.org/). Data</p><p>entry is possible all over the year.</p>");
+        var currentValue = normalizeCurrentValue('COLL_METHOD', "<p>The underlying data base DAD-IS is maintained by FAO/AGAG (see http://dad.fao.org/). Data entry is possible all over the year.</p>");
         var propertyEditor = editor.getEditor('root.COLL_METHOD');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -879,6 +893,20 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Funstats.un.org%2Fsdgs%2Fmetadata%2Ffiles%2FMetadata-02-05-02.docx&amp;wdOrigin=BROWSELINK\">Metadata-02-05-02.docx (live.com)</a></p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_updated_date'));
@@ -1048,12 +1076,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
+<script src='/site/assets/js/sdg.js?v=20220929101029'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929101029"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

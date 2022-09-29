@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929101029">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929101029">
         
 
         
@@ -695,7 +695,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana statistical service.</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana statistical service, Ministry of Finance.</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -725,7 +725,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> The Agriculture Orientation Index (AOI) for Government Expenditures is defined as the Agriculture Share of Government Expenditures, divided by the Agriculture Share of GDP, where Agriculture refers to the agriculture, forestry, fishing and hunting sector. The measure in a currency-free index, calculated as the ratio of these two shares. National governments are requested to compile Government Expenditures according to the international Classification of Functions of Government (COFOC), and Agriculture Share of GDP according to the System of National Accounts (SNA).</p><p>Year 2008 to 2011 used AgPER methodology using the COFOG (Classification of the Functions of Government) classification of agric but year 2012 to 2015 used AgPER Lite methodology which is less comprehensive compared to the AgPER methodology. </p><p>1. Data is Collected at the Districts (Validated at disstrict level by the District Director of Agriculture).</p><p>2. Data is Aggregated at the Region (Validated at the regional level by the Regional Director of Agriculture).</p><p>3. Field Verification visits by the technical committee and consulting team. </p><p>4. Validation (stakeholder validation workshop at the National level).</p><p>Concepts:</p><p>Agriculture refers to the agriculture, forestry, fishing and hunting sector, or Division A of ISIC Rev 4 (equal to Division A+B of ISIC Rev 3.2).</p><p>Government Expenditure comprise all expense and acquisition of non-financial assets associated with supporting a particular sector, as defined in the Government Finance Statistics Manual (GFSM) 2014 developed by the International Monetary Fund (IMF). NOTE: Transactions in assets and liabilities, such as loans by general government units (disbursement and repayment), are excluded when compiling COFOG data for GFS reporting purposes.</p><p>Government Expenditure are classified according to the Classification of the Functions of Government (COFOG), a classification developed by the Organisation for Economic Co-operation and Development (OECD) and published by the United Nations Statistical Division (UNSD).</p><p>Agriculture value-added and GDP are based on the System of National Accounts (SNA).</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> The Agriculture Orientation Index (AOI) for Government Expenditures is defined as the Agriculture Share of Government Expenditures, divided by the Agriculture Share of GDP, where Agriculture refers to the agriculture, forestry, fishing and hunting sector. The measure in a currency-free index, calculated as the ratio of these two shares. National governments are requested to compile Government Expenditures according to the international Classification of Functions of Government (COFOC), and Agriculture Share of GDP according to the System of National Accounts (SNA).</p><p>Year 2008 to 2011 used AgPER methodology using the COFOG (Classification of the Functions of Government) classification of agric but year 2012 to 2015 used AgPER Lite methodology which is less comprehensive compared to the AgPER methodology. </p><p>1. Data is Collected at the Districts (Validated at disstrict level by the District Director of Agriculture).</p><p>2. Data is Aggregated at the Region (Validated at the regional level by the Regional Director of Agriculture).</p><p>3. Field Verification visits by the technical committee and consulting team. </p><p>4. Validation (stakeholder validation workshop at the National level).</p><p><strong>Concepts:</strong></p><p>Agriculture refers to the agriculture, forestry, fishing and hunting sector, or Division A of ISIC Rev 4 (equal to Division A+B of ISIC Rev 3.2).</p><p>Government Expenditure comprise all expense and acquisition of non-financial assets associated with supporting a particular sector, as defined in the Government Finance Statistics Manual (GFSM) 2014 developed by the International Monetary Fund (IMF). NOTE: Transactions in assets and liabilities, such as loans by general government units (disbursement and repayment), are excluded when compiling COFOG data for GFS reporting purposes.</p><p>Government Expenditure are classified according to the Classification of the Functions of Government (COFOG), a classification developed by the Organisation for Economic Co-operation and Development (OECD) and published by the United Nations Statistical Division (UNSD).</p><p>Agriculture value-added and GDP are based on the System of National Accounts (SNA).</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -741,7 +741,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Index, Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -779,25 +779,11 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('REL_CAL_POLICY', "<p>June 2019</p>");
-        var propertyEditor = editor.getEditor('root.REL_CAL_POLICY');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: REL_CAL_POLICY');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana statistical service.</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana statistical service, Ministry of Finance.</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -875,13 +861,27 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has not been disaggregated</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p>Global SDG Indicator Platform</p><p>https://sdg.tracking-progress.org/indicator/2-a-1-agriculture-orientation-index-for-government-expenditures-2/ \" </p><p>https://sdg.tracking-progress.org/indicator/2-a-1-agriculture-orientation-index-for-government-expenditures-2/ </p>");
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p>Global SDG Indicator Platform</p><p><a href=\"https://sdg.tracking-progress.org/indicator/2-a-1-agriculture-orientation-index-for-government-expenditures-2/ \">https://sdg.tracking-progress.org/indicator/2-a-1-agriculture-orientation-index-for-government-expenditures-2/ </a></p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1076,12 +1076,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
+<script src='/site/assets/js/sdg.js?v=20220929101029'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929101029"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

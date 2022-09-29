@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929101029">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929101029">
         
 
         
@@ -621,20 +621,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS__GLOBAL'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR_INFO', "<p>Foreign direct investment (FDI) is an investment in a business by an investor from another country for which the foreign investor has control over the business concerned. It is distinguished from foreign portfolio investment by the notion of direct control.</p>");
-        var propertyEditor = editor.getEditor('root.SDG_INDICATOR_INFO');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_INDICATOR_INFO');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
     
@@ -695,7 +681,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Investment Promotion Centre</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -725,7 +711,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Percentage of total Foreign Direct Investment that flows into agriculture sector refers to the proportion of total private capital flows from abroad/overseas that goes into the agricultural sector per anum, where agriculture entails Crops, Livestock, Fishing, Forestry and Logging i.e. it is total foreign direct investment flows into the agricultural sector divided by the total foreign direct investment inflows registered.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Percentage of total Foreign Direct Investment that flows into agriculture sector refers to the proportion of total private capital flows from abroad/overseas that goes into the agricultural sector per annum, where agriculture entails Crops, Livestock, Fishing, Forestry and Logging i.e. it is total foreign direct investment flows into the agricultural sector divided by the total foreign direct investment inflows registered.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -761,7 +747,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>: 2019 GIPC Annual Report</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>2019 GIPC Annual Report</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -777,12 +763,54 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('FREQ_COLL', "<p>Annually</p>");
+        var propertyEditor = editor.getEditor('root.FREQ_COLL');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: FREQ_COLL');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Investment Promotion Centre</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Servicegipc</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -833,10 +861,38 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has no disaggregation</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/\">SDG Indicators — SDG Indicators (un.org)</a></p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_updated_date'));
@@ -1020,12 +1076,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
+<script src='/site/assets/js/sdg.js?v=20220929101029'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929101029"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
