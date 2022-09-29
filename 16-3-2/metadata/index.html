@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929031243">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929031243">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
         
 
         
@@ -741,7 +741,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Number</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -795,8 +795,36 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Prisons Service</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service (GSS)</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -805,7 +833,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p><strong>Rationale:</strong></p><p>The indicator signifies overall respect for the principle that persons awaiting trial shall not be detained in custody unnecessarily. This, in turn, is premised on aspects of the right to be presumed innocent until proven guilty. From a development perspective, extensive use of pre-sentence detention when not necessary for reasons such as the prevention of absconding, the protection of victims or witnesses, or the prevention of the commission of further offences, can divert criminal justice system resources, and exert financial and unemployment burdens on the accused and his or her family. Measuring the relative extent to which pre-sentence detention is used can provide the evidence to assist countries in lowering such burdens and ensuring its proportionate use.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator signifies overall respect for the principle that persons awaiting trial shall not be detained in custody unnecessarily. This, in turn, is premised on aspects of the right to be presumed innocent until proven guilty. From a development perspective, extensive use of pre-sentence detention when not necessary for reasons such as the prevention of absconding, the protection of victims or witnesses, or the prevention of the commission of further offences, can divert criminal justice system resources, and exert financial and unemployment burdens on the accused and his or her family. Measuring the relative extent to which pre-sentence detention is used can provide the evidence to assist countries in lowering such burdens and ensuring its proportionate use.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1034,12 +1062,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929031243'></script>
+<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929031243"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

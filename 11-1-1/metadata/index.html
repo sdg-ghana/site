@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929031243">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929031243">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
         
 
         
@@ -671,10 +671,38 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Urban population living in slums (number) [11.1.1]</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Direct relation</p><p> 1.1.1 Poverty rate; 1.1.2 Poverty rate, national; 6.1.1 Access to Improved Water; 6.2.1 Access to Improved Sanitation; 7.1.1 Access to Electricity; 8.3.1 Informal Employment; 8.5.2 Unemployment Rate 8.6.1 Youth Unemployment; 10.2.1 Population below Median Income; 10.1.1 Grow rates of the poorest 40%; 11.2.1 Public Transit Stop Coverage; 11.5.1 Population Affected by Hazardous Events; 11.6.1 Solid Waste Collection; 11.7.1 Accessibility to Open Public Area; 11.7.2 Public Space Safety for Women; 16.1.1 Homicide rate; 16.1.3 Population subjected to Violence. 0.g. International organisation(s) responsible for global monitoring</p>");
+        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
@@ -701,7 +729,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_FUNCT', "<p>Director, Communication and Dissemination</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_FUNCT', "<p>Director, Communication and Dissemination Directorate</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_FUNCT');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -753,6 +781,20 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%), Number</p>");
+        var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: UNIT_MEASURE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
@@ -761,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Data for the slum/informal settlements components of the indicator can be computed from</p><p>Census and national household surveys, including DHS and MICS. Data for the inadequate</p><p>housing component can be computed through income and household surveys that capture housing</p><p>expenditures.</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Data for the slum/informal settlements components of the indicator can be computed from</p><p>Census and national household surveys, including Demographic and Health Survey and Multiple Indicator Cluster Survey. </p><p>Data for the inadequate housing component can be computed through income and household surveys that capture housing</p><p>expenditures.</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -795,8 +837,36 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -805,7 +875,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>From the seven criteria of adequate housing, the three that are not covered by slums / informal</p><p>settlements are affordability, accessibility and cultural adequacy. For the purpose of composing an</p><p>indicator, affordability is the most relevant and easier to measure.</p><p>Thus, in order to come up with a composite indicator, the metadata for the SDG Indicator 11.1.1 is</p><p>proposing to group the definition of slums and informal settlements, to allow for comparison with</p><p>MDGs, and add the element of <em>affordability </em>from the definition of adequate housing.</p><p>Thus, Indicator 11.1.1 is expected to be a <strong>composite one</strong>, with the main components of slum/</p><p>informal settlements’ and the added component of affordability defining inadequate housing.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Most of the criteria for defining slums, informal settlements and inadequate housing overlap. The three criteria of informal settlements are essentially captured in the definition of slums, which sustains the combination of both (slums/informal settlements). Both aspects of slums and informal settlements are therefore combined into one component of the indicator, providing some continuity with what was captured under MDG 7. At a later stage, a composite index will be developed that will incorporate all measures (combining slum/informal settlements and inadequate housing) and provide one estimate.</p><p>The second component of the indicator is on inadequate housing. From the seven criteria of adequate housing, the three that are not covered by slums / informal settlements are affordability, accessibility and cultural adequacy. However, affordability is the most relevant and easier to measure.</p><p>In this regard, housing affordability is not only a key housing adequacy criterion, but is a suitable means of measuring inadequate housing in a more encompassing manner, as it remains a global challenge across different countries and income levels, with strong negative impact on urban inequality.</p><p>The underlying principle is that household financial costs associated with housing should not threaten or compromise the attainment and satisfaction of other basic needs such as, food, education, access to health care, transport, etc. Based on the existing method and data of UN-Habitat’s Urban Indicators Program (1996-2006), unaffordability is currently measured as the net monthly expenditure on housing cost that exceeds 30% of the total monthly income of the household.</p><p><strong>Slums / Informal Settlements;</strong> DEFINITION: As adopted in the MDG, slum households are households whose members suffer one or more of the following ‘household deprivations’: 1) Lack of access to improved water source, 2) Lack of access to improved sanitation facilities, 3) Lack of sufficient living area, 4) Lack of housing durability and, 5) Lack of security of tenure. </p><p>MEASUREMENT: Security of Tenure: • Proportion of households with formal title deeds to both land and residence. • Proportion of households with formal title deeds to either one of land or residence. • Proportion of households with agreements or any document as a proof of a tenure arrangement. Access to improved water sources: · Proportion of households whose members have access to improved drinking water sources (i.e. piped in water into dwelling, plot or yard; public tap/stand pipe service; protected spring; rain water collection; bottled water if secondary source is also improved; bore hole/tube well; and protected dug well). Access to improved sanitation facilities: · Proportion of households whose members have access to improved sanitation facilities (i.e. pour-flush toilets or latrines connected to a</p><p>sewer, septic tank or pit; ventilated improved pit latrine; pit latrine with a slab or platform that covers the pit entirely; composting toilets/latrines). Structural quality of Housing and location: · Proportion of households residing on or near a hazardous site. The following locations should be considered: o housing in geologically hazardous zones (landslide/earthquake and flood areas); o housing on or under garbage mountains; o housing around high-industrial pollution areas; o housing around other unprotected high-risk zones (e.g. railroads, airports, energy transmission lines). Structural quality of the housing and permanency of the structure: · Proportion of households living in temporary and/or dilapidated structures. The following factors should be considered when placing a housing unit in these categories: o quality of construction (e.g. materials used for wall, floor and roof); o compliance with local building codes, standards and bylaws. Sufficient living area: • Proportion of households in which not more than three people share the same habitable room.</p><p><strong>Inadequate housing</strong> DEFINITION: Proposed to complement the slums/informal settlements measuring affordability of housing at the global level. A housing is considered inadequate if it is not affordable to the household, i.e. the net monthly expenditure on its cost exceeds 30% of the total monthly income of the household.</p><p>MEASUREMENT: Inadequate housing: • Proportion of households with net monthly expenditure on housing exceeding 30% of the total monthly income of the household</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -943,6 +1013,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>United Nations Human Settlements Programme (UN-Habitat)</p>");
+        var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));
@@ -1090,12 +1174,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929031243'></script>
+<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929031243"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

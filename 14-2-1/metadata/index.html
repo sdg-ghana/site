@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929031243">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929031243">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
         
 
         
@@ -623,10 +623,52 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/life-below-water\">Goal 14: Conserve and sustainably use the oceans, seas and marine resources for sustainable development </a></h1>");
+        var propertyEditor = editor.getEditor('root.SDG_GOAL');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_GOAL');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 14.1: By 2025, prevent and significantly reduce marine pollution of all kinds, in particular from land-based activities, including marine debris and nutrient pollution</p>");
+        var propertyEditor = editor.getEditor('root.SDG_TARGET');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_TARGET');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 14.2.1: Proportion of national exclusive economic zones managed using ecosystem-based approaches</h2>");
+        var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_INDICATOR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
@@ -637,6 +679,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ocean Conservancy</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -653,6 +709,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition: Regional Seas Coordinated Indicator 22 ‘Integrated Coastal Zone Management (ICZM) is proposed as the primary indicator. For countries with Marine/Maritime Spatial Planning (MSP) in place, these plans can be helpful to assess ICZM. For other countries, it is important to identify ways to measure existing plans and to build capacity for integrated planning. All data for this indicator will be based on country submissions to the Regional Seas Programme. In order to promote the use of the Regional Seas as part of the follow-up and review mechanism for the Regional Seas, UNEP drafted report on how Regional Seas data could be directly used for the SDGs (see https://wedocs.unep.org/bitstream/handle/20.500.11822/27295/ocean_SDG.pdf?sequence=1&amp;isAllowe d=y). Plans are developed through coordination across different marine and terrestrial institutions and agencies. Marine Spatial Planning (MSP) – Marine Spatial Planning is focused on the EEZ. It then integrates the needs and policies of multiple marine sectors in one coherent planning framework. EEZ - national Exclusive Economic Zone (EEZ) (200 nautical miles from the coast) as outlined by the United Nations Convention on the Law of the Sea.</p>");
+        var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: STAT_CONC_DEF');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
@@ -661,6 +731,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Tides database</p>");
+        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SOURCE_TYPE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
@@ -669,14 +753,56 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ocean Conservancy</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>From an ecological perspective, ecosystem approaches consider the connections between the living organisms, habitats, physical and chemical conditions within an ecosystem, focusing on the importance of ecological integrity, biodiversity and overall ecosystem health. From a management perspective, ecosystem-based approaches refer to integrated management strategies for socio-ecological systems that consider ecological, social and economic factors and apply principles of sustainable development. A marine or coastal area-based (or spatial) management promotes better management of EEZs. Many countries use Marine Spatial Planning (MSP) and Integrated Coastal Zone Management (ICZM) as their approach for ensuring appropriate ecosystem-based management, including issues that are crosssectoral and wider scale in nature.</p>");
+        var propertyEditor = editor.getEditor('root.RATIONALE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: RATIONALE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
@@ -719,6 +845,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>United Nations Environment Programme (UNEP)</p>");
+        var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));
@@ -866,12 +1006,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929031243'></script>
+<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929031243"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

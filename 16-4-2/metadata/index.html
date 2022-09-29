@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929031243">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20220929095030">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929031243">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20220929095030">
         
 
         
@@ -623,10 +623,52 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 16: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels</p>");
+        var propertyEditor = editor.getEditor('root.SDG_GOAL');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_GOAL');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 16.4: By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime</p>");
+        var propertyEditor = editor.getEditor('root.SDG_TARGET');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_TARGET');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 16.4.2: Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments</p>");
+        var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_INDICATOR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
@@ -637,6 +679,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Interior</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -653,6 +709,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments</p><p><strong>Concepts:</strong></p><p>Arms: arms refer to ‘small arms and light weapons’, defined as any portable lethal weapon that expels or launches, is designed to expel or launch, or may be readily converted to expel or launch a shot, bullet or projectile by the action of an explosive, excluding antique small arms and light weapons or their replicas. Antique small arms and light weapons and their replicas will be defined in accordance with domestic law, and in no case will they include those manufactured after 1899. Arms include all firearms, as defined in</p><p>the “Protocol against the illicit manufacturing of and trafficking in firearms, their parts and components and ammunition”</p><p>In particular, ‘small arms’ are, broadly speaking, weapons for individual use, including revolvers, pistols, rifles and carbines, shotguns, sub-machine guns and light machine guns. ‘Light weapons’ are, broadly speaking, weapons designed for use by two or three persons serving as a crew, although some may be carried and used by a single person. They include, heavy machine guns, hand-held under-barrel and mounted grenade launchers, portable anti-aircraft guns, portable anti-tank guns, recoilless rifles, portable launchers of anti-tank missile and rocket systems, portable launchers of anti-aircraft missile systems, and mortars of a calibre of less than 100 millimetres.</p><p>Seized: arms that have been physically apprehended during the reported period by a competent authority, whether temporarily or not, in relation to a suspected criminal offence or administrative violation related to these arms. For the purpose of the calculation of indicator 16.4.2, only arms that were seized due to criminal offences are considered.</p><p>Found: arms apprehended by authorities that are not linked to an intentional or planned investigation or inspection, neither attributable to any apparent holder or owner, regardless of whether the items were reported lost or stolen.</p><p>Surrendered: arms willingly handed over to authorities that are not linked to a planned investigation or inspection. The surrender may occur as a personal initiative of a citizen in the context of a voluntary surrender campaign and disarmament, demobilisation and reintegration processes, inter alia.</p><p>Illicit origin: Earliest point in time in the life of an arm where it was of an illicit nature. In order to establish the illicit origin, it is necessary to identify the point of diversion of the arm and the circumstances around it.</p><p>Point of diversion: the point in space and time and/or circumstances when arms left the licit circuit and entered the illicit one. If identified through tracing, the last legal record needs to be found. For arms illicitly manufactured, the point of diversion is the manufacture itself.</p><p>Last legal record: last recorded information available about the item, its status (deactivated, stolen, lost, seized, found, surrendered, sent for destruction, confiscated, in transit, etc.) and its legal end-user. The identification of the last legal record may require the initiation of several individual tracing requests.</p><p>Tracing: the systematic tracking of weapons and, where possible, their parts and components, and ammunition, at the national and/or international level for the purpose of assisting the competent authorities of States parties in detecting, investigating and analysing illicit manufacturing and illicit trafficking.</p><p>Illicit origin established by a competent authority in line with international instruments: illicit origin established through means other than tracing, e.g. through intelligence. In the case of arms that are not traceable, this is the only mean to establishing the illicit origin</p>");
+        var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: STAT_CONC_DEF');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
@@ -661,6 +731,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ministry of Interior Programme Based Budget , 2021 and 2022</p>");
+        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SOURCE_TYPE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
@@ -669,18 +753,74 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Interior</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>While Target 16.4 aims at significantly reducing illicit arms flows, directly measuring these types of flows is extremely difficult due to the underground nature of illicit arms trafficking. Therefore, the indicator does not aim at measuring these flows, but the efficiency with which the international community combats the phenomenon of illicit arms trafficking.</p>");
+        var propertyEditor = editor.getEditor('root.RATIONALE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: RATIONALE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The indicator is calculated as a proportion. The denominator of the proportion is the total number of arms seized, found and surrendered. The numerator will include all those arms for which the point of diversion was established / identified, either through tracing or by a competent authority (e.g. through intelligence)</p>");
+        var propertyEditor = editor.getEditor('root.DATA_COMP');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_COMP');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -697,6 +837,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/\">SDG Indicators — SDG Indicators (un.org)</a></p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_updated_date'));
@@ -719,6 +873,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>United Nations Office on Drugs and Crime (UNODC) </p><p>United Nations Office for  Disarmament Affairs (UNODA)</p>");
+        var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.ADJUSTMENT'));
@@ -866,12 +1034,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20220929031243'></script>
+<script src='/site/assets/js/sdg.js?v=20220929095030'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20220929031243"></script><script>
+    <script src="/site/assets/js/custom.js?v=20220929095030"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
