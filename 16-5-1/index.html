@@ -138,7 +138,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221008085205">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221008091304">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -146,7 +146,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221008085205">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221008091304">
         
 
         
@@ -501,11 +501,11 @@ data-event-label="high"
   data-id="16-5-1"
   data-country="Ghana"
   data-charttitle="Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months"
-  data-charttitles="[]"
-  data-measurementunit=""
+  data-charttitles="[{&quot;series&quot;:&quot;Top three perceived corrupt institutions(16.5.1)&quot;,&quot;title&quot;:&quot;Perception of corruption among state institutions&quot;}]"
+  data-measurementunit="Percent"
   data-xaxislabel=""
   data-showdata="true"
-  data-graphtype="line"
+  data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
@@ -517,7 +517,7 @@ data-event-label="high"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;COMPOSITE_BREAKDOWN&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;,&quot;Government Officials&quot;,&quot;Judges ad Magistrates&quot;,&quot;Police&quot;]},&quot;title&quot;:&quot;Composite breakdown&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;},{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;}]}"
-  data-compositebreakdownlabel=""
+  data-compositebreakdownlabel="Institution"
   data-precision="[]"
 >
   
@@ -562,13 +562,13 @@ data-event-label="high"
 
   <div id="datatableFooter">
     
-    <p>Source: World Bank</p>
+    <p>Source: Transparency International</p>
     
     
     <p>Geographical Area: </p>
     
     
-    <p>Unit of Measurement: </p>
+    <p>Unit of Measurement: Percent</p>
     
     
     <p>Footnote: </p>
@@ -656,7 +656,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months</h4>
+          <h4 id="chart-heading" class="chart-title">Perception of corruption among state institutions</h4>
           <div id="chart" class="plot-container">
             
               
@@ -873,39 +873,32 @@ opensdg.chartConfigAlter(function(config, info) {
 </script>
 
 <script>
-// For line charts, add the vertical line hover functionality.
 opensdg.chartConfigAlter(function(config, info) {
+  if (info.stackedDisaggregation) {
     var overrides = {
-        options: {
-            tooltips: {
-                intersect: false,
-                axis: 'x',
-            },
-        },
-        plugins: [{
-            beforeDatasetsDraw: function(chart) {
-                if (chart.tooltip._active && chart.tooltip._active.length) {
-                    var activePoint = chart.tooltip._active[0],
-                        ctx = chart.ctx,
-                        x = activePoint.tooltipPosition().x,
-                        topY = chart.scales['y-axis-0'].top,
-                        bottomY = chart.scales['y-axis-0'].bottom;
-
-                    // draw line
-                    ctx.save();
-                    ctx.beginPath();
-                    ctx.moveTo(x, topY);
-                    ctx.lineTo(x, bottomY);
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = '#757575';
-                    ctx.stroke();
-                    ctx.restore();
-                }
-            }
-        }],
+      options: {
+        scales: {
+          xAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }],
+        }
+      }
     };
+    // If we have stackedDisaggregation, we need to group datasets into stacks.
+    config.data.datasets.forEach(function(dataset) {
+      var disaggregation = $.extend({}, dataset.disaggregation);
+      // We're going to "stringify" each combination of disaggregations in order
+      // to place them in their own "stacks". To place "stacked" disaggregations
+      // into the same stack, we set them as "samestack" before stringifying.
+      // Note that the string "samestack" is completely arbitrary.
+      if (typeof disaggregation[info.stackedDisaggregation] !== 'undefined') {
+        disaggregation[info.stackedDisaggregation] = 'samestack';
+      }
+      // Use the disaggregation as a unique id for each stack.
+      dataset.stack = JSON.stringify(disaggregation);
+    });
     // Add these overrides onto the normal config, and return it.
     $.extend(true, config, overrides);
+  }
 });
 </script>
 
@@ -921,7 +914,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>World Bank</dd>
+        <dd>Transparency International</dd>
         
 
         
@@ -989,7 +982,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>World Bank</dd>
+        <dd>Transparency International</dd>
         
 
         
@@ -1103,7 +1096,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            Sep 28, 2022
+            Oct 08, 2022
           
         </td>
         </tr>
@@ -1683,7 +1676,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>World Bank</p>
+            <p>Transparency International</p>
 
           
         </td>
@@ -1709,20 +1702,7 @@ data-event-label="Change to Sources tab"
   
       
         
-      
-      
-      <tr>
-        <th scope="row">Earliest available data </th>
-        <td>
           
-            <p>2004</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
       
         
       
@@ -1753,8 +1733,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://data.worldbank.org/indicator/SI.POV.DDAY?locations=GB" target="_blank">
-                Poverty headcount ratio at $1.90 a day (2011 PPP) (% of population) <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.transparency.org/en/cpi/2021/index/gha" target="_blank">
+                Corruption Perceptions Index <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1772,19 +1752,7 @@ data-event-label="Change to Sources tab"
   
       
         
-      
-      
-      <tr>
-        <th scope="row">Release date </th>
-        <td>
           
-            May 28, 2020
-          
-        </td>
-        </tr>
-        
-      
-  
       
         
       
@@ -1825,7 +1793,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            <p>Research@WorldBank.org</p>
+            <p>ti@transparency.org</p>
 
           
         </td>
@@ -2055,12 +2023,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221008085205'></script>
+<script src='/site/assets/js/sdg.js?v=20221008091304'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221008085205"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221008091304"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
