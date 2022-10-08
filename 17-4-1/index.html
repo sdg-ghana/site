@@ -138,7 +138,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221008083420">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221008085205">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -146,7 +146,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221008083420">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221008085205">
         
 
         
@@ -501,8 +501,8 @@ data-event-label="high"
   data-id="17-4-1"
   data-country="Ghana"
   data-charttitle="Debt service as a proportion of exports of goods and services"
-  data-charttitles="[]"
-  data-measurementunit=""
+  data-charttitles="[{&quot;series&quot;:&quot;Debt Service as a percentage of total domestic revenue&quot;,&quot;title&quot;:&quot;Debt Service as a percentage of total domestic revenue&quot;}]"
+  data-measurementunit="Percent"
   data-xaxislabel=""
   data-showdata="true"
   data-graphtype="line"
@@ -618,13 +618,13 @@ data-event-label="high"
 
   <div id="datatableFooter">
     
-    <p>Source: World Bank</p>
+    <p>Source: Ministry of Finance and Economic Planning</p>
     
     
     <p>Geographical Area: </p>
     
     
-    <p>Unit of Measurement: </p>
+    <p>Unit of Measurement: Percent</p>
     
     
     <p>Footnote: </p>
@@ -712,7 +712,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Debt service as a proportion of exports of goods and services</h4>
+          <h4 id="chart-heading" class="chart-title">Debt Service as a percentage of total domestic revenue</h4>
           <div id="chart" class="plot-container">
             
               
@@ -977,7 +977,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>World Bank</dd>
+        <dd>Ministry of Finance and Economic Planning</dd>
         
 
         
@@ -1045,7 +1045,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>World Bank</dd>
+        <dd>Ministry of Finance and Economic Planning</dd>
         
 
         
@@ -1159,7 +1159,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            Sep 28, 2022
+            Oct 08, 2022
           
         </td>
         </tr>
@@ -1658,7 +1658,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>World Bank</p>
+            <p>Ministry of Finance and Economic Planning</p>
 
           
         </td>
@@ -1684,20 +1684,7 @@ data-event-label="Change to Sources tab"
   
       
         
-      
-      
-      <tr>
-        <th scope="row">Earliest available data </th>
-        <td>
           
-            <p>2004</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
       
         
       
@@ -1728,8 +1715,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://data.worldbank.org/indicator/SI.POV.DDAY?locations=GB" target="_blank">
-                Poverty headcount ratio at $1.90 a day (2011 PPP) (% of population) <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://mofep.gov.gh/index.php/fiscal-data" target="_blank">
+                Fiscal Data <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1747,19 +1734,7 @@ data-event-label="Change to Sources tab"
   
       
         
-      
-      
-      <tr>
-        <th scope="row">Release date </th>
-        <td>
           
-            May 28, 2020
-          
-        </td>
-        </tr>
-        
-      
-  
       
         
       
@@ -1784,7 +1759,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            <p>Non-official</p>
+            <p>Official</p>
 
           
         </td>
@@ -1800,7 +1775,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            <p>Research@WorldBank.org</p>
+            <p>info@mofep.gov.gh</p>
 
           
         </td>
@@ -2030,12 +2005,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221008083420'></script>
+<script src='/site/assets/js/sdg.js?v=20221008085205'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221008083420"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221008085205"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
