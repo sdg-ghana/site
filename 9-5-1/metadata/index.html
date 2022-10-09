@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221009030440">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221009045408">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221009030440">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221009045408">
         
 
         
@@ -643,22 +643,106 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation</p>");
+        var propertyEditor = editor.getEditor('root.SDG_GOAL');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_GOAL');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 9.5: Enhance scientific research, upgrade the technological capabilities of industrial sectors in all countries, in particular developing countries, including, by 2030, encouraging innovation and substantially increasing the number of research and development workers per 1 million people and public and private research and development spending</p>");
+        var propertyEditor = editor.getEditor('root.SDG_TARGET');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_TARGET');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 9.5.1: Research and development expenditure as a proportion of GDP</p>");
+        var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_INDICATOR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>2.a.1, 2.a.2</p><p>12.a.1</p><p>14.a.1</p><p>17.6.1</p>");
+        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_CUSTODIAN_AGENCIES', "<p>United Nations Educational, Scientific and Cultural Organization (UNESCO)</p>");
+        var propertyEditor = editor.getEditor('root.SDG_CUSTODIAN_AGENCIES');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_CUSTODIAN_AGENCIES');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_CUSTODIAN_AGENCIES'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Environment, Science, Technology and Innovation (MESTI)</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -675,14 +759,70 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definitions:</strong></p><p> Research and development (R&amp;D) expenditure as a proportion of Gross Domestic Product (GDP) is the amount of R&amp;D expenditure divided by the total output of the economy</p><p><strong>Concepts:</strong></p><p> The OECD Frascati Manual (OECD, 2015) provides the relevant definitions for research and experimental development, gross domestic expenditure on R&amp;D and researchers. Although an OECD manual, the application is global. During the 6th revision of the Frascati Manual, developing country issues were mainstreamed in the core of the Manual. The 7th edition was released in October 2015.</p><p>The following definitions, taken from the 2015 edition of the Frascati Manual are relevant for computing the indicator. </p><p>Research and experimental development (R&amp;D) comprise creative and systematic work undertaken in order to increase the stock of knowledge – including knowledge of humankind, culture and society – and to devise new applications of available knowledge. </p><p>Expenditures on intramural R&amp;D represent the amount of money spent on R&amp;D that is performed within a reporting unit.</p>");
+        var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: STAT_CONC_DEF');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent (%)</p>");
+        var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: UNIT_MEASURE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('CLASS_SYSTEM', "<p>The main methodological guide, which provides international standard guidelines for measuring R&amp;D is the </p><p>OECD Frascati Manual (Frascati Manual 2015: Guidelines for Collecting and Reporting Data on Research and Experimental Development: </p><p>http://www.oecdilibrary.org/science-and-technology/frascatimanual-2015_9789264239012-en). </p><p>In addition to the above, the following international classifications are used to facilitate the R&amp;D data compilation process and the presentation of R&amp;D statistics by various disaggregation: </p><p>International Standard Industrial Classification of All Economic Activities (ISIC), Rev. 4, United Nations (2008): <a href=\"https://unstats.un.org/unsd/cr/registry/isic-4.\">https://unstats.un.org/unsd/cr/registry/isic-4.</a></p><p> International Standard Classification of Education (ISCED) 2011, UNESCO-UIS (2012): www.uis.unesco.org/Education/Documents/isced-2011-en.pdf. </p><p>International Standard Classification of Occupations (ISCO), International Labour Organization (2012): www.ilo.org/public/english/bureau/stat/isco/isco08/index.html</p>");
+        var propertyEditor = editor.getEditor('root.CLASS_SYSTEM');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CLASS_SYSTEM');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>MESTI, 2022</p>");
+        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SOURCE_TYPE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
@@ -691,14 +831,56 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Environment, Science, Technology and Innovation (MESTI)</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service </p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator is a direct measure of Research and development (R&amp;D) spending referred to in the target.</p>");
+        var propertyEditor = editor.getEditor('root.RATIONALE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: RATIONALE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
@@ -866,12 +1048,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221009030440'></script>
+<script src='/site/assets/js/sdg.js?v=20221009045408'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221009030440"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221009045408"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

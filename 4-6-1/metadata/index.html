@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221009030440">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221009045408">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221009030440">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221009045408">
         
 
         
@@ -913,6 +913,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Proportion of youth and adults who have achieved at least a fixed level of proficiency as defined for large-<br/>scale (sample representative) adult literacy and numeracy assessments:</p><p>𝑃𝐹𝐿𝑃𝑡,𝑎,𝑑 =</p><p>where:<br/>PFLPt,a,d = the proportion of people in a skills survey in age group a, in year t, who have achieved or<br/>exceeded the fixed level of proficiency in domain d.<br/>FLPt,a,d = the number of people in a skills survey in age group a, in year t, who have achieved or exceeded<br/>the fixed level of proficiency in domain d.<br/>Pt,a,d = the total number of people in age group a, in year t, who participated in the skills survey of<br/>domain d.<br/>a = 16-65 years (youth and adults).<br/>d = the domain which was assessed (literacy or numeracy).</p>");
+        var propertyEditor = editor.getEditor('root.DATA_COMP');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_COMP');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -1104,12 +1118,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221009030440'></script>
+<script src='/site/assets/js/sdg.js?v=20221009045408'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221009030440"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221009045408"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

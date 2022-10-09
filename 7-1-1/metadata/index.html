@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221009030440">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221009045408">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221009030440">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221009045408">
         
 
         
@@ -641,20 +641,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.un_designated_tier'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR_INFO', "<p>Propotion of population with access to Electricity (i.e. connected to the national grid, private generator or solar).</p>");
-        var propertyEditor = editor.getEditor('root.SDG_INDICATOR_INFO');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_INDICATOR_INFO');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
     
@@ -707,6 +693,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('META_LAST_UPDATE', "<p>2022-9-13</p>");
+        var propertyEditor = editor.getEditor('root.META_LAST_UPDATE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: META_LAST_UPDATE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
@@ -761,7 +761,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition:</p><p>Proportion of population with access to electricity is the percentage of population with access to electricity.</p><p>SDG7 ensures access to affordable, reliable, sustainable and modern energy for all. Specifically, Indicator 7.1.1 refers to the proportion of population with access to electricity. This is expressed in percentage figures and is disaggregated by total, urban and rural access rates per country, as well as by UN regional and global classifications. </p><p>Concepts:</p><p>Electricity access in this scenario refers to the proportion of population in the considered area (country, region or global context) that has access to consistent sources of electricity. </p><p>The World Bank’s Global Electrification Database compiles nationally representative household survey data as well as census data from 1990 to 2019. It also incorporates data from the Socio-Economic Database for Latin America and the Caribbean, the Middle East and North Africa Poverty Database, and the Europe and Central Asia Poverty Database, all of which are based on similar surveys. At the time of this analysis, the Global Electrification Database contained 1,282 surveys from 139 countries, excluding surveys from high-income countries as classified by the United. </p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition:</p><p>Proportion of population with access to electricity (i.e. connected to the national grid, private generator or solar) is the percentage of population with access to electricity.</p><p>SDG7 ensures access to affordable, reliable, sustainable and modern energy for all. Specifically, Indicator 7.1.1 refers to the proportion of population with access to electricity. This is expressed in percentage figures and is disaggregated by total, urban and rural access rates per country, as well as by UN regional and global classifications. </p><p>Concepts:</p><p>Electricity access in this scenario refers to the proportion of population in the considered area (country, region or global context) that has access to consistent sources of electricity. </p><p>The World Bank’s Global Electrification Database compiles nationally representative household survey data as well as census data from 1990 to 2019. It also incorporates data from the Socio-Economic Database for Latin America and the Caribbean, the Middle East and North Africa Poverty Database, and the Europe and Central Asia Poverty Database, all of which are based on similar surveys. At the time of this analysis, the Global Electrification Database contained 1,282 surveys from 139 countries, excluding surveys from high-income countries as classified by the United. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -797,7 +797,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>GLSS Round 6, 2014; Round, 7, 2019 and PBB, MoE,2019</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey (GLSS) Round 6, 2014; Round, 7, 2019 </p><p>PBB, MoE,2019</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -817,14 +817,56 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service (GSS)</p><p>Ministry of Energy (MoE)</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical service</p>");
+        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COMPILING_ORG');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Access to electricity addresses major critical issues in all the dimensions of sustainable development. The target has a wide range of social and economic impacts, including facilitating development of income generating activities and lightening the burden of household tasks. Under the global target of equal access to energy, SDG7.1.1 focuses specifically on electricity access available to the global population. In order to gain a clear picture, access rates are only considered if the primary source of lighting is the local electricity provider, solar systems, mini-grids and stand-alone systems. Sources such as generators, candles, batteries, etc., are not considered due to their limited working capacities and since they are usually kept as backup sources for lighting.</p>");
+        var propertyEditor = editor.getEditor('root.RATIONALE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: RATIONALE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
@@ -1006,12 +1048,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221009030440'></script>
+<script src='/site/assets/js/sdg.js?v=20221009045408'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221009030440"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221009045408"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
