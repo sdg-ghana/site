@@ -3354,3 +3354,10 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
   margin-right: auto;
   width: 50%;
   max-width: 150px; }
+
+.navbar-brand {
+  display: block;
+  width: 100%;
+  max-width: 2000px;
+  padding: 15px;
+  height: auto; }
