@@ -6,3 +6,22 @@
   padding: 15px;
   height: auto;
 }
+
+
+.site-intro {
+  padding-right: 300px;
+  min-height: 180px;
+  background: url("../SDG_logo.png");
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: url("../SDG_logo.png");
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+  background-position: right 60px top;
+  background-size: 180px;
+  background-repeat: no-repeat;
+}
