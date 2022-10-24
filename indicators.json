@@ -2113,13 +2113,13 @@
   },
   {
     "goal": {
-      "id": "covid",
-      "title": "global_goals.covid-title",
+      "id": "",
+      "title": "",
       "indicators": [
         
         {
           "id": "covid-1",
-          "title": "Covid 1",
+          "title": "COVID-19 impact on work and income of households in Ghana",
           "description": "",
           "keywords": "",
           "href": "/site//covid-indicator-1",
@@ -2127,26 +2127,26 @@
         },
         {
           "id": "covid-2",
-          "title": "global_indicators.covid-2-title",
+          "title": "Indications of recovery relating to SDG Goal 2",
           "description": "",
           "keywords": "",
-          "href": "/site/covid-2",
+          "href": "/site//covid-indicator-2",
           "status": "complete"
         },
         {
           "id": "covid-3",
-          "title": "global_indicators.covid-3-title",
+          "title": "Health impact of COVID-19",
           "description": "",
           "keywords": "",
-          "href": "/site/covid-3",
+          "href": "/site//covid-indicator-3",
           "status": "complete"
         },
         {
           "id": "covid-4",
-          "title": "global_indicators.covid-4-title",
+          "title": "Indications of recovery relating to SDG Goal 4",
           "description": "",
           "keywords": "",
-          "href": "/site/covid-4",
+          "href": "/site//covid-indicator-4",
           "status": "complete"
         }]
     }
