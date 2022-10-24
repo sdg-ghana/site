@@ -2113,8 +2113,8 @@
   },
   {
     "goal": {
-      "id": "",
-      "title": "",
+      "id": "covid",
+      "title": "global_goals.covid-title",
       "indicators": [
         
         {
@@ -2123,6 +2123,30 @@
           "description": "",
           "keywords": "",
           "href": "/site//covid-indicator-1",
+          "status": "complete"
+        },
+        {
+          "id": "covid-2",
+          "title": "global_indicators.covid-2-title",
+          "description": "",
+          "keywords": "",
+          "href": "/site/covid-2",
+          "status": "complete"
+        },
+        {
+          "id": "covid-3",
+          "title": "global_indicators.covid-3-title",
+          "description": "",
+          "keywords": "",
+          "href": "/site/covid-3",
+          "status": "complete"
+        },
+        {
+          "id": "covid-4",
+          "title": "global_indicators.covid-4-title",
+          "description": "",
+          "keywords": "",
+          "href": "/site/covid-4",
           "status": "complete"
         }]
     }
