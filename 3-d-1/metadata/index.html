@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221031231142">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221031232105">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221031231142">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221031232105">
         
 
         
@@ -767,6 +767,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>World Health Organisation (WHO)</p>");
+        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: CONTACT_ORGANISATION');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -783,8 +797,36 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><a href=\"https://www.who.int/health-topics/international-health-regulations\">International Health Regulations (IHR)</a> - The IHR provide an overarching legal framework that defines countries’ rights and obligations in handling public health events and emergencies that have the potential to cross borders. They are an instrument of international law that is legally-binding on 196 countries, including the 194 WHO Member States.</p><p>Core capacities - The public health capacities required to detect, assess, notify and report events, and respond to public health risks and emergencies of national and international concern. States Parties are required to have these in place throughout their territories pursuant to Articles 5 and 12, and Annex 1A of the <a href=\"http://apps.who.int/iris/bitstream/10665/43883/1/9789241580410_eng.pdf\">IHR (2005)</a> requirements by the year 2012. The thirteen core capacities defined in this document are shown under the IHR core capacity dropdown.</p>");
+        var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: STAT_CONC_DEF');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent (%)</p>");
+        var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: UNIT_MEASURE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
@@ -809,8 +851,36 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p>Data is based on self-assessment by Ghana.</p><p>Scores give the percentage of attributes that have been attained for each core capacity using a standard WHO instrument (questionnaire).</p>");
+        var propertyEditor = editor.getEditor('root.REC_USE_LIM');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: REC_USE_LIM');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.</p>");
+        var propertyEditor = editor.getEditor('root.DATA_COMP');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_COMP');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -829,13 +899,27 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('other_info', "Ghana is a party to the [International Health Regulation (IHR)](https://www.who.int/health-topics/international-health-regulations) designed to help protect all States from the international spread of diseases. Some achievements under the IHR include:\n\n- Establishment of a National IHR Focal Point located at the [Disease Surveillance Department](https://ghs.gov.gh/disease-surveillance-department/) of Ghana Health Service (GHS)\n\n- Regular monitoring of the progress of implementation of the IHR by the WHO Secretariat\n\n- Ghana has adopted the [Second Edition IDSR Guidelines](https://www.cdc.gov/globalhealth/healthprotection/idsr/pdf/technicalguidelines/idsr-technical-guidelines-2nd-edition_2010_english.pdf), which also promotes [IHR (2005)](https://apps.who.int/iris/bitstream/handle/10665/246107/9789241580496-eng.pdf) implementation\n\n- Development of IHR Website\n\n- Training of staff at designated Points of Entry on IHR Core capacity requirements \n\nKindly refer to the [Overview of International Health Regulations 2005 (Ghana 2017)](https://www.afro.who.int/sites/default/files/2017-10/TEACHING%20PANEL%20final.pdf) for more information.");
+        var propertyEditor = editor.getEditor('root.other_info');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: other_info');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.national_data_updated_date'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('national_metadata_updated_date', "2022-10-27");
+        var currentValue = normalizeCurrentValue('national_metadata_updated_date', "2022-10-31");
         var propertyEditor = editor.getEditor('root.national_metadata_updated_date');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -988,12 +1072,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221031231142'></script>
+<script src='/site/assets/js/sdg.js?v=20221031232105'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221031231142"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221031232105"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
