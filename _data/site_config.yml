@@ -137,7 +137,7 @@ frontpage_introduction_banner:
     Development</a>.
     
     
-    Ghanaian data for the Sustainable Development Goals are collated and reported here.
+    Ghana data for the Sustainable Development Goals are collated and reported here.
 goal_image_base: 'https://open-sdg.org/sdg-translations/assets/img/goals'
 goal_image_extension: ''
 goals_page:
@@ -281,7 +281,7 @@ reporting_status:
     report](https://sdgs-ghana.github.io/production-data/disaggregations.html).
     
     
-    Note: These percentages have been rounded. As a result, adding them together
+    Note: These percentages have been rounded up. As a result, adding them together
     may not equal exactly 100%.'
   disaggregation_tabs: true
 search_index_boost: []
