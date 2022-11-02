@@ -21,7 +21,7 @@ breadcrumbs:
 contrast_type: default
 country:
   name: Ghana
-  adjective: Ghanaian
+  adjective: Ghana
 create_goals:
   layout: goal-by-target-vertical
   previous_next_links: false
