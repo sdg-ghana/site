@@ -19,4 +19,6 @@ The NRP is also linked to the GSS website which can be accessed at https://stats
 
 If you have any feedback on this National Reporting Platform, kindly contact us via email: sdg.secretariat@statsghana.gov.gh
 
-If you have any feedback on this website or SDG data then please contact us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>. The answers to some frequently asked questions are also available in our [FAQ]({{ site.baseurl }}/faq/).
+If you have any feedback on this website or SDG data then please contact us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>. 
+
+The answers to some frequently asked questions are also available on our [FAQ] page({{ site.baseurl }}/faq/).
