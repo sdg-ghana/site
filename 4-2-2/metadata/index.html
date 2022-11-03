@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221103104459">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221103105541">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221103104459">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221103105541">
         
 
         
@@ -909,6 +909,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The number of children in the relevant age group who participate in an organized learning programme is expressed as a percentage of the total population in the same age range. The indicator can be calculated both from administrative data and from household surveys. If the former, the number of enrolments in organized learning programmes are reported by schools and the population in the age group one year below the official primary entry age is derived from population estimates. For the calculation of this indicator at the global level, population estimates from the UN Population Division are used. If derived from household surveys, both enrolments and population are collected at the same time. (PROL0t1,AG(a-1) = E0t1,AG(a-1)) SAPAG(a-1) where (PROL0t1,AG(a-1) = participation rate in organized learning one year before the official entry age a to primary education, E0t1,AG(a-1) = enrolment in early childhood or primary education (ISCED levels 0 and 1) aged one year below the official entry age a to primary education, SAPAG(a-1) = school-age population aged one year below the official entry age a to primary education).</p>");
+        var propertyEditor = editor.getEditor('root.DATA_COMP');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_COMP');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -923,7 +937,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has been disaggregated by sex, regions, urban and rural areas </p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has not been disaggregated </p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -941,7 +955,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/\">SDG Indicators — SDG Indicators (un.org)</a></p>");
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/\">SDG Indicators — SDG Indicators (un.org)</a></p><p>https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/MICS%20SFR%20final_compressed.pdf</p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1114,12 +1128,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221103104459'></script>
+<script src='/site/assets/js/sdg.js?v=20221103105541'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221103104459"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221103105541"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
