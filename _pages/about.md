@@ -11,7 +11,7 @@ Ghana Statistical Service (GSS), as part of its legal mandate as the National St
 
 GSS is working in collaboration with the Ministries, Departments and Agencies (MDAs) and other stakeholders within the National Statistical System (NSS) to produce data for the SDGs.
 
-The data on the NRP is user-friendly as it is presented in open, transparent, accessible and re-usable formats. Other key features of the NRP include interactive maps, as well as metadata which describe the data provided.
+The data on the NRP is user-friendly as it is presented in open, transparent, accessible and re-usable formats. Other key features of the NRP include interactive maps, as well as metadata which describes the data provided.
 
 The NRP is still at an Alpha stage in development. As a result, it is still 'work in progress'.
 
