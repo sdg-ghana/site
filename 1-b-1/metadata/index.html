@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221107102156">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221107104042">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221107102156">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221107104042">
         
 
         
@@ -783,7 +783,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Health, Ministry of Energy</p>");
+        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Health</p><p>Ministry of Energy</p>");
         var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -813,7 +813,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Proportion of government spending towards health and education and direct transfers which benefit directly the monetary poor. Government spending measures public expenditures on health and education services. Direct transfers refer to cash transfers and near-cash transfers. The definition of the monetary poor follows national standards, with poverty levels determined by national definition of income or consumption poverty (consistent with SDG 1.2.1). </p><p><strong>Concepts:</strong></p><p><u>Proportion of public spending:</u> Expenditures by governments on health, education and direct transfers (cash transfers and near-cash transfers).  The poor: Monetary Poverty as determined by national definition of income/consumption poverty (consistent with SDG 1.2.1).</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Proportion of government spending towards health and education and direct transfers which benefit directly the monetary poor. Government spending measures public expenditures on health and education services. Direct transfers refer to cash transfers and near-cash transfers. The definition of the monetary poor follows national standards, with poverty levels determined by national definition of income or consumption poverty (consistent with SDG 1.2.1). </p><p><strong>Concepts:</strong></p><p>Proportion of public spending: Expenditures by governments on health, education and direct transfers (cash transfers and near-cash transfers).  The poor: Monetary Poverty as determined by national definition of income/consumption poverty (consistent with SDG 1.2.1).</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -829,7 +829,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,7 +849,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Budget and performance report of MoH, MoE, 2016 to 2018</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Budget and performance report of Ministry of Health and Ministry of Energy, 2016 - 2018</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -885,20 +885,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -951,7 +937,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data does not have a disaggregation</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for the indicator.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1142,12 +1128,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221107102156'></script>
+<script src='/site/assets/js/sdg.js?v=20221107104042'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221107102156"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221107104042"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
