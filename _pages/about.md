@@ -17,4 +17,4 @@ The NRP is still at an Alpha stage in development. As a result, it is still 'wor
 
 The NRP is also linked to the GSS website which can be accessed at [https://www.statsghana.gov.gh](https://statsghana.gov.gh/)
 
-If you have any feedback on this National Reporting Platform or SDG data then please contact us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>. The answers to some frequently asked questions are also available in our [FAQ]({{ site.baseurl }}/faq/).
+If you have any feedback on this National Reporting Platform or SDG data, then please contact us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>. The answers to some frequently asked questions are also available in our [FAQ]({{ site.baseurl }}/faq/).
