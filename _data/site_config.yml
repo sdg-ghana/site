@@ -115,9 +115,9 @@ frontpage_cards:
     button_link: ''
     rule_color: ''
 frontpage_goals_grid:
-  title: Ghana data for the Sustainable Development Goal indicators
+  title: Ghana data for the Sustainable Development Goals indicators
   description: >-
-    Click on each goal for Ghanaian Sustainable Development Goal global
+    Click on each goal for Ghanaian Sustainable Development Goals global
     indicator data.
 frontpage_heading: ''
 frontpage_instructions: ''
@@ -265,15 +265,13 @@ reporting_status:
       hide_on_goal_pages: false  
   title: 'Reporting Status'
   description: 'Reporting status provides an overview of how much Sustainable Development
-    Goal (SDG) data Ghana reports. For more information, see [What does the
+    Goals (SDGs) data Ghana reports on. For more information, see [What does the
     reporting status
     mean?](https://sdgs-ghana.github.io/faq/#what-does-the-reporting-status-mean)
     
     
     Disaggregation status provides an overview of how many of the SDG indicators
-    are disaggregated. For more information, see [What does the disaggregation
-    status
-    mean?](https://sdgs-ghana.github.io/faq/#what-does-the-disaggregation-status-mean)
+    are disaggregated. For more information, see the disaggregation status tab below.
     
     
     For details about all available disaggregations and how each indicator is
@@ -281,7 +279,7 @@ reporting_status:
     report](https://sdgs-ghana.github.io/production-data/disaggregations.html).
     
     
-    Note: These percentages have been rounded. As a result, adding them together
+    Note: These percentages have been rounded up. As a result, adding them together
     may not equal exactly 100%.'
   disaggregation_tabs: true
 search_index_boost: []
