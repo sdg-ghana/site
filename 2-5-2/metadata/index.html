@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108103848">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108104514">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108103848">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108104514">
         
 
         
@@ -711,52 +711,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR_INFO'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p><strong>Goal 2: </strong>End hunger, achieve food security and improved nutrition, and promote sustainable</p><p>agriculture</p>");
-        var propertyEditor = editor.getEditor('root.SDG_GOAL');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_GOAL');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_GOAL'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p><strong>Target 2.5: </strong>By 2020, maintain the genetic diversity of seeds, cultivated plants and farmed and</p><p>domesticated animals and their related wild species, including through soundly managed and</p><p>diversified seed and plant banks at the national, regional and international levels, and promote</p><p>access to and fair and equitable sharing of benefits arising from the utilization of genetic resources</p><p>and associated traditional knowledge, as internationally agreed</p>");
-        var propertyEditor = editor.getEditor('root.SDG_TARGET');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_TARGET');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_TARGET'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p><strong>Indicator 2.5.2</strong>: Proportion of local breeds classified as being at risk, not-at-risk or at unknown</p><p>level of risk of extinction</p>");
-        var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_INDICATOR');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
@@ -767,20 +725,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Forestry Commission, MoFA: National Coordinator for the Management of Animal Genetic Resources (NCs).</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -797,72 +741,16 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The indicator presents the percentage of local livestock breeds among local breeds with known risk status classified as being at risk of extinctions at a certain moment in time, as well as the trends for this percentage.</p><p><strong>Concepts</strong>:</p><p>A similar indicator was originally proposed for the Target 15.5, and it serves also as an indicator for the Aichi Target 13 “Genetic Diversity of Terrestrial Domesticated Animals” under the Convention on Biological Diversity (CBD). It is described on the webpage of the Biodiversity Indicators Partnership (BIP), a network of organizations, which have come together to provide the most up-to date biodiversity</p><p>information possible for tracking progress towards the Aichi Targets (http://www.bipindicators.net/domesticatedanimals). Further, it is presented in the Global Biodiversity Outlook 4, page 91 (see https://www.cbd.int/gbo/gbo4/publication/gbo4-en.pdf ) which is an output of the processes under the CBD.</p>");
-        var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: STAT_CONC_DEF');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.STAT_CONC_DEF'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent</p>");
-        var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: UNIT_MEASURE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.UNIT_MEASURE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CLASS_SYSTEM'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.SRC_TYPE_COLL_METHOD'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Forestry Commission and MoFA</p>");
-        var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SOURCE_TYPE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COLL_METHOD', "<p>The underlying data base DAD-IS is maintained by FAO/AGAG (see http://dad.fao.org/). Data entry is possible all over the year.</p>");
-        var propertyEditor = editor.getEditor('root.COLL_METHOD');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COLL_METHOD');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
@@ -877,52 +765,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_METHOD'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator has a direct link to “biodiversity” as animal or livestock genetic resources represent</p><p>an integral part of agricultural ecosystems and biodiversity as such. Further there are indirect links</p><p>to “malnutrition”: Animal genetic resources for food and agriculture are an essential part of the</p><p>biological basis for world food security, and contribute to the livelihoods of over a thousand million</p><p>people. A diverse resource base is critical for human survival and well-being, and a contribution</p><p>to the eradication of hunger: animal genetic resources are crucial in adapting to changing socioeconomic</p><p>and environmental conditions, including climate change. They are the animal breeder’s</p><p>raw material and amongst the farmer’s most essential inputs. They are essential for sustainable</p><p>agricultural production.</p>");
-        var propertyEditor = editor.getEditor('root.RATIONALE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: RATIONALE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p>Breed-related information remains far from complete. For almost 60 percent of all reported breeds,</p><p>risk status is not known because of missing population data or lack of recent updates. Updating of</p><p>population size data at least each 10 years is needed for the definition of the risk classes.</p>");
-        var propertyEditor = editor.getEditor('root.REC_USE_LIM');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: REC_USE_LIM');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Risk classes are defined based on population sizes of breeds reported to DAD-IS. The risk class is</p><p>considered to be “unknown” if (i) no population sizes are reported or (ii) the most recent population</p><p>size reported refers to a year more than 10- years before the year of calculation (10 year cut off</p><p>point).</p><p>Links to official definitions/descriptions of the indicator are reported below:</p><p>The indicator is one out of a set of 3 sub-indicators which are defined in the document CGRFA/</p><p>WG-AnGR-7/12/7 “Targets and indicators for animal genetic resources” (http://www.fao.org/</p><p>docrep/meeting/026/me514e.pdf) and that are endorsed in their current form by the Commission</p><p>on Genetic Resources for Food and Agriculture at its the 14th Session (see par 28 CRRFA-14/13/</p><p>Report at http://www.fao.org/docrep/meeting/028/mg538e.pdf). Risk classes are defined based on population sizes of breeds reported to DAD-IS. The risk class is</p><p>considered to be “unknown” if (i) no population sizes are reported or (ii) the most recent population</p><p>size reported refers to a year more than 10- years before the year of calculation (10 year cut off</p><p>point).</p><p>Links to official definitions/descriptions of the indicator are reported below:</p><p>The indicator is one out of a set of 3 sub-indicators which are defined in the document CGRFA/</p><p>WG-AnGR-7/12/7 “Targets and indicators for animal genetic resources” (http://www.fao.org/</p><p>docrep/meeting/026/me514e.pdf) and that are endorsed in their current form by the Commission</p><p>on Genetic Resources for Food and Agriculture at its the 14th Session (see par 28 CRRFA-14/13/</p><p>Report at http://www.fao.org/docrep/meeting/028/mg538e.pdf).</p>");
-        var propertyEditor = editor.getEditor('root.DATA_COMP');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: DATA_COMP');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -931,70 +777,14 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('QUALITY_ASSURE', "<p>Described in section 7 of FAO. 2011. Surveying and monitoring of animal genetic resources.</p><p>FAO Animal Production and Health Guidelines. No. 7. Rome. (available at http://www.fao.org/</p><p>docrep/014/ba0055e/ba0055e00.htm)</p><p>The guidelines were presented to and endorsed by the Commission on Genetic Resources for Food</p><p>and Agriculture at its Thirteenth Regular Session in July 2011.</p>");
-        var propertyEditor = editor.getEditor('root.QUALITY_ASSURE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: QUALITY_ASSURE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p><strong>Data availability</strong></p><p>Forestry Commission, MoFA</p>");
-        var propertyEditor = editor.getEditor('root.COVERAGE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COVERAGE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPARABILITY', "<p><em>Any references and documentation that help with understanding of the data for this indicator</em></p><p><strong>URL:</strong></p><p>http://dad.fao.org/</p>");
-        var propertyEditor = editor.getEditor('root.COMPARABILITY');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPARABILITY');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Funstats.un.org%2Fsdgs%2Fmetadata%2Ffiles%2FMetadata-02-05-02.docx&amp;wdOrigin=BROWSELINK\">Metadata-02-05-02.docx (live.com)</a></p>");
-        var propertyEditor = editor.getEditor('root.OTHER_DOC');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: OTHER_DOC');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1156,12 +946,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221108103848'></script>
+<script src='/site/assets/js/sdg.js?v=20221108104514'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221108103848"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221108104514"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
