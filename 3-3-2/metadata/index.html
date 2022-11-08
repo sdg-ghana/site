@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108175048">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108175938">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108175048">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108175938">
         
 
         
@@ -765,7 +765,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Indicators associated with TB incidence:  numbers: 1.1.1, 1.3.1, 2.1.1, 3.3.1, 3.4.1, 3.5.2, 3.a.1, 3.8.1, 3.8.2, 7.1.2, 8.1.1, 10.1.1, 11.1.1</p>");
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>2.1.1</p><p>3.3.1</p><p>3.4.1</p><p>3.8.1 </p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -781,20 +781,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Health</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -813,7 +799,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> </p><p>The tuberculosis incidence per 100 000 population is defined as the estimated number of new and relapse TB cases (all forms of TB, including cases in people living with HIV) arising in a given year, expressed as a rate per 100 000 population. </p><p> </p><p> </p><p><strong>Concepts:</strong>  </p><p>Direct measurement requires high-quality surveillance systems in which underreporting is negligible, and strong health systems so that under-diagnosis is also negligible; otherwise indirect estimates are based on notification data and estimates of levels of underreporting and under-diagnosis. </p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> </p><p>The tuberculosis incidence per 100,000 population is defined as the estimated number of new and relapse TB cases (all forms of TB, including cases in people living with HIV) arising in a given year, expressed as a rate per 100,000 population. </p><p> </p><p> <strong>Concepts:</strong>  </p><p>Direct measurement requires high-quality surveillance systems in which under-reporting is negligible, and strong health systems so that under-diagnosis is also negligible; otherwise indirect estimates are based on notification data and estimates of levels of under-reporting and under-diagnosis. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -829,7 +815,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Number of cases per 100 000 population per year.</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Per 100,000 population</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,7 +835,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>MOH, Holistic Assessment of Health Sector Programme of Work, 2018</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Holistic Assessment of Health Sector Programme of Work, 2018</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -871,7 +857,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Health</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Health (MoH)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -885,20 +871,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -907,7 +879,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Following two years of consultations, a post-2015 global tuberculosis strategy was endorsed by the World Health Assembly in May 2014. Known as the End TB Strategy, it covers the period 2016-2035. The overall goal is to “End the global tuberculosis epidemic”, and correspondingly ambitious targets for reductions in tuberculosis deaths and cases are set for 2030 (80% reduction in incidence rate compared with the level of 2015) and 2035 (90% reduction in incidence rate), in the context of the SDGs.</p><p>The tuberculosis incidence rate was selected as an indicator for measuring reductions in the number of cases of disease burden. Although this indicator was estimated with considerable uncertainty in most countries in 2014, notifications of cases to national authorities provide a good proxy if there is limited under-reporting of detected cases and limited under or over-diagnosis of cases.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p> The overall goal is to “End the global tuberculosis epidemic”, and correspondingly ambitious targets for reductions in tuberculosis deaths and cases are set for 2030 (80% reduction in incidence rate compared with the level of 2015) and 2035 (90% reduction in incidence rate), in the context of the SDGs.</p><p>The tuberculosis incidence rate was selected as an indicator for measuring reductions in the number of cases of disease burden. Although this indicator was estimated with considerable uncertainty in most countries in 2014, notifications of cases to national authorities provide a good proxy if there is limited under-reporting of detected cases and limited under or over-diagnosis of cases.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -951,7 +923,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has no disaggregation</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1128,12 +1100,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221108175048'></script>
+<script src='/site/assets/js/sdg.js?v=20221108175938'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221108175048"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221108175938"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
