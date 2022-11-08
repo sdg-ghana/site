@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108102651">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108103340">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108102651">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108103340">
         
 
         
@@ -713,7 +713,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 1. End poverty in all its forms everywhere</p>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 1: End poverty in all its forms everywhere</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -729,7 +729,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 1.a. Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programs and policies to end poverty in all its dimensions.</p>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 1.a: Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programs and policies to end poverty in all its dimensions.</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -781,20 +781,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Finance (MoF)</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -849,7 +835,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>2019 Sustainable Development Goals (SDGs) Report</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>2019 Sustainable Development Goals (SDGs) Budget Report</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -923,7 +909,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has been disaggregated into source of funds</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has been disaggregated into source of funds.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1114,12 +1100,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221108102651'></script>
+<script src='/site/assets/js/sdg.js?v=20221108103340'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221108102651"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221108103340"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
