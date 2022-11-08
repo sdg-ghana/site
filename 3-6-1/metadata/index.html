@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108212951">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108215508">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108212951">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108215508">
         
 
         
@@ -763,38 +763,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>3.5, 11.2</p>");
-        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Health</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -813,7 +785,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Death rate due to road traffic injuries as defined as the number of road traffic fatal injury deaths per 100,000 population.</p><p><strong>Concepts:</strong></p><p>Numerator: Number of deaths due to road traffic crashes</p><p>Absolute figure indicating the number of people who die as a result of a road traffic crash.</p><p>Denominator: Population (number of people by country)</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Death rate due to road traffic injuries is defined as the number of road traffic fatal injury deaths per 100,000 population. Absolute figure indicating the number of people who die as a result of a road traffic crash.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -871,7 +843,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Health</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Health (MoH)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -885,20 +857,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -937,7 +895,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data is not disaggregated</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -975,7 +933,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('national_metadata_updated_date', "2022-10-10");
+        var currentValue = normalizeCurrentValue('national_metadata_updated_date', "2022-11-08");
         var propertyEditor = editor.getEditor('root.national_metadata_updated_date');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1128,12 +1086,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221108212951'></script>
+<script src='/site/assets/js/sdg.js?v=20221108215508'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221108212951"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221108215508"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
