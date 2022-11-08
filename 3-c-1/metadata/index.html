@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108224329">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108225356">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108224329">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108225356">
         
 
         
@@ -781,20 +781,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service (GSS), Ministry of Health</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -813,7 +799,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Health worker densities by occupation</strong></p><p><strong>Definition:</strong></p><p>Density of medical doctors: The density of medical doctors is defined as the number of medical doctors, including generalists and specialist medical practitioners per 10,000 population in the given national and/or subnational area. The International Standard Classification of Occupations (ISCO) unit group codes included in this category are 221, 2211 and 2212 of ISCO-08.</p><p>Density of nursing and midwifery personnel: The density of nursing and midwifery personnel is defined as the number of nursing and midwifery personnel per 10,000 population in the given national and/or</p><p>subnational area. The ISCO-08 codes included in this category are 2221, 2222, 3221 and 3222.</p><p>Density of dentists: The density of dentists is defined as the number of dentists per 10,000 population in the given national and/or subnational area. The ISCO-08 codes included in this category are 2261.</p><p>Density of pharmacists: The density of pharmacists is defined as the number of pharmacists per 10,000 population in the given national and/or subnational area. The ISCO-08 codes included in this category are 2262.</p><p>Health worker distribution by sex</p><p>Percentage of male medical doctors: Male doctors as percentage of all medical doctors at national level. The ISCO-08 codes included in this category are 221, 2211 and 2212.</p><p>Percentage of female medical doctors: Female doctors as percentage of all medical doctors at national level. The ISCO-08 codes included in this category are 221, 2211 and 2212.</p><p>Percentage of male nursing personnel: Male nursing personnel as percentage of all nursing personnel at national level. The ISCO-08 codes included in this category are 2221 and 3221.</p><p>Percentage of female nursing personnel: Female nursing personnel as percentage of all nursing personnel at national level. The ISCO-08 codes included in this category are 2221 and 3221.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Density of medical doctors: The density of medical doctors is defined as the number of medical doctors, including generalists and specialist medical practitioners per 10,000 population in the given national and/or subnational area. <a href=\"https://www.ilo.org/public/english/bureau/stat/isco/isco08/\">The International Standard Classification of Occupations (ISCO) unit group codes</a> included in this category are 221, 2211 and 2212 of ISCO-08.</p><p>Density of nursing and midwifery personnel: The density of nursing and midwifery personnel is defined as the number of nursing and midwifery personnel per 10,000 population in the given national and/or subnational area.The ISCO-08 codes included in this category are 2221, 2222, 3221 and 3222.</p><p>Density of dentists: The density of dentists is defined as the number of dentists per 10,000 population in the given national and/or subnational area. The ISCO-08 codes included in this category are 2261.</p><p>Density of pharmacists: The density of pharmacists is defined as the number of pharmacists per 10,000 population in the given national and/or subnational area. The ISCO-08 codes included in this category are 2262.</p><p><strong>Health worker distribution by sex</strong></p><p>Percentage of male medical doctors: Male doctors as percentage of all medical doctors at national level. The ISCO-08 codes included in this category are 221, 2211 and 2212.</p><p>Percentage of female medical doctors: Female doctors as percentage of all medical doctors at national level. The ISCO-08 codes included in this category are 221, 2211 and 2212.</p><p>Percentage of male nursing personnel: Male nursing personnel as percentage of all nursing personnel at national level. The ISCO-08 codes included in this category are 2221 and 3221.</p><p>Percentage of female nursing personnel: Female nursing personnel as percentage of all nursing personnel at national level. The ISCO-08 codes included in this category are 2221 and 3221.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,7 +835,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Holistic Assessment of the Health Sector, 2021</p><p>2022 Ghana Voluntary National Review Report </p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Holistic Assessment of the Health Sector Programme of Work</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -871,7 +857,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Health, Ghana Statistical Service</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Health (MoH)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -885,20 +871,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service (GSS)</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -907,7 +879,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>A health workforce of adequate size and skill mix, as well as required teachers and trainers, are critical to the attainment of any population health goal. This includes the achievement of universal health coverage and the health-related targets of the United Nations Sustainable Development Goals.<br/><br/>Yet countries globally are affected by health workforce challenges of a multifaceted nature, such as difficulties in the education and training, deployment, performance and retention of their health workforces. A suboptimal allocation of health workers is one of the main challenges that directly influences the availability, accessibility, quality and performance of national health services. In the worst case, this may leave populations with inadequate access to the health services they need. It is clear that efforts to achieve the SDGs and UHC are thwarted by these health workforce challenges.<br/><br/>Therefore, the World Health Organization (WHO) and its partners developed the Global Strategy on Human Resources for Health: Workforce 2030 (GSHRH), which sets out the policy agenda to ensure a health workforce that is fit for purpose to attain the targets of UHC and the SDGs (WHO 2016c).</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>A health workforce of adequate size and skill mix, as well as required teachers and trainers, are critical to the attainment of any population health goal. This includes the achievement of universal health coverage and the health-related targets of the United Nations Sustainable Development Goals.<br/> A suboptimal allocation of health workers is one of the main challenges that directly influences the availability, accessibility, quality and performance of national health services. It is clear that efforts to achieve the SDGs and UHC are thwarted by these health workforce challenges.<br/>Therefore, the World Health Organization (WHO) and its partners developed the <a href=\"https://apps.who.int/iris/bitstream/handle/10665/250368/9789241511131-eng.pdf\">Global Strategy on Human Resources for Health: Workforce 2030 (GSHRH)</a>, which sets out the policy agenda to ensure a health workforce that is fit for purpose to attain the targets of UHC and the SDGs (WHO 2016).</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -937,7 +909,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p>The data has not been disaggregated</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1114,12 +1086,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221108224329'></script>
+<script src='/site/assets/js/sdg.js?v=20221108225356'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221108224329"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221108225356"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108224329">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221108225356">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108224329">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221108225356">
         
 
         
@@ -745,7 +745,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>3.d.1 International Health Regulations (IHR) capacity and health emergency preparedness</p>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 3.d.1 International Health Regulations (IHR) capacity and health emergency preparedness</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -799,7 +799,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><a href=\"https://www.who.int/health-topics/international-health-regulations\">International Health Regulations (IHR)</a> - The IHR provide an overarching legal framework that defines countries’ rights and obligations in handling public health events and emergencies that have the potential to cross borders. They are an instrument of international law that is legally-binding on 196 countries, including the 194 WHO Member States.</p><p>Core capacities - The public health capacities required to detect, assess, notify and report events, and respond to public health risks and emergencies of national and international concern. States Parties are required to have these in place throughout their territories pursuant to Articles 5 and 12, and Annex 1A of the <a href=\"http://apps.who.int/iris/bitstream/10665/43883/1/9789241580410_eng.pdf\">IHR (2005)</a> requirements by the year 2012. The thirteen core capacities defined in this document are shown under the IHR core capacity dropdown.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p><a href=\"https://www.who.int/health-topics/international-health-regulations\">International Health Regulations (IHR)</a> - The IHR provide an overarching legal framework that defines countries’ rights and obligations in handling public health events and emergencies that have the potential to cross borders. They are an instrument of international law that is legally-binding on 196 countries, including the 194 WHO Member States.</p><p>Core capacities - The public health capacities required to detect, assess, notify and report events, and respond to public health risks and emergencies of national and international concern. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -815,7 +815,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent (%)</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -841,6 +841,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>World Health Organisation (WHO)</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_SOURCE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
@@ -851,25 +865,11 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p>Data is based on self-assessment by Ghana.</p><p>Scores give the percentage of attributes that have been attained for each core capacity using a standard WHO instrument (questionnaire).</p>");
-        var propertyEditor = editor.getEditor('root.REC_USE_LIM');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: REC_USE_LIM');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.</p>");
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator.</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1072,12 +1072,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221108224329'></script>
+<script src='/site/assets/js/sdg.js?v=20221108225356'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221108224329"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221108225356"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
