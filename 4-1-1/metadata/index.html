@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221109023653">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221109055606">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221109023653">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221109055606">
         
 
         
@@ -713,7 +713,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/quality-education\">Goal 4: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 4: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -745,7 +745,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 4.1.1: Proportion of children and young people: (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 4.1.1: Proportion of children and young people: (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -779,7 +779,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>The parity indices for this indicator are reported in SDG indicator 4.5.1.</p>");
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>4.5.1.</p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -795,20 +795,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Education Service, Ministry of Education</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -827,7 +813,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Percentage of children and young people achieving at least a minimum proficiency level in (i) reading and (ii) mathematics during primary education (Grade 2 or 3), at the end of primary education, and at the end of lower secondary education. The minimum proficiency level will be measured relative to new common reading and mathematics scales currently in development.</p><p><strong>Concepts:</strong></p><p><em>Minimum proficiency level (MPL)</em> is the benchmark of basic knowledge in a domain (mathematics, reading, etc.) measured through learning assessments. In September 2018, an agreement was reached on a verbal definition of the global minimum proficiency level of reference for each of the areas and domains of Indicator 4.1.1 as described in the <a href=\"http://gaml.uis.unesco.org/wp-content/uploads/sites/2/2019/02/MPLs_revised_doc_20190204.docx\"><u>Minimum Proficiency Levels (MPLs): Outcomes of the consensus building meeting</u></a>.</p><p><em>Minimum proficiency levels defined by each learning assessment</em></p><p>To ensure comparability across learning assessments, a verbal definition of MPL for each domain and levels between cross-national assessments (CNAs) was established by conducting an analysis of the performance level descriptors (PLDs) of cross-national, regional, and community-led tests in reading and mathematics. The analysis was led and completed by the UIS and a consensus among experts on the proposed methodology was deemed adequate and pragmatic.</p><p>The global MPL definitions for the domains of reading and mathematics are presented in Table 1.</p><p><strong>     Table 1. Minimum proficiency levels defined by each learning assessment</strong></p><table><tr><td colspan=\"2\"><p><strong>Reading</strong></p></td></tr><tr><td><p><strong>Educational Level</strong></p></td><td><p><strong>Descriptor</strong></p></td></tr><tr><td><p><strong>Grade 2 </strong></p></td><td><p>They read and comprehend most of written words, particularly familiar ones, and extract explicit information from sentences.<strong> </strong></p></td></tr><tr><td><p><strong>Grade 3</strong></p></td><td><p>Students read aloud written words accurately and fluently. They understand the overall meaning of sentences and short texts. Students identify the texts’ topic.</p></td></tr><tr><td><p><strong>Grades 4 &amp; 6</strong></p></td><td><p>Students interpret and give some explanations about the main and secondary ideas in different types of texts. They establish connections between main ideas on a text and their personal experiences as well as general knowledge. <strong> </strong></p></td></tr><tr><td><p><strong>Grades 8 &amp; 9</strong></p></td><td><p>Students establish connections between main ideas on different text types and the author’s intentions. They reflect and draw conclusions based on the text.</p></td></tr></table><table><tr><td colspan=\"2\"><p><strong>Mathematics</strong></p></td></tr><tr><td><p><strong>Educational Level</strong></p></td><td><p><strong>Descriptor</strong></p></td></tr><tr><td><p><strong>Grades 2-3</strong></p></td><td><p>Students demonstrate skills in number sense and computation, shape recognition and spatial orientation.</p></td></tr><tr><td><p><strong>Grades 4-6</strong></p></td><td><p>Students demonstrate skills in number sense and computation, basic measurement, reading, interpreting, and constructing graphs, spatial orientation, and number patterns. </p></td></tr><tr><td><p><strong>Grades 8 &amp; 9</strong></p></td><td><p>Students demonstrate skills in computation, application problems, matching tables and graphs, and making use of algebraic representations.  </p></td></tr></table>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Percentage of children and young people achieving at least a minimum proficiency level in (i) reading and (ii) mathematics during primary education (Grade 2 or 3), at the end of primary education, and at the end of lower secondary education. The minimum proficiency level will be measured relative to new common reading and mathematics scales currently in development.</p><p><strong>Concepts:</strong></p><p>Minimum proficiency level (MPL) is the benchmark of basic knowledge in a domain (mathematics, reading, etc.) measured through learning assessments. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -885,7 +871,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Education Service, Ministry of Education</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Education Service (GES)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -899,20 +885,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -921,7 +893,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator aims to measure the percentage of children and young people who have achieved the minimum learning outcomes in reading and mathematics during or at the end of the relevant stages of education.</p><p>The higher the figure, the higher the proportion of children and/or young people reaching at least minimum proficiency in the respective domain (reading or mathematic) with the limitations indicated under the “Comments and limitations” section.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator aims to measure the percentage of children and young people who have achieved the minimum learning outcomes in reading and mathematics during or at the end of the relevant stages of education.The higher the figure, the higher the proportion of children and/or young people reaching at least minimum proficiency in the respective domain (reading or mathematics). </p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -939,7 +911,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The number of children and/or young people at the relevant stage of education (n) in year (t) achieving at least the pre-defined proficiency level in subject s expressed as a percentage of the number of children and or young people at stage of education n, in year t, in any proficiency level in subjects.</p>");
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The number of children and/or young people at the relevant stage of education (n) in year (t) achieving at least the pre-defined proficiency level in subjects expressed as a percentage of the number of children and or young people at stage of education (n), in year (t), in any proficiency level in subjects.</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1156,12 +1128,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221109023653'></script>
+<script src='/site/assets/js/sdg.js?v=20221109055606'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221109023653"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221109055606"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
