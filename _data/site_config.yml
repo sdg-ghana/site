@@ -222,7 +222,7 @@ map_options:
     dashArray: '5,5'
 menu:
   - path: /
-    translation_key: menu.frontpage
+    translation_key: Frontpage
     dropdown: []
   - path: /goals
     translation_key: general.goals
