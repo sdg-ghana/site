@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221109074716">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221109080306">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221109074716">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221109080306">
         
 
         
@@ -713,7 +713,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p><strong>Goal 4: </strong>Ensure inclusive and equitable quality education and promote lifelong learning opportunities</p><p>for all</p>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 4:<strong> </strong>Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -729,7 +729,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p><strong>Target 4.a: </strong>Build and upgrade education facilities that are child, disability and gender sensitive and</p><p>provide safe, non-violent, inclusive and effective learning environments for all.</p>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 4.a:<strong> </strong>Build and upgrade education facilities that are child, disability and gender sensitive and provide safe, non-violent, inclusive and effective learning environments for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -745,7 +745,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p><strong>Indicator 4.a.1: </strong>Proportion of schools with access to: (a) electricity; (b) the Internet for pedagogical</p><p>purposes; (c) computers for pedagogical purposes; (d) adapted infrastructure and materials for</p><p>students with disabilities; (e) basic drinking water; (f) single-sex basic sanitation facilities; and (g)</p><p>basic hand washing facilities (as per the WASH indicator definitions)</p>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 4.a.1:<strong> </strong>Proportion of schools offering basic services, by type of service</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -759,18 +759,10 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Education Service (GES)</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Proportion of schools with access to basic drinking water [4.a.1]</p><p>Proportion of schools with access to electricity [4.a.1]</p><p>Proportion of schools with access to toilet facilities</p><p>Proportion of schools with access to urinals</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
@@ -779,8 +771,16 @@ data-event-label="high"
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -799,7 +799,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The percentage of schools by level of education (primary education) with access to the given facility</p><p>or service.</p><p><strong>Concept:</strong></p><p><strong>Electricity: </strong>Regularly and readily available sources of power (e.g. grid/mains connection, wind,</p><p>water, solar and fuel-powered generator, etc.) that enable the adequate and sustainable use of ICT</p><p>infrastructure for educational purposes.</p><p><strong>Internet for pedagogical purposes: </strong>Internet that is available for enhancing teaching and learning</p><p>and is accessible by pupils. Internet is defined as a worldwide interconnected computer network,</p><p>which provides pupils access to a number of communication services including the World Wide</p><p>Web and carries e-mail, news, entertainment and data files, irrespective of the device used (i.e.</p><p>not assumed to be only via a computer) and thus can also be accessed by mobile telephone, tablet,</p><p>PDA, games machine, digital TV etc.). Access can be via a fixed narrowband, fixed broadband, or</p><p>via mobile network.</p><p><strong>Computers for pedagogical use: </strong>Use of computers to support course delivery or independent</p><p>teaching and learning needs. This may include activities using computers or the Internet to meet</p><p>information needs for research purposes; develop presentations; perform hands-on exercises</p><p>and experiments; share information; and participate in online discussion forums for educational</p><p>purposes. A computer is a programmable electronic device that can store, retrieve and process data,</p><p>as well as share information in a highly-structured manner. It performs high-speed mathematical or</p><p>logical operations according to a set of instructions or algorithms. Computers include the following</p><p>types:</p><p>- A desktop computer usually remains fixed in one place; normally the user is placed in front</p><p>of it, behind the keyboard;</p><p>- A laptop computer is small enough to carry and usually enables the same tasks as a desktop</p><p>computer; it includes notebooks and netbooks but does not include tablets and similar</p><p>handheld devices; and</p><p>- A tablet (or similar handheld computer) is a computer that is integrated into a flat touch</p><p>screen, operated by touching the screen rather than using a physical keyboard.</p><p><strong>Adapted infrastructure: </strong>Any built environment related to education facilities that are accessible</p><p>to all users, including those with different types of disability, to be able to gain access to use and</p><p>exit from them. Accessibility includes ease of independent approach, entry, evacuation and/or use</p><p>of a building and its services and facilities (such as water and sanitation), by all of the building’s</p><p>potential users with an assurance of individual health, safety and welfare during the course of those</p><p>activities.</p><p><strong>Adapted materials: </strong>Learning materials and assistive products that enable students and teachers</p><p>with disabilities/functioning limitations to access learning and to participate fully in the school</p><p>environment.</p><p><strong>Accessible learning materials: </strong>Textbooks, instructional materials, assessments and other materials</p><p>that are available and provided in appropriate formats such as audio, braille, sign language and</p><p>simplified formats that can be used by students and teachers with disabilities/functioning limitations.</p><p><strong>Basic drinking water: </strong>Is defined as a functional drinking water source (MDG ‘improved’ categories)</p><p>on or near the premises and water points accessible to all users during school hours.</p><p><strong>Basic sanitation facilities: </strong>Are defined as functional sanitation facilities (MDG ‘improved’</p><p>categories) separated for males and females on or near the premises.</p><p><strong>Basic hand washing facilities: </strong>Are defined as functional hand washing facilities, with soap and</p><p>water available to all girls and boys.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The percentage of schools by level of education (primary education) with access to the given facility or service.</p><p><strong>Concept:</strong></p><p>Electricity:<strong> </strong>Regularly and readily available sources of power (e.g. grid/mains connection, wind, water, solar and fuel-powered generator, etc.) that enable the adequate and sustainable use of ICT infrastructure for educational purposes.</p><p>Basic drinking water:<strong> </strong>Is defined as a functional drinking water source (MDG ‘improved’ categories)</p><p>on or near the premises and water points accessible to all users during school hours.</p><p>Basic sanitation facilities:<strong> </strong>Are defined as functional sanitation facilities (MDG ‘improved’ categories) separated for males and females on or near the premises.</p><p>Basic hand washing facilities: Are defined as functional hand washing facilities, with soap and water available to all girls and boys.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -815,7 +815,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -849,20 +849,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SOURCE_TYPE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COLL_METHOD', "<p>Conduct Annual School Census</p>");
-        var propertyEditor = editor.getEditor('root.COLL_METHOD');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COLL_METHOD');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
@@ -871,7 +857,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>World Bank</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Education (MoE)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -885,20 +871,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -907,7 +879,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator measures access in schools to key basic services and facilities necessary to ensure a</p><p>safe and effective learning environment for all students.</p><p>A high value indicates that schools have good access to the relevant services and facilities. Ideally</p><p>each school should have access to all these services and facilities.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The indicator measures access in schools to key basic services and facilities necessary to ensure a safe and effective learning environment for all students.</p><p>A high value indicates that schools have good access to the relevant services and facilities. Ideally each school should have access to all these services and facilities.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -923,7 +895,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p><strong>Limitations</strong></p><p>The indicator measures the existence in schools of the given service or facility but not its quality or</p><p>operational state.</p>");
+        var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p>The indicator measures the existence in schools of the given service or facility but not its quality or operational state.</p>");
         var propertyEditor = editor.getEditor('root.REC_USE_LIM');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -939,7 +911,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The number of schools in a given level of education with access to the relevant facilities is expressed</p><p>as a percentage of all schools at that level of education. The computation is as follows:</p><p>     PSn, f = </p><p>where:</p><p>PSn,f = Percentage of schools at level n of education with access to facility f</p><p>Sn,f = Number of schools at level n of education with access to facility f</p><p>Sn = Total number of schools at level n of education</p>");
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The number of schools in a given level of education with access to the relevant facilities is expressed as a percentage of all schools at that level of education. </p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -959,27 +931,13 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_MGMNT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('QUALITY_ASSURE', "<p>Adopt MoE quality assurance system</p>");
-        var propertyEditor = editor.getEditor('root.QUALITY_ASSURE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: QUALITY_ASSURE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSURE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p><strong>Data availability</strong></p><p>Annual data from School Census fed into the Education Management Information System (EMIS)</p><p>database</p><p><strong>Data disaggregation</strong></p><p>Disaggregation by level of education</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data is disaggregated by level of education.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -993,25 +951,11 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPARABILITY', "<p>Nationally-published figures may differ from the international ones because of differences between</p><p>national education systems and the International Standard Classification of Education (ISCED); or</p><p>differences in coverage (i.e. the extent to which different types of education – e.g. private or special</p><p>education – are included in one rather than the other).</p>");
-        var propertyEditor = editor.getEditor('root.COMPARABILITY');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPARABILITY');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p>Ministry of Education EMIS data base</p><p>URL:</p><p>http://www.uis.unesco.org/Pages/default.aspx</p><p>The proportion of schools with access to electricity, the Internet for pedagogical purposes and</p><p>computers for pedagogical purposes: see Guide to Measuring Information and Communication</p><p>Technologies (ICT) in Education, UIS Technical Paper No. 2.</p><p>WASH Monitoring Indicators: http://www.unicef.org/wash/files/4_WSSCC_JMP_Fact_Sheets_4_</p><p>UK_LoRes.pdf</p>");
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"http://uis.unesco.org/\">http://www.uis.unesco.org/Pages/default.aspx</a></p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1184,12 +1128,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221109074716'></script>
+<script src='/site/assets/js/sdg.js?v=20221109080306'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221109074716"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221109080306"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
