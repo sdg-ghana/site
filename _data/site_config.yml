@@ -221,6 +221,9 @@ map_options:
     color: '#172d44'
     dashArray: '5,5'
 menu:
+  - path: /
+    translation_key: menu.frontpage
+    dropdown: []
   - path: /goals
     translation_key: general.goals
     dropdown: []
