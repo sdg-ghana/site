@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110133739">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110135107">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110133739">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110135107">
         
 
         
@@ -717,7 +717,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/affordable-and-clean-energy\">Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 7.1.2: Proportion of population with primary reliance on clean fuels and technology</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 7.1.2: Proportion of population with primary reliance on clean fuels and technology</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -769,7 +769,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>3.9.1: Mortality rate attributed to household and ambient air pollution</p>");
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>3.9.1</p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -785,20 +785,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service</p><p>Ministry of Energy</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -817,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition:</p><p>Proportion of population with primary reliance on clean fuels and technology is calculated as the number of people using clean fuels and technologies for cooking, heating and lighting divided by total population reporting that any cooking, heating or lighting, expressed as percentage. “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion.</p><p>Concepts:</p><p>Current global data collection focuses on the primary fuel used for cooking, categorized as solid or non-solid fuels, where solid fuels are considered polluting and non-modern, while non-solid fuels are considered clean. This single measure captures a good part of the lack of access to clean cooking fuels but fails to collect data on type of device or technology is used for cooking, and also fails to capture other polluting forms of energy use in the home such as those used for lighting and heating.</p><p>New evidence-based normative guidance from the WHO (i.e. WHO Guidelines for indoor air quality guidelines: household fuel combustion), highlights the importance of addressing both fuel and the technology for adequately protecting public health. These guidelines provide technical recommendations in the form of emissions targets for as to what fuels and technology (stove, lamp, and so on) combinations in the home are clean. These guidelines also recommend against the use of unprocessed coal and discourage the use kerosene (a non-solid but highly polluting fuel) in the home. They also recommend that all major household energy end uses (e.g. cooking, space heating, lighting) use efficient fuels and technology combinations to ensure health benefits.</p><p>For this reason, the technical recommendations in the WHO guidelines, access to modern cooking solution in the home will be defined as “access to clean fuels and technologies” rather than “access to non-solid fuels.” This shift will help ensure that health and other “nexus” benefits are better counted, and thus realized.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>“Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance <a href=\"https://www.who.int/publications/i/item/9789241548885\">WHO guidelines for indoor air quality: household fuel combustion.</a></p><p><strong>Concepts:</strong></p><p>New evidence-based normative guidance from the WHO (i.e. WHO Guidelines for indoor air quality guidelines: household fuel combustion), highlights the importance of addressing both fuel and the technology for adequately protecting public health. These guidelines provide technical recommendations in the form of emissions targets for as to what fuels and technology (stove, lamp, and so on) combinations in the home are clean. These guidelines also recommend against the use of unprocessed coal and discourage the use kerosene (a non-solid but highly polluting fuel) in the home. They also recommend that all major household energy end uses (e.g. cooking, space heating, lighting) use efficient fuels and technology combinations to ensure health benefits.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -833,7 +819,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey (GLSS) Rounds 6, 2014; </p><p>Ghana Living Standards Survey (GLSS) Round 7, 2019;</p><p> PBB of Ministry of Energy (MoE),2019</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Energy Statistics, 2021</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -875,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service (GSS)</p><p>Ministry of Energy (MoE) </p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Energy Commission</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -889,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -911,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Cooking, lighting and heating represent a large share of household energy use across the low- and middle-income countries. For cooking and heating, households typically rely on solid fuels (such as wood, charcoal, biomass) or kerosene paired with inefficient technologies (e.g. open fires, stoves, space heaters or lamps). It is well known that reliance on such inefficient energy for cooking, heating and lighting is associated with high levels of household (indoor) air pollution. The use of inefficient fuels for cooking alone is estimated to cause over 4 million deaths annually, mainly among women and children. This is more than Tuberculosis, Human Immunodeficiency Virus and malaria combined. These adverse health impacts can be avoided by adopting clean fuels and technologies for all main household energy end-or in some circumstances by adopting advanced combustion cook stoves (i.e. those which achieve the emission rates targets provided by the WHO guidelines) and adopting strict protocols for their safe use. Given the importance of clean and safe household energy use as a human development issue, universal access to energy among the technical practitioner community is currently taken to mean access to both electricity and clean fuels and technologies for cooking, heating and lighting. For this reason, clean cooking forms part of the universal access objective under the UN Secretary General’s Sustainable Energy for All initiative</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Cooking, lighting and heating represent a large share of household energy use across the low- and middle-income countries. For cooking and heating, households typically rely on solid fuels (such as wood, charcoal, biomass) or kerosene paired with inefficient technologies (e.g. open fires, stoves, space heaters or lamps). It is well known that reliance on such inefficient energy for cooking, heating and lighting is associated with high levels of household (indoor) air pollution. The use of inefficient fuels for cooking alone is estimated to cause over 4 million deaths annually, mainly among women and children. This is more than Tuberculosis, Human Immunodeficiency Virus and malaria combined. These adverse health impacts can be avoided by adopting clean fuels and technologies for all main household energy end-or in some circumstances by adopting advanced combustion cook stoves (i.e. those which achieve the emission rates targets provided by the WHO guidelines) and adopting strict protocols for their safe use.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -927,6 +899,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Proportion of population with primary reliance on clean fuels and technology is calculated as the number of people using clean fuels and technologies for cooking, heating and lighting divided by total population reporting any cooking, heating or lighting, expressed as a percentage. </p>");
+        var propertyEditor = editor.getEditor('root.DATA_COMP');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: DATA_COMP');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -939,6 +925,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data has been disaggregated into regions, rural and urban areas.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
@@ -1104,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221110133739'></script>
+<script src='/site/assets/js/sdg.js?v=20221110135107'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221110133739"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221110135107"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
