@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110151255">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110152253">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110151255">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110152253">
         
 
         
@@ -717,7 +717,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all.</p>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -733,7 +733,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 7.b: By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable<br/>energy services for all in developing countries, in particular least developed countries, small island<br/>developing States and landlocked developing countries, in accordance with their respective programmes<br/>of support</p>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 7.b: By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States and landlocked developing countries, in accordance with their respective programmes of support</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 7.b.1: Installed renewable energy-generating capacity in developing countries (in watts per<br/>capita)</p>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 7.b.1: Installed renewable energy-generating capacity in developing countries (in watts per capita)</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -769,7 +769,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>This indicator is also used as indicator 12.a.1</p>");
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>12.a.1</p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -785,20 +785,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>National Energy Commission </p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -807,45 +793,17 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_PHONE', "<p>0302-813-756/7</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_PHONE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_PHONE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_EMAIL', "<p>statistics@energycom.gov.gh</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_EMAIL');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_EMAIL');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.IND_DEF_CON_CLASS'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition:<br/>The indicator is defined as the installed capacity of power plants that generate electricity from renewable<br/>energy sources divided by the total population of a country. Capacity is defined as the net maximum<br/>electrical capacity installed at the year-end and renewable energy sources are as defined in the IRENA<br/>Statute (see concepts below).<br/>Concepts:<br/>Electricity capacity is defined in the International Recommendations for Energy Statistics or IRES (UN,<br/>2018) as the maximum active power that can be supplied continuously (i.e., throughout a prolonged<br/>period in a day with the whole plant running) at the point of outlet (i.e., after taking the power supplies for the station auxiliaries and allowing for the losses in those transformers considered integral to the<br/>station). This assumes no restriction of interconnection to the network. It does not include overload<br/>capacity that can only be sustained for a short period of time (e.g., internal combustion engines<br/>momentarily running above their rated capacity).<br/>The IRENA Statute defines renewable energy to include energy from the following sources: hydropower;<br/>marine energy (ocean, tidal and wave energy); wind energy; solar energy (photovoltaic and thermal<br/>energy); bioenergy; and geothermal energy.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong><br/>The indicator is defined as the installed capacity of power plants that generate electricity from renewable energy sources divided by the total population of a country. </p><p>Capacity is defined as the net maximum electrical capacity installed at the year-end and renewable energy sources are as defined in the <a href=\"https://www.irena.org/About/Vision-and-mission\">IRENA Statute</a>.<br/></p><p><strong>Concepts:</strong><br/>Electricity capacity is defined in the<a href=\"https://unstats.un.org/unsd/energystats/methodology/documents/IRES-web.pdf\"> International Recommendations for Energy Statistics or IRES (UN, 2018) </a>as the maximum active power that can be supplied continuously (i.e., throughout a prolonged period in a day with the whole plant running) at the point of outlet (i.e., after taking the power supplies for the station auxiliaries and allowing for the losses in those transformers considered integral to the station). This assumes no restriction of interconnection to the network. It does not include overload capacity that can only be sustained for a short period of time (e.g., internal combustion engines<br/>momentarily running above their rated capacity).<br/>The IRENA Statute defines renewable energy to include energy from the following sources: hydropower; marine energy (ocean, tidal and wave energy); wind energy; solar energy (photovoltaic and thermal energy); bioenergy; and geothermal energy.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -881,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Energy Statistics</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Energy Statistics, 2021</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -903,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>National Energy Commission </p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Energy Commission </p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -917,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -939,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The infrastructure and technologies required to supply modern and sustainable energy services cover a<br/>wide range of equipment and devices that are used across numerous economic sectors. There is no<br/>readily available mechanism to collect, aggregate and measure the contribution of this disparate group of<br/>products to the delivery of modern and sustainable energy services. However, one major part of the<br/>energy supply chain that can be readily measured is the infrastructure used to produce electricity.<br/>Renewables are considered a sustainable form of energy supply, as their current use does not usually<br/>deplete their availability to be used in the future. The focus of this indicator on electricity reflects the<br/>emphasis of the target on modern sources of energy and is particularly relevant for developing countries<br/>where the demand for electricity is often high and its availability is constrained. Furthermore, the focus on renewables reflects the fact that the technologies used to produce renewable electricity are generally<br/>modern and more sustainable than non-renewables, particularly in the fastest growing sub-sectors of<br/>electricity generation from wind and solar energy.<br/>The division of renewable electricity capacity by population (to produce a measure of Watts per capita) is<br/>proposing to scale the capacity data to account for the large variation in needs between countries. It uses<br/>population rather than GDP to scale the data, because this is the most basic indicator of the demand for<br/>modern and sustainable energy services in a country.<br/>This indicator should also complement indicators 7.1.1 and 7.2.1. With respect to electricity access, it will<br/>provide additional information to the proportion of people with electricity access by showing how much<br/>infrastructure is available to deliver that access (in terms of the amount of capacity per person). The<br/>focus on renewable capacity will also add value to the existing renewables indicator (7.2.1) by showing<br/>how much renewable energy is contributing to the need for improved electricity access.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The focus of this indicator on electricity reflects the<br/>emphasis of the target on modern sources of energy and is particularly relevant for developing countries where the demand for electricity is often high and its availability is constrained. Furthermore, the focus on renewables reflects the fact that the technologies used to produce renewable electricity are generally modern and more sustainable than non-renewables, particularly in the fastest growing sub-sectors of<br/>electricity generation from wind and solar energy.<br/>It uses population rather than GDP to scale the data, because this is the most basic indicator of the demand for modern and sustainable energy services in a country. With respect to electricity access, it will provide additional information to the proportion of people with electricity access by showing how much infrastructure is available to deliver that access (in terms of the amount of capacity per person). The focus on renewable capacity will also add value to the existing renewables indicator (7.2.1) by showing how much renewable energy is contributing to the need for improved electricity access.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -969,7 +913,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('COVERAGE', "<p> No disaggregation</p>");
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p> There is no available disaggregatin for this indcator.</p>");
         var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1146,12 +1090,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221110151255'></script>
+<script src='/site/assets/js/sdg.js?v=20221110152253'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221110151255"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221110152253"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
