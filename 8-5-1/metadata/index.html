@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110175126">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110180223">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110175126">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110180223">
         
 
         
@@ -717,7 +717,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/decent-jobs-and-economic-growth\">Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 8.5.1: Average hourly earnings of female and male employees, by occupation, age and persons with disabilities</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 8.5.1: Average hourly earnings of  employees, by sex, age, occupation and persons with disabilities</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -763,13 +763,27 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Average hourly earnings [8.5.1]</p><p>Average monthly earnings [8.5.1]</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>1.1.1, 5.5.2, 8.2.1, 10.4.1 </p>");
+        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>1.1.1</p><p>5.5.2</p><p>8.2.1</p><p>10.4.1</p>");
         var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -785,20 +799,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -817,7 +817,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> </p><p>This indicator provides information on the mean hourly earnings from paid employment of employees by sex, occupation, age and disability status.  </p><p> </p><p><strong>Concepts:</strong> </p><p>Earnings refer to the gross remuneration in cash or in kind paid to employees, as a rule at regular intervals, for time worked or work done together with remuneration for time not worked, such as annual vacation, other type of paid leave or holidays. Earnings exclude employers’ contributions in respect of their employees paid to social security and pension schemes and also the benefits received by employees under these schemes. Earnings also exclude severance and termination pay.  </p><p> </p><p>For international comparability purposes, statistics of earnings used relate to employees’ gross remuneration, i.e. the total before any deductions are made by the employer in respect of taxes, contributions of employees to social security and pension schemes, life insurance premiums, union dues and other obligations of employees. As stated in the indicator title, data on earnings should be presented on the basis of the arithmetic average of the hourly earnings of all employees. </p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong> </p><p>This indicator provides information on the mean hourly earnings from paid employment of employees by sex, occupation, age and disability status.  </p><p> <strong>Concepts: </strong></p><p>Earnings refer to the gross remuneration in cash or in kind paid to employees, as a rule at regular intervals, for time worked or work done together with remuneration for time not worked, such as annual vacation, other type of paid leave or holidays. Earnings exclude employers’ contributions in respect of their employees paid to social security and pension schemes and also the benefits received by employees under these schemes. Earnings also exclude severance and termination pay.  </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -833,7 +833,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +853,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Compiled from GLSS Round 6 Labour Force Report, 2014; Labour Force Survey 2015; and GLSS Round 7, 2019</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey (GLSS) Round 6, 2014</p><p>Ghana Living Standards Survey (GLSS) Round 7, 2019</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -889,20 +889,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana statistical service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -939,10 +925,38 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data is disaggregated by sex.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://www.ilo.org/moscow/dw4sd/themes/equality/WCMS_560713/lang--en/index.htm\">https://www.ilo.org/moscow/dw4sd/themes/equality/WCMS_560713/lang--en/index.htm</a> </p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1104,12 +1118,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221110175126'></script>
+<script src='/site/assets/js/sdg.js?v=20221110180223'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221110175126"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221110180223"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
