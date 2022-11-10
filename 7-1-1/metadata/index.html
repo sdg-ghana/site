@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110132404">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221110133651">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110132404">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221110133651">
         
 
         
@@ -717,7 +717,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/affordable-and-clean-energy\">Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 7: Ensure access to affordable, reliable, sustainable and modern energy for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 7.1.1: Proportion of population with access to electricity</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 7.1.1: Proportion of population with access to electricity</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -763,18 +763,10 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service</p><p>Ministry of Energy</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Proportion of household with access to electricity [7.1.1]</p><p>Proportion of population with access to electricity [7.1.1]</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
@@ -783,8 +775,16 @@ data-event-label="high"
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -803,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition:</p><p>Proportion of population with access to electricity (i.e. connected to the national grid, private generator or solar) is the percentage of population with access to electricity.</p><p>SDG7 ensures access to affordable, reliable, sustainable and modern energy for all. Specifically, Indicator 7.1.1 refers to the proportion of population with access to electricity. This is expressed in percentage figures and is disaggregated by total, urban and rural access rates per country, as well as by UN regional and global classifications. </p><p>Concepts:</p><p>Electricity access in this scenario refers to the proportion of population in the considered area (country, region or global context) that has access to consistent sources of electricity. </p><p>The World Bank’s Global Electrification Database compiles nationally representative household survey data as well as census data from 1990 to 2019. It also incorporates data from the Socio-Economic Database for Latin America and the Caribbean, the Middle East and North Africa Poverty Database, and the Europe and Central Asia Poverty Database, all of which are based on similar surveys. At the time of this analysis, the Global Electrification Database contained 1,282 surveys from 139 countries, excluding surveys from high-income countries as classified by the United. </p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Proportion of population with access to electricity (i.e. connected to the national grid, private generator or solar) is the percentage of population with access to electricity.</p><p>Specifically, Indicator 7.1.1 refers to the proportion of population with access to electricity. This is expressed in percentage figures and is disaggregated by total, urban and rural access rates. </p><p><strong>Concepts:</strong></p><p>Electricity access in this scenario refers to the proportion of population in the considered area (country, region or global context) that has access to consistent sources of electricity. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -839,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey (GLSS) Round 6, 2014; Round, 7, 2019 </p><p>PBB, MoE,2019</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey (GLSS) Round 6, 2014</p><p>Ghana Living Standards Survey (GLSS) Round 7, 2019 </p><p>National Energy Statistics, 2021</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -861,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service (GSS)</p><p>Ministry of Energy (MoE)</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Energy Commission (EC)</p><p>Ghana Statistical Service (GSS)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -875,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -897,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Access to electricity addresses major critical issues in all the dimensions of sustainable development. The target has a wide range of social and economic impacts, including facilitating development of income generating activities and lightening the burden of household tasks. Under the global target of equal access to energy, SDG7.1.1 focuses specifically on electricity access available to the global population. In order to gain a clear picture, access rates are only considered if the primary source of lighting is the local electricity provider, solar systems, mini-grids and stand-alone systems. Sources such as generators, candles, batteries, etc., are not considered due to their limited working capacities and since they are usually kept as backup sources for lighting.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Access to electricity addresses major critical issues in all the dimensions of sustainable development. The target has a wide range of social and economic impacts, including facilitating development of income generating activities and lightening the burden of household tasks.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -915,7 +901,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Number of households having access to electricity divided by the total number of households in the country multiplied by 100</p>");
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Number of households having access to electricity divided by the total number of households in the country, multiplied by 100.</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -939,10 +925,38 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data is disaggregated into rural and urban areas.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS\">https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS</a> </p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1104,12 +1118,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221110132404'></script>
+<script src='/site/assets/js/sdg.js?v=20221110133651'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221110132404"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221110133651"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
