@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111074238">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111082012">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111074238">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111082012">
         
 
         
@@ -717,7 +717,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1> <a href=\"https://sustainabledevelopment-ghana.github.io/industry-innovation-and-infrastructure\">Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation</a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -733,7 +733,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 9.1: Develop quality, reliable, sustainable and resilient infrastructure, including regional and trans-border infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all</p>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 9.1: Develop quality, reliable, sustainable and resilient infrastructure, including regional and transborder infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2>Indicator 9.1.2: Passenger and freight volumes, by mode of transport</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 9.1.2: Passenger and freight volumes, by mode of transport</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -763,18 +763,10 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>1) Ghana Airport Company Limited/Ghana Railway Company Limited/Ghana Ports and Habour Authority/Volta Lake Transport Company/Metro Mass Transit Limited</p><p>2) Ghana Railway Company Limited</p><p>3) Ghana Ports and Habour Authority</p><p>4) Ministry of Transport</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Air transport, domestic passengers carried</p><p>Air transport, international passengers carried</p><p>Freight volume (tonne kilometres) [9.1.2]</p><p>Number of containers by marine transport</p><p>Passenger volume (passenger kilometres) [9.1.2]</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
@@ -783,8 +775,16 @@ data-event-label="high"
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -803,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Passenger and freight volumes for air transport, rail transport, marine water transport, inland water transport and urban transport</p><p><strong>Definition:</strong></p><p>Passenger and freight volumes for air transport, rail transport, marine water transport, inland water transport and urban transport<strong> </strong>are respectively measured in passenger-km and tonne-km, and broken down by mode of transport. For the purposes of monitoring this indicator, passenger-km data are split between aviation, road (broken down between passenger cars, buses and motorcycles) and rail, and tonne-km are split between aviation, road, rail and inland waterways. </p><p>As maritime data are not widely available, only tonnes (rather than tonne-km) data at the regional level have been shared.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Passenger and freight volumes for air transport, rail transport, marine water transport, inland water transport and urban transport<strong> </strong>are respectively measured in passenger-km and tonne-km, and broken down by mode of transport. For the purposes of monitoring this indicator, passenger-km data are split between aviation, road (broken down between passenger cars, buses and motorcycles) and rail, and tonne-km are split between aviation, road, rail and inland waterways. </p><p>As maritime data are not widely available, only tonnes (rather than tonne-km) data at the regional level have been shared.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -819,7 +819,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Number of people(in thousands)/metric tonnes (in thousands)</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Number </p><p>Tonnes (in thousands)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -839,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>1) Annual Progress Report, Ghana Airports Company Limited, 2020</p><p>2) Annual Progress Report. MRD 2020</p><p>3) <em>Annual Progress Report. MoT, 2020</em></p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Airports Company Limited (GACL) Annual Progress Report,  2020</p><p>Ministry of Railways Development (MRD) Annual Progress Report, 2022</p><p>Ministry of Transport<em> </em>(MoT)<em> </em>Annual Progress Report,<em> </em>2021</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -855,30 +855,14 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('FREQ_COLL', "<p>Annual</p>");
-        var propertyEditor = editor.getEditor('root.FREQ_COLL');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: FREQ_COLL');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana statistical service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Airport Company Limited (GACL)</p><p>Ministry of Railways Development (MRD)</p><p>Ministry of Transport (MoT)</p>");
+        var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
@@ -887,8 +871,10 @@ data-event-label="high"
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
+        console.log('Unable to set config key: DATA_SOURCE');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -897,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Develop quality, reliable, sustainable and resilient infrastructure, including regional and trans-border infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all. Trans-border infrastructure development is best captured by passenger and freight volumes moved by Member States and Regions. A growth in passenger and freight volumes shows a robust infrastructure development happening in States and Regions along with the resultant socio-economic benefit. Air Transport is particularly important not only for the economic and job benefits but also because it is one of the only mode of transport that can be relied on during emergencies and disease outbreaks to reach food, medicines, medical personnel, vaccines and other supplies speedily to the affected persons in the affected areas. In addition, tracking how the non-road share of freight volumes, and the public transport share of passenger volumes, changes over time allows insights into the overall sustainability of the global transport system.</p><p>Aviation:</p><p>Informed decision-making is the foundation upon which successful businesses are built. In a fast-growing industry like aviation, planners and investors require the most comprehensive, up-to-date, and reliable data. ICAO’s aviation data/statistics programme is to provide accurate, reliable and consistent aviation data so that States, international organizations, aviation industry, tourism and other stakeholders can make better projections. The UN recognized ICAO as the central agency responsible for the collection, analysis, publication, standardization, improvement and dissemination of statistics pertaining to civil aviation.</p><p>Maritime:</p><p>The volume of international maritime freight and container port traffic movements provide an overall indication of the importance of port infrastructure for trade and development and may be relied upon to infer the quality and adequacy of seaports and their hinterland connections. Maritime transport is the dominant mode of international freight transport when flows are measured in volume terms. Behind the global and regional headline estimates, individual contributions vary by region and type of cargo, reflecting, among other factors, differences in countries’ economic structures, composition of trade, urbanization, levels of development, extent of integration into global trading networks, degree of participation in global supply chains, and the quality of transport infrastructure.</p><p>World container port traffic reflects the importance of containerized trade and countries’ participation in global liner shipping networks and globalized manufacturing production processes.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Transborder infrastructure development is best captured by passenger and freight volumes moved by Member States and Regions. A growth in passenger and freight volumes shows a robust infrastructure development happening in States and Regions along with the resultant socio-economic benefit. Air Transport is particularly important not only for the economic and job benefits but also because it is one of the only mode of transport that can be relied on during emergencies and disease outbreaks to reach food, medicines, medical personnel, vaccines and other supplies speedily to the affected persons in the affected areas. In addition, tracking how the non-road share of freight volumes, and the public transport share of passenger volumes, changes over time allows insights into the overall sustainability of the global transport system. The volume of international maritime freight and container port traffic movements provide an overall indication of the importance of port infrastructure for trade and development and may be relied upon to infer the quality and adequacy of seaports and their hinterland connections. Maritime transport is the dominant mode of international freight transport when flows are measured in volume terms. </p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -913,20 +899,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>(1.) sum of number of passengers</p><p>(2.) sum of freight volume</p>");
-        var propertyEditor = editor.getEditor('root.DATA_COMP');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: DATA_COMP');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -939,10 +911,38 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data is disaggregated by mode of transport.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"http://bit.ly/3tmsXub&quot; \\t &quot;_blank\">bit.ly/3tmsXub</a></p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1104,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221111074238'></script>
+<script src='/site/assets/js/sdg.js?v=20221111082012'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221111074238"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221111082012"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
