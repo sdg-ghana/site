@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111141254">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111151822">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111141254">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111151822">
         
 
         
@@ -763,6 +763,20 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Proportion of population covered by at least 2G mobile network [9.c.1]</p><p>Proportion of population covered by at least a 3G mobile network [9.c.1]</p><p>Proportion of population covered by at least a 4G mobile network [9.c.1]</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
@@ -771,72 +785,16 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>National Communication Authority</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_NAME', "<p>Victor Teppeh</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_NAME');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_NAME');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.ORGANISATION_UNIT'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_FUNCT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_PHONE', "<p>+233249988888</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_PHONE');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_PHONE');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_PHONE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_MAIL', "<p>Victor.teppeh@nca.gob.gh</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_MAIL');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_MAIL');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_MAIL'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_EMAIL'));
@@ -845,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definitions:</strong></p><p>Proportion of population covered by a mobile network, broken down by technology, refers to the percentage of inhabitants living within range of a mobile-cellular signal, irrespective of whether or not they are mobile phone subscribers or users. This is calculated by dividing the number of inhabitants within range of a mobile-cellular signal by the total population and multiplying by 100.</p><p><strong>Concepts:</strong></p><p>\"The indicator is based on where the population lives, and not where they work or go to school, etc. When there are multiple operators offering the service, the maximum population number covered should be reported. Coverage should refer to LTE, broadband (3G) and narrowband (2G) mobile-cellular technologies and include:</p><p>- 2G mobile population coverage: Mobile networks with access to data communications (e.g. Internet) at downstream speeds below 256 Kbit/s. This includes mobile-cellular technologies such as GPRS, CDMA2000 1x and most EDGE implementations. The indicator refers to the theoretical ability of subscribers to use non-broadband speed mobile data services, rather than the number of active users of such services.</p><p>- 3G population coverage: refers to the percentage of inhabitants that are within range of at least a 3G mobile-cellular signal, irrespective of whether or not they are subscribers. This is calculated by dividing the number of inhabitants that are covered by at least a 3G mobile-cellular signal by the total population and multiplying by 100. It excludes people covered only by GPRS, EDGE or CDMA 1xRTT.</p><p>- LTE population coverage: Refers to the percentage of inhabitants that live within range of LTE/LTE-Advanced, mobile WiMAX/WirelessMAN or other more advanced mobile-cellular networks, irrespective of whether or not they are subscribers. This is calculated by dividing the number of inhabitants that are covered by the previously mentioned mobile-cellular technologies by the total population and multiplying by 100. It excludes people covered only by HSPA, UMTS, EV-DO and previous 3G technologies, and also excludes fixed WiMAX coverage.</p><p>As technologies evolve and as more and more countries will deploy and commercialize more advanced mobile-broadband networks (5G etc.), the indicator will include further breakdowns.\"</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Proportion of population covered by a mobile network, broken down by technology, refers to the percentage of inhabitants living within range of a mobile-cellular signal, irrespective of whether or not they are mobile phone subscribers or users. This is calculated by dividing the number of inhabitants within range of a mobile-cellular signal by the total population and multiplying by 100.</p><p><strong>Concepts:</strong></p><p>The indicator is based on where the population lives, and not where they work or go to school, etc. When there are multiple operators offering the service, the maximum population number covered should be reported. Coverage should refer to LTE, broadband (3G) and narrowband (2G) mobile-cellular technologies and include:</p><p>- 2G mobile population coverage: Mobile networks with access to data communications (e.g. Internet) at downstream speeds below 256 Kbit/s. The indicator refers to the theoretical ability of subscribers to use non-broadband speed mobile data services, rather than the number of active users of such services.</p><p>- 3G population coverage: refers to the percentage of inhabitants that are within range of at least a 3G mobile-cellular signal, irrespective of whether or not they are subscribers. </p><p>- LTE population coverage: Refers to the percentage of inhabitants that live within range of LTE/LTE-Advanced, mobile WiMAX/WirelessMAN or other more advanced mobile-cellular networks, irrespective of whether or not they are subscribers.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -861,7 +819,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage </p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -881,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Communication Authority, 2022</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>National Communication Authority (NCA), 2022</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -903,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>National Communication Authority</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>National Communication Authority (NCA)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -917,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service (GSS)</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -939,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The percentage of the population covered by a mobile cellular network can be considered as a minimum indicator for ICT access since it provides people with the possibility to subscribe to and use mobile-cellular services to communicate. Over the last decade, mobile-cellular networks have expanded rapidly and helped overcome very basic infrastructure barriers that existed when fixed-telephone networks – often limited to urban and highly populated areas - were the dominant telecommunication infrastructure.</p><p>While 2G (narrowband) mobile-cellular networks offer limited (and mainly voice-based) services, higher-speed networks (3G and LTE) provide increasingly high-speed, reliable and high-quality access to the Internet and its increasing amount of information, content, services, and applications. Mobile networks are therefore essential to overcoming infrastructure barriers, helping people join the information society and benefit from the potential of ICTs, in particular in least developed countries.</p><p>The indicator highlights the importance of mobile networks in providing basic, as well as advanced communication services and will help design targeted policies to overcome remaining infrastructure barriers, and address the digital divide. Many governments track this indicator and have set specific targets in terms of the mobile population coverage (by technology) that operators must achieve.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>The percentage of the population covered by a mobile cellular network can be considered as a minimum indicator for ICT access since it provides people with the possibility to subscribe to and use mobile-cellular services to communicate. Mobile networks are therefore essential to overcoming infrastructure barriers, helping people join the information society and benefit from the potential of ICTs, in particular in least developed countries.The indicator highlights the importance of mobile networks in providing basic, as well as advanced communication services and will help design targeted policies to overcome remaining infrastructure barriers, and address the digital divide. </p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -953,20 +897,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.RATIONALE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('REC_USE_LIM', "<p>Comment: Currently data is collected at the national level only but there are plans to dis-aggregate to regional and district levels</p>");
-        var propertyEditor = editor.getEditor('root.REC_USE_LIM');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: REC_USE_LIM');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
@@ -981,6 +911,20 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
@@ -1160,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221111141254'></script>
+<script src='/site/assets/js/sdg.js?v=20221111151822'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221111141254"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221111151822"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
