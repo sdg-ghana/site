@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111153838">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111160736">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111153838">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111160736">
         
 
         
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 10.4.1: Labour share of GDP, comprising wages and social protection transfers</p>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 10.4.1: Labour share of GDP</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -785,20 +785,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -817,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Labour share of Gross Domestic Product (GDP) is the total compensation of employees and the labour income of the self-employed given as a percent of GDP, which is a measure of total output. It provides information about the relative share of output which accrues to workers as compared with the share that accrues to capital in the production process for a given reference period.</p><p><strong>Concepts:</strong></p><p>Compensation of employees is the total in-cash or in-kind remuneration payable to the employee by the enterprise for the work performed by the employee during the accounting period. Compensation of employees includes: (i) wages and salaries (in cash or in kind) and (ii) social insurance contributions payable by employers. This concept views compensation of employees as a cost to employer, thus compensation equals zero for unpaid work undertaken voluntarily. Moreover, it does not include taxes payable by employers on the wage and salary bill, such as payroll tax.</p><p>The indicator should be produced using data that cover all economic activities, all employees, and the self-employed. Thus, in addition to the compensation of employees, the indicator should also include the labour income of the self-employed.</p><p>Gross domestic product (GDP) represents the market value of all final goods and services produced during a specific time period (for the purposes of this indicator, one year) in a country's territory.</p><p>Persons in employment are defined as all those persons of working age who, during a short reference period (one week), were engaged in any activity to produce goods or provide services for pay or profit. </p><p>Persons in employment include employees and self-employed.</p><p>Employees are all those workers who hold the type of job defined as paid employment jobs, that is, jobs where the incumbents hold explicit or implicit employment contracts giving them a basic remuneration not directly dependent on the revenue of the unit for which they work. </p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Labour share of Gross Domestic Product (GDP) is the total compensation of employees and the labour income of the self-employed given as a percent of GDP, which is a measure of total output. It provides information about the relative share of output which accrues to workers as compared with the share that accrues to capital in the production process for a given reference period.</p><p><strong>Concepts:</strong></p><p>Compensation of employees is the total in-cash or in-kind remuneration payable to the employee by the enterprise for the work performed by the employee during the accounting period. </p><p>Gross domestic product (GDP) represents the market value of all final goods and services produced during a specific time period (for the purposes of this indicator, one year) in a country's territory.</p><p>Persons in employment are defined as all those persons of working age who, during a short reference period (one week), were engaged in any activity to produce goods or provide services for pay or profit. </p><p>Employees are all those workers who hold the type of job defined as paid employment jobs, that is, jobs where the incumbents hold explicit or implicit employment contracts giving them a basic remuneration not directly dependent on the revenue of the unit for which they work. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -833,7 +819,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent (%)</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey GLSS) Round 6 Labour Force Report 2014;</p><p>Ghana Living Standards Survey (GLSS) Round 7, 2017</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Living Standards Survey (GLSS) Round 6 Labour Force Report, 2014</p><p>Ghana Living Standards Survey (GLSS) Round 7, 2017</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -875,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service (GSS)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -889,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -911,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Labour share of GDP seeks to inform about the relative share of GDP which accrues to workers as compared to the share which accrues to capital in a given reference period.</p><p>In order to interpret this indicator effectively, it is important to consider it together with economic growth trends. The share of labour compensation in national output can highlight the extent to which economic growth translates into higher incomes for employees over time (and/or higher earnings for the self-employed). In periods of economic recession, the labour income share provides an indication of the extent to which falling output reduces labour income relative to profits. If labour income falls at a greater rate than profits, the labour income share will be expected to fall. By contrast, if there is a sharper decline in profits than in labour income, the share will rise. For any given level of GDP and profits, the labour</p><p>income share can fall as a result of falling wages, falling earnings of the self-employed, changes in the composition of employment by income or a combination of these.</p><p>Increased production and GDP often lead to improved living standards of individuals in the economy, but this will depend on the distribution of real income and public policy among other factors</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>In order to interpret this indicator effectively, it is important to consider it together with economic growth trends. The share of labour compensation in national output can highlight the extent to which economic growth translates into higher incomes for employees over time (and/or higher earnings for the self-employed). In periods of economic recession, the labour income share provides an indication of the extent to which falling output reduces labour income relative to profits. If labour income falls at a greater rate than profits, the labour income share will be expected to fall. By contrast, if there is a sharper decline in profits than in labour income, the share will rise. For any given level of GDP and profits, the labour income share can fall as a result of falling wages, falling earnings of the self-employed, changes in the composition of employment by income or a combination of these. Increased production and GDP often lead to improved living standards of individuals in the economy, but this will depend on the distribution of real income and public policy among other factors.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -927,20 +899,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Labour share of Gross Domestic Product =</p><p><em>{[(Total compensation o employees) + (Labour income of the self-employed)]/ Gross Domestic Product }* 100</em></p>");
-        var propertyEditor = editor.getEditor('root.DATA_COMP');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: DATA_COMP');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
@@ -953,14 +911,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
-
-    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://open.africa/dataset/ghana-living-standards-survey-glss-7-2017\">https://open.africa/dataset/ghana-living-standards-survey-glss-7-2017</a></p><p>https://www2.statsghana.gov.gh/docfiles/glss6/GLSS6_Labour%20Force%20Report.pdf</p>");
-        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
@@ -969,8 +923,12 @@ data-event-label="high"
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: OTHER_DOC');
+        console.log('Unable to set config key: COVERAGE');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
+
+    propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1132,12 +1090,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221111153838'></script>
+<script src='/site/assets/js/sdg.js?v=20221111160736'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221111153838"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221111160736"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
