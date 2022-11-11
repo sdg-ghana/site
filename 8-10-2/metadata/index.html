@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111070518">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111072745">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111070518">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111072745">
         
 
         
@@ -717,7 +717,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_GOAL', "<h1><a href=\"https://sustainabledevelopment-ghana.github.io/decent-jobs-and-economic-growth\">Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all </a></h1>");
+        var currentValue = normalizeCurrentValue('SDG_GOAL', "<p>Goal 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_GOAL');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -733,7 +733,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_TARGET', "<h5>Target 8.10: Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all</h5>");
+        var currentValue = normalizeCurrentValue('SDG_TARGET', "<p>Target 8.10: Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all</p>");
         var propertyEditor = editor.getEditor('root.SDG_TARGET');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -749,7 +749,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<h2> Indicator 8.10.2: Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider</h2>");
+        var currentValue = normalizeCurrentValue('SDG_INDICATOR', "<p>Indicator 8.10.2: Proportion of adults (15 years and older) with an account at a bank or other financial institution or with a mobile-money-service provider</p>");
         var propertyEditor = editor.getEditor('root.SDG_INDICATOR');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -763,42 +763,28 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_INDICATOR'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('SDG_SERIES_DESCR', "<p>Number of active mobile money accounts</p><p>Number of registered mobile money accounts</p>");
+        var propertyEditor = editor.getEditor('root.SDG_SERIES_DESCR');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: SDG_SERIES_DESCR');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_SERIES_DESCR'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>1.4, 5.a, 2.3</p>");
-        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Bank of Ghana</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -817,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>The percentage of adults (ages 15+) who report having an account (by themselves or together with someone else) at a bank or another type of financial institution or personally using a mobile money service in the past 12 months. </p><p><strong>Concepts:</strong></p><p>Account at a financial institution includes respondents who report having an account at a bank or at another type of financial institution, such as a credit union, microfinance institution, cooperative, or the post office (if applicable), or having a debit card in their own name. In addition, it includes respondents who report receiving wages, government transfers, or payments for agricultural products into an account at a financial institution in the past 12 months; paying utility bills or school fees from an account at a financial institution in the past 12 months; or receiving wages or government transfers into a card in the past 12 months. Mobile money account includes respondents who report personally using GSM Association (GSMA) Mobile Money for the Unbanked (MMU) services in the past 12 months to pay bills or to send or receive money. In addition, it includes respondents who report receiving wages, government transfers, or payments for agricultural products through a mobile phone in the past 12 months.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>This indicator reports on the percentage of adults (ages 15+) who report having an account (by themselves or together with someone else) at a bank or another type of financial institution or personally using a mobile money service in the past 12 months. </p><p><strong>Concepts:</strong></p><p>Account at a financial institution includes respondents who report having an account at a bank or at another type of financial institution, such as a credit union, microfinance institution, cooperative, or the post office (if applicable), or having a debit card in their own name. In addition, it includes respondents who report receiving wages, government transfers, or payments for agricultural products into an account at a financial institution in the past 12 months; paying utility bills or school fees from an account at a financial institution in the past 12 months; or receiving wages or government transfers into a card in the past 12 months. </p><p>Mobile money account includes respondents who report personally using <a href=\"https://www.gsma.com/mobilefordevelopment/wp-content/uploads/2013/07/MMU_Mobile-Money-101.pdf\">GSM Association (GSMA) Mobile Money for the Unbanked (MMU)</a> services in the past 12 months to pay bills or to send or receive money. In addition, it includes respondents who report receiving wages, government transfers, or payments for agricultural products through a mobile phone in the past 12 months.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -833,7 +819,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent (%)</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Million mobile money accounts</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>BoG Payment Systems Oversight Annual Report, 2018 and BoG Economic and Financial Data, 2020</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Bank of Ghana (BoG) Payment Systems Oversight Annual Report, 2018</p><p>Bank of Ghana (BoG) Economic and Financial Data, 2021</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -875,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Bank of Ghana</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Bank of Ghana (BoG)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -889,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -911,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Access to formal financial services such as savings, insurance, payments, credit and remittances is essential to the ability of people—regardless of income level, gender, age, education or where they live— to manage their lives, build their futures, and grow their businesses. Having access to an account is an important starting point for people to access arrange of financial services.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Access to formal financial services such as savings, insurance, payments, credit and remittances is essential to the ability of people—regardless of income level, gender, age, education or where they live— to manage their lives, build their futures, and grow their businesses. Having access to an account is an important starting point for people to access a range of financial services.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -939,10 +911,38 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/files/Metadata-08-10-02.pdf\">https://unstats.un.org/sdgs/metadata/files/Metadata-08-10-02.pdf</a> </p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1104,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221111070518'></script>
+<script src='/site/assets/js/sdg.js?v=20221111072745'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221111070518"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221111072745"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
