@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111180602">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221111181732">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111180602">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221111181732">
         
 
         
@@ -767,38 +767,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>Goals 1 (“No Poverty”), 2 (“Zero Hunger”), 3 (“Good Health and Wellbeing”), 4 (“Quality Education”), 5 (“Gender Equality”), 8 (“Decent Work and Economic Growth”), and 16 (“Peace, Justice and Strong Institutions”).</p>");
-        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>United Nations High Commissioner for Refugees (UNHCR)</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -833,7 +805,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Number of refugees per 100,000 population in country of origin</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p> Per 100,000 population </p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +825,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>UNHCR Refugee Data Finder, 2021</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder, 2021</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -889,20 +861,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service (GSS)</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -911,7 +869,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Forced displacement as a result of conflict, violence, and other causes undermine sustainable development, and can increase the risk of regional instability, especially when refugees are hosted in neighbouring countries, resulting in possible tensions with local populations. The United Nations General Assembly Resolution (A/Res/70/1) that adopted the 2030 Agenda for Sustainable Development at paragraph 23 recognizes the relevance of the Agenda to meet the needs of refugees, internally displaced persons and migrants on the basis that they are among the most vulnerable. It also explicitly states that Member States resolve to take further effective measures and actions, to “strengthen support and meet the special needs of people living in areas affected by complex humanitarian emergencies”. In addition, target 10.7 recognizes for the first time the contribution of migration to sustainable development by aiming to “facilitate orderly, safe, and responsible migration and mobility of people, including through implementation of planned and well-managed migration policies”.</p><p>This indicator tracks the number of people displaced across national borders as a result of persecution, conflict, violence, human rights violations, or events seriously disturbing public order. It measures the total count of refugee population by country or territory of origin as a proportion of the total population.</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Forced displacement as a result of conflict, violence, and other causes undermine sustainable development, and can increase the risk of regional instability, especially when refugees are hosted in neighbouring countries, resulting in possible tensions with local populations. <a href=\"https://www.un.org/en/development/desa/population/migration/generalassembly/docs/globalcompact/A_RES_70_1_E.pdf\">The United Nations General Assembly Resolution (A/Res/70/1)</a> that adopted the <a href=\"https://www.coe.int/en/web/programmes/un-2030-agenda&quot; \\l &quot;:~:text=The%202030%20Agenda%20for%20Sustainable,equality%20and%20non%2Ddiscrimination%E2%80%9D.\">2030 Agenda for Sustainable Development </a>on paragraph 23 recognizes the relevance of the Agenda to meet the needs of refugees, internally displaced persons and migrants on the basis that they are among the most vulnerable.</p><p>This indicator tracks the number of people displaced across national borders as a result of persecution, conflict, violence, human rights violations, or events seriously disturbing public order. It measures the total count of refugee population by country or territory of origin as a proportion of the total population.</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -929,7 +887,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>[𝑁𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑟𝑒𝑓𝑢𝑔𝑒𝑒𝑠 𝑏𝑦 𝑐𝑜𝑢𝑛𝑡𝑟𝑦 𝑜𝑓 𝑜𝑟𝑖𝑔𝑖𝑛 𝑎𝑡 𝑦𝑒𝑎𝑟−𝑒𝑛𝑑/(𝑌𝑒𝑎𝑟−𝑒𝑛𝑑 𝑝𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖𝑛 𝑐𝑜𝑢𝑛𝑡𝑟𝑦 𝑜𝑓 𝑜𝑟𝑖𝑔𝑖𝑛 +𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑟𝑒𝑓𝑢𝑔𝑒𝑒𝑠 𝑏𝑦 𝑐𝑜𝑢𝑛𝑡𝑟𝑦 𝑜𝑓 𝑜𝑟𝑖𝑔𝑖𝑛 𝑎𝑡 𝑦𝑒𝑎𝑟−𝑒𝑛𝑑)]×100,000</p><p>The indicator is presented as the number of refugees per 100,000 population in country of origin.</p>");
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>The indicator is presented as the number of refugees per 100,000 population in country of origin.</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -953,13 +911,27 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data is disaggregated by country of origin.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/\">SDG Indicators — SDG Indicators (un.org)</a></p><p>URL: www.unhcr.org </p><p>References: </p><p>UNHCR Refugee Population Statistics Database (https://www.unhcr.org/refugee-statistics/ )</p>");
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/\">SDG Indicators — SDG Indicators (un.org)</a></p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1132,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221111180602'></script>
+<script src='/site/assets/js/sdg.js?v=20221111181732'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221111180602"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221111181732"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
