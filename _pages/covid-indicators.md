@@ -15,4 +15,4 @@ standalone_indicators:
     
     - covid-4
 ---
-Content for my standalone indicator list 
+This is a list of Covid indicators
