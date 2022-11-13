@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221113110851">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221113112132">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221113110851">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221113112132">
         
 
         
@@ -767,38 +767,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.META_LAST_UPDATE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('SDG_RELATED_INDICATORS', "<p>16.3</p>");
-        var propertyEditor = editor.getEditor('root.SDG_RELATED_INDICATORS');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: SDG_RELATED_INDICATORS');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.SDG_RELATED_INDICATORS'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -817,7 +789,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>This indicator is defined as the percentage of persons who paid at least one bribe (gave a public official money, a gift or counter favour) to a public official, or were asked for a bribe by these public officials, in the last 12 months, as a percentage of persons who had at least one contact with a public official in the same period.</p><p><strong>Concepts:</strong></p><p>In the International Classification of Crime for Statistical Purposes (ICCS), bribery is defined as: ‘Promising, offering, giving, soliciting, or accepting an undue advantage to or from a public official or a person who directs or works in a private sector entity, directly or indirectly, in order that the person act or refrain from acting in the exercise of his or her official duties’. This definition is based on definitions of bribery of national public officials, bribery of foreign public officials and official of international organisations and bribery in the private sector that are contained in the United Nations Convention against Corruption (articles 15, 16, and 21).</p><p>While the concept of bribery is broader, as it includes also actions such as promising or offering, and it covers both public and private sector, this indicator focuses on specific forms of bribery that are more measurable (the giving and/or requesting of bribes) and it limits the scope to the public sector.</p><p>The concept of undue advantage is operationalized by reference to giving of money, gifts or provision of a service requested/offered by/to a public official in exchange for a special treatment.</p><p>This indicator captures the often called ‘administrative bribery’, which is often intended as the type of bribery affecting citizens in their dealings with public administrations and/or civil servants.</p><p>For this indicator, public official refers to persons holding a legislative, executive, administrative or judicial office. In the operationalization of the indicator, a list of selected officials and civil servants is used.</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>This indicator is defined as the percentage of persons who paid at least one bribe (gave a public official money, a gift or counter favour) to a public official, or were asked for a bribe by these public officials, in the last 12 months, as a percentage of persons who had at least one contact with a public official in the same period.</p><p><strong>Concepts:</strong></p><p>In the <a href=\"https://www.unodc.org/documents/data-and-analysis/statistics/crime/ICCS/ICCS_English_2016_web.pdf\">International Classification of Crime for Statistical Purposes (ICCS)</a>, bribery is defined as: ‘Promising, offering, giving, soliciting, or accepting an undue advantage to or from a public official or a person who directs or works in a private sector entity, directly or indirectly, in order that the person act or refrain from acting in the exercise of his or her official duties’. </p><p>While the concept of bribery is broader, as it includes also actions such as promising or offering, and it covers both public and private sector, this indicator focuses on specific forms of bribery that are more measurable (the giving and/or requesting of bribes) and it limits the scope to the public sector.</p><p>The concept of undue advantage is operationalized by reference to giving of money, gifts or provision of a service requested/offered by/to a public official in exchange for a special treatment.</p><p>This indicator captures the often called ‘administrative bribery’, which is often intended as the type of bribery affecting citizens in their dealings with public administrations and/or civil servants.</p><p>For this indicator, public official refers to persons holding a legislative, executive, administrative or judicial office. </p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +825,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ghana Statistical Service, Ghana Living Standards Survey</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Global Corruption Barometer</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -869,27 +841,13 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COLL_METHOD'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('FREQ_COLL', "<p>5 years</p>");
-        var propertyEditor = editor.getEditor('root.FREQ_COLL');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: FREQ_COLL');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.FREQ_COLL'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REL_CAL_POLICY'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ghana Statistical Service (GSS)</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Transparency International</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -903,20 +861,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service (GSS)</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -943,7 +887,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Proportion of persons who paid at least a bribe (gave a public official money, gift or did a public official favour) to a public official, or were asked for a bribe by these public officials, in the last 12 months, expressed as percentage of persons who had at least one contact with a public official in the same period.</p>");
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Proportion of persons who paid at least a bribe ( money, gift or favour) to a Public official, or were asked for a bribe by these Public officials, in the last 12 months, expressed as a percentage of persons who had at least one contact with a Public official in the same period.</p>");
         var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -967,13 +911,27 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>This data is disaggregated by institutions.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
     
       try {
-        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://images.transparencycdn.org/images/GCB_Africa_2019_Methodology_and_Data.zip\">https://images.transparencycdn.org/images/GCB_Africa_2019_Methodology_and_Data.zip</a></p><p><a href=\"https://en.wikipedia.org/wiki/Global_Corruption_Barometer\">https://en.wikipedia.org/wiki/Global_Corruption_Barometer</a></p><p><a href=\"https://www.u4.no/publications/why-when-and-how-to-use-the-global-corruption-barometer.pdf\">https://www.u4.no/publications/why-when-and-how-to-use-the-global-corruption-barometer.pdf</a></p>");
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://images.transparencycdn.org/images/GCB_Africa_2019_Methodology_and_Data.zip\">https://images.transparencycdn.org/images/GCB_Africa_2019_Methodology_and_Data.zip</a> </p><p><a href=\"https://en.wikipedia.org/wiki/Global_Corruption_Barometer\">https://en.wikipedia.org/wiki/Global_Corruption_Barometer</a> </p><p><a href=\"https://www.u4.no/publications/why-when-and-how-to-use-the-global-corruption-barometer.pdf\">https://www.u4.no/publications/why-when-and-how-to-use-the-global-corruption-barometer.pdf</a> </p>");
         var propertyEditor = editor.getEditor('root.OTHER_DOC');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -1146,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221113110851'></script>
+<script src='/site/assets/js/sdg.js?v=20221113112132'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221113110851"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221113112132"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
