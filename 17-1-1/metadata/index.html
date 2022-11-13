@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221113125245">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221113130223">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221113125245">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221113130223">
         
 
         
@@ -785,20 +785,6 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('CONTACT_ORGANISATION', "<p>Ministry of Finance</p>");
-        var propertyEditor = editor.getEditor('root.CONTACT_ORGANISATION');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: CONTACT_ORGANISATION');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_ORGANISATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.CONTACT_NAME'));
@@ -817,7 +803,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p>Definition:</p><p>Revenue is defined in Chapter 4 (paragraph 4.23) of GFSM 2014 an increase in net worth resulting from a transaction. It is a fiscal indicator for assessing the sustainability of fiscal activities. General government units have four types of revenue. The major types of revenue are taxes (GFS code 11), social contributions (GFS code 12), grants (GFS code 13), and other revenue (GFS code 14). Of these, compulsory levies and transfers are the main sources of revenue for most general government units. In particular, taxes are compulsory, unrequited amounts receivable by government units from institutional units. Social contributions are actual or imputed revenue receivable by social insurance schemes to make provision for social insurance benefits payable. Grants are transfers receivable by government units from other resident or nonresident government units or international organizations, and that do not meet the definition of a tax, subsidy, or social contribution. Other revenue is all revenue receivable excluding taxes, social contributions, and grants. Other revenue comprises: (i) property income; (ii) sales of goods and</p><p>services; (iii) fines, penalties, and forfeits; (iv) transfers not elsewhere classified; and (v) premiums, fees, and claims related to nonlife insurance and standardized guarantee schemes.</p><p>Concepts:</p><p>The transactions and the associated classifications are detailed in Chapter 5 of GFSM 2014 and are structured to demonstrate how general government (and public sector) units raise revenue. Only those taxes and social insurance contributions that are evidenced by tax assessments and declarations, customs declarations, and similar documents are considered to create revenue for government units. Thus, the difference between assessments and expected collections represents a claim that has no real value and should not be recorded as revenue (see GFSM 2014 paragraph 5.20). The analytic framework of GFSM 2014 (like that of the GFSM 2001) builds on the GFSM 1986 framework, and extends it by incorporating additional elements that are useful in assessing fiscal policy. An important example is the treatment of nonfinancial assets, where the sale of such assets is no longer included in revenue. The disposal of a nonfinancial asset by sale or barter is not revenue because it has no effect on net worth. Rather, it changes the composition of the balance sheet by exchanging one asset (the nonfinancial asset) for another (the proceeds of the sale). Similarly, amounts receivable from loan repayments and loan disbursements are not revenue. In general, transactions that increase net worth result from current operations. Capital transfers are an exception. In GFSM 2014, capital transfers receivable are classified as revenue because they increase the recipient’s net worth and they are often indistinguishable from current transfers in their effect on government operations. In recording cash-based accounting revenue transactions, data representing the tax payments received by government, net of refunds paid out during the period covered should be reported. These data will include taxes paid after the original assessment, taxes paid or refunds deducted from taxes after subsequent assessments, and taxes paid or refunds deducted after any subsequent reopening of the accounts. Therefore, total tax revenue could be presented on a gross basis as the total amount of all taxes accrued, or on a net basis as the gross amount minus tax refunds. Revenue categories are presented gross of expense categories for the same or related category. In particular, interest revenue is presented gross rather than as net interest expense or net interest revenue. Similarly, social benefits and social contributions, grant revenue and expense, and rent revenue and expense are presented gross. Also, sales of goods and services are presented gross of the expenses incurred in their production. In cases of erroneous or unauthorized transactions, revenue categories are presented net of refunds of the relevant revenue, and expense categories are presented net of inflows from the recovery of the expense. For example, refunds of income taxes may be paid when the amount of taxes withheld or otherwise paid in advance of the final determination exceeds the actual tax due. Such refunds are recorded as a reduction in tax revenue. For this reason, tax revenue is presented net of non-payable tax credits (see GFSM 2014 paragraphs 5.29–5.32).</p>");
+        var currentValue = normalizeCurrentValue('STAT_CONC_DEF', "<p><strong>Definition:</strong></p><p>Revenue is defined as an increase in net worth resulting from a transaction. It is a fiscal indicator for assessing the sustainability of fiscal activities. General government units have four types of revenue. The major types of revenue are taxes (<a href=\"https://unstats.un.org/unsd/classifications/Family/Detail/1034\">GFS code 11</a>), social contributions (<a href=\"https://unstats.un.org/unsd/classifications/Family/Detail/1034\">GFS code 12</a>), grants (<a href=\"https://unstats.un.org/unsd/classifications/Family/Detail/1034\">GFS code 13</a>), and other revenue (<a href=\"https://unstats.un.org/unsd/classifications/Family/Detail/1034\">GFS code 14</a>). Of these, compulsory levies and transfers are the main sources of revenue for most general government units.</p><p><strong>Concepts:</strong></p><p>The transactions and the associated classifications are detailed in <a href=\"https://www.imf.org/external/Pubs/FT/GFS/Manual/2014/gfsfinal.pdf\">Chapter 5 of GFSM 2014</a> and are structured to demonstrate how general government (and public sector) units raise revenue.</p>");
         var propertyEditor = editor.getEditor('root.STAT_CONC_DEF');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -833,7 +819,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percent</p>");
+        var currentValue = normalizeCurrentValue('UNIT_MEASURE', "<p>Percentage (%)</p>");
         var propertyEditor = editor.getEditor('root.UNIT_MEASURE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -853,7 +839,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ministry of Finance fiscal data, 2020</p>");
+        var currentValue = normalizeCurrentValue('SOURCE_TYPE', "<p>Ministry of Finance (MoF) Fiscal Data</p>");
         var propertyEditor = editor.getEditor('root.SOURCE_TYPE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -875,7 +861,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Finance</p>");
+        var currentValue = normalizeCurrentValue('DATA_SOURCE', "<p>Ministry of Finance and Economic Planning (MOFEP)</p>");
         var propertyEditor = editor.getEditor('root.DATA_SOURCE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -889,20 +875,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_SOURCE'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('COMPILING_ORG', "<p>Ghana Statistical Service</p>");
-        var propertyEditor = editor.getEditor('root.COMPILING_ORG');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-        propertyEditorTranslationLinks(propertyEditor);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: COMPILING_ORG');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPILING_ORG'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.INST_MANDATE'));
@@ -911,7 +883,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Fiscal policy is the use of the level and composition of the general government and public sectors’ spending and revenue—and the related accumulation of government assets and liabilities—to achieve such goals as the stabilization of the economy, the reallocation of resources, and the redistribution of</p><p>income. In addition to revenue mobilization, government units may also finance a portion of their activities in a specific period by borrowing or by acquiring funds from sources other than compulsory transfers—for example, interest revenue, incidental sales of goods and services, or the rent of subsoil assets. Indicator 17.1.1 Total government revenue as a proportion of GDP, by source supports understanding countries’ domestic revenue mobilization in the form of tax and nontax sources. The indicator will provide analysts with a cross-country comparable dataset that highlights the relationship between the four main types of revenue as well as the relative \"tax burden\" (revenue in the form of taxes) and “fiscal burden” (revenue in the form of taxes plus social contributions).</p>");
+        var currentValue = normalizeCurrentValue('RATIONALE', "<p>Fiscal policy is the use of the level and composition of the general government and public sectors’ spending and revenue—and the related accumulation of government assets and liabilities—to achieve such goals as the stabilization of the economy, the reallocation of resources, and the redistribution of income. The indicator will provide analysts with a cross-country comparable dataset that highlights the relationship between the four main types of revenue as well as the relative \"tax burden\" (revenue in the form of taxes) and “fiscal burden” (revenue in the form of taxes plus social contributions).</p>");
         var propertyEditor = editor.getEditor('root.RATIONALE');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -939,10 +911,38 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.QUALITY_ASSMNT'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('COVERAGE', "<p>There is no available disaggregation for this indicator.</p>");
+        var propertyEditor = editor.getEditor('root.COVERAGE');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: COVERAGE');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.COVERAGE'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.COMPARABILITY'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('OTHER_DOC', "<p><a href=\"https://unstats.un.org/sdgs/metadata/files/Metadata-17-01-01.pdf\">https://unstats.un.org/sdgs/metadata/files/Metadata-17-01-01.pdf</a> </p>");
+        var propertyEditor = editor.getEditor('root.OTHER_DOC');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+        propertyEditorTranslationLinks(propertyEditor);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: OTHER_DOC');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.OTHER_DOC'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.other_info'));
@@ -1104,12 +1104,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221113125245'></script>
+<script src='/site/assets/js/sdg.js?v=20221113130223'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221113125245"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221113130223"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
