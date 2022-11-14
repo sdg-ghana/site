@@ -10,6 +10,18 @@ If you have any feedback on our publications please contact us at sdg.secretaria
 
 ### All goals
 
+### [Ghana’s 2020 SDGs Budget Report](https://mofep.gov.gh/sites/default/files/reports/economic/2020_SDGs_Budget_Report.pdf)
+The 2020 SDGs Budget Report is a continuation of the efforts of the Government of Ghana to evaluate and define the funding gap for the SDGs in order to establish a financing mechanism that enables the country to fund and execute the Global Goals as expected.
+
+### [Ghana’s 2022 Voluntary National Review Report](https://ndpc.gov.gh/media/VNR_2022_Report_c5cXm4Q.pdf)
+In accordance with the UN Voluntary Common Reporting guidelines, Ghana has launched the 2022 Voluntary National Review report on the implementation of the SDGs. The report, the second since 2019, is under the leadership of the National Development Planning Commission.22 Aug 2022
+
+### [Ghana’s 2021 SDGs Budget Report](https://mofep.gov.gh/sites/default/files/reports/economic/2021-Ghana-SDG-Report.pdf)
+The 2021 SDGs Budget Report is a continuation of the efforts of the Government of Ghana to evaluate and define the funding gap for the SDGs in order to establish a financing mechanism that enables the country to fund and execute the Global Goals as expected.
+
+### [Ghana’s Budget Credibility and the Sustainable Development Goals](https://internationalbudget.org/wp-content/uploads/Ghana-Budget-Credibility-and-the-Sustainable-Development-Goals-1.pdf)
+Ghana’s efforts to achieve the Sustainable Development Goals (SDGs) by 2030 face major challenges, with rapid progress still needed in sectors related to the goals on hunger, gender equity and health. To accelerate progress toward development goals, Ghana needs to effectively mobilize domestic and international financing for programs that can address these challenges. National budgets are central to these efforts. This brief therefore looks at budget credibility patterns from 2018 to 2020 in seven key sectors that relate to 10 SDG goals, using available budget data from ministries as a proxy for SDG spending in the absence of more formal tracking systems for budget execution information on SDG spending. This analysis aims to show how Ghana’s current performance on budget credibility can potentially impact wider efforts to achieve the SDGs, and provides recommendations for how the government, development partners and civil society can expand awareness and action about budget credibility in SDG and development goal discussions.
+
 ### [Ghana SDGs Indicator Baseline Report 2018, 6 September 2018](http://www.gh.undp.org/content/dam/ghana/docs/Reports/UNDP_GH_IGC_SDGs_%20Indicator_%20Baseline_Report_2018.pdf).
 This is the first Sustainable Development Goals (SDGs) Indicator Baseline report for Ghana. The report provides a baseline status for a set of SDGs indicators and serves as a reference point for tracking progress on the achievement of the SDGs and the corresponding Africa Union’s Agenda 2063.
 
