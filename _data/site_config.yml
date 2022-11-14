@@ -76,7 +76,7 @@ footer_menu:
   - path: 'https://www.facebook.com/statsghana/'
     translation_key: general.facebook
   - path: 'https://www.youtube.com/channel/UCUaIIM-7yRwXHBYt1IFJIqw/playlists'
-    translation_key: general.youtube
+    translation_key: Youtube
   - path: /about/cookies-and-privacy/
     translation_key: menu.cookies
 frontpage_cards:
