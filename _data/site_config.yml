@@ -87,14 +87,11 @@ frontpage_cards:
   - title: Publications
     content: >
 
-      [UN Ghana Sustainable Development Partnership Framework with Ghana
-      2018-2022, June
-      2018](http://gh.one.un.org/content/dam/unct/ghana/docs/Delivering%20as%20One/UNCT-GH-UNSDP-2018.pdf)
+      [Ghana’s Voluntary National Review, 2022](https://ndpc.gov.gh/media/VNR_2022_Report_c5cXm4Q.pdf)
 
       <br/>
 
-      [National Strategy for the Development of Statistics, Ghana
-      2018-2022](http://www.statsghana.gov.gh/docfiles/publications/NSDS%20II%20Ghana_Revised_16.03.18.pdf)
+      [National Strategy for the Development of Statistics, Ghana 2018-2022](https://statsghana.gov.gh/gssmain/storage/img/NSDS%20II%20Ghana_Revised_16.03.18.pdf)
     include: ''
     button_label: More Publications
     button_link: 'https://sdg-ghana.github.io/site/publications/'
