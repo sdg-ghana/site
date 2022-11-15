@@ -1,7 +1,7 @@
 ﻿accessible_charts: true
 accessible_tabs: true
 analytics:
-  ga_prod: ''
+  ga_prod: 'G-Q3NXY8BCX1'
 breadcrumbs:
   goal:
     - path: /
