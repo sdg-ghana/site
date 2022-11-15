@@ -133,7 +133,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221115155428">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20221115155256">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221115155428">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20221115155256">
         
 
         
@@ -929,12 +929,10 @@ data-event-label="high"
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.REC_USE_LIM'));
 
-    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
-
     
       try {
-        var currentValue = normalizeCurrentValue('DATA_VALIDATION', "<p>Agriculture Orientation Index (AOI): Total Agriculture Share of Government Expenditures expressed as a percentage of Agriculture value added Share of GDP. </p><p>Where:</p><p>Agriculture Share of Government Expenditure:  Total Government Expenditure on Agriculture expressed as a percentage of Total Government (Public) expenditure.</p><p>Agriculture here refers to <a href=\"https://www.abs.gov.au/statistics/detailed-methodology-information/concepts-sources-methods/australian-system-government-finance-statistics-concepts-sources-and-methods/2015/appendix-1-part-c-classification-functions-government-australia/classification-fun\">COFOG category 042</a> (agriculture, forestry, fishing and hunting); and</p><p>Agriculture value added Share of GDP : Total Agriculture value added expressed as a percentage of GDP. </p><p>Agriculture here  refers to the <a href=\"https://unstats.un.org/unsd/publication/seriesm/seriesm_4rev4e.pdf\">Division A of ISIC Rev 4</a> (agriculture, forestry, fishing and hunting), equal to Division A+B of ISIC Rev 3.2.</p>");
-        var propertyEditor = editor.getEditor('root.DATA_VALIDATION');
+        var currentValue = normalizeCurrentValue('DATA_COMP', "<p>Total Government Expenditure on Agriculture expressed as a percentage of Total Government (Public) expenditure.</p>");
+        var propertyEditor = editor.getEditor('root.DATA_COMP');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
         
@@ -943,8 +941,10 @@ data-event-label="high"
       }
       catch (e) {
         console.log(e.message);
-        console.log('Unable to set config key: DATA_VALIDATION');
+        console.log('Unable to set config key: DATA_COMP');
       }
+    propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_COMP'));
+
     propertyEditorAccessibilityFixes(editor.getEditor('root.DATA_VALIDATION'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.DOC_METHOD'));
@@ -1170,12 +1170,12 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20221115155428'></script>
+<script src='/site/assets/js/sdg.js?v=20221115155256'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20221115155428"></script><script>
+    <script src="/site/assets/js/custom.js?v=20221115155256"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
