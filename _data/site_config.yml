@@ -54,7 +54,7 @@ custom_css:
   - /assets/css/custom.css
 custom_js:
   - /assets/js/custom.js
-data_edit_url: 'http://prose.io/#sdg-ghana/data/edit/develop/data/indicator_[id].csv'
+data_edit_url: 'https://github.com/sdg-ghana/data/tree/develop/data'
 data_fields:
   units: UNIT_MEASURE
   series: SERIES
@@ -160,7 +160,7 @@ indicator_data_form:
   enabled: false
   repository_link: ''
 indicator_metadata_form:
-  enabled: true
+  enabled: false
   dropdowns: []
   repository_link: 'https://github.com/sdg-ghana/data/tree/develop/meta'
   translation_link: 'https://hosted.weblate.org/languages/fr/sdg-translations/'
@@ -250,7 +250,7 @@ menu:
         translation_key: Covid indicators
       - path: gdp-indicators/
         translation_key: GDP indicators
-metadata_edit_url: metadata
+metadata_edit_url: https://github.com/sdg-ghana/data/tree/develop/meta
 metadata_tabs: []
 news:
   category_links: false
