@@ -141,7 +141,7 @@ goal_image_extension: ''
 goals_page:
   title: Ghana's National Reporting Platform for the Sustainable Development Goals
   description: Click on the *goals* below to see the most recent reported statistics.
-graph_color_set: 'default'
+graph_color_set: default
 graph_title_from_series: true
 header:
   include: header-default.html
