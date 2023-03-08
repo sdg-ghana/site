@@ -141,7 +141,11 @@ goal_image_extension: ''
 goals_page:
   title: Ghana's National Reporting Platform for the Sustainable Development Goals
   description: Click on the *goals* below to see the most recent reported statistics.
-graph_color_set: 'accessible'
+graph_color_headline: '#004466'
+graph_color_headline_high_contrast: '#55a6e5'
+graph_color_set: accessible
+graph_color_list: []
+graph_color_number: 0
 graph_title_from_series: true
 header:
   include: header-default.html
