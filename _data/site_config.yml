@@ -69,7 +69,7 @@ email_contacts:
 environment: staging
 footer_language_toggle: none
 footer_menu:
-  - path: 'mailto:sdg.secretariat@statsghana.gov.gh'
+  - path: /contact-us
     translation_key: menu.contact_us
   - path: 'https://twitter.com/statsghana'
     translation_key: general.twitter
