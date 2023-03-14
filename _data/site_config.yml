@@ -59,9 +59,9 @@ data_fields:
   units: UNIT_MEASURE
   series: SERIES
 date_formats: []
-disclaimer:
-  phase: ''
-  message: ''
+dislaimer:
+  phase: Beta
+  message: This is a development website. We welcome your <a href="mailto:%email_contacts.suggestions">feedback</a>.
 email_contacts:
   questions: sdg.secretariat@statsghana.gov.gh
   suggestions: sdg.secretariat@statsghana.gov.gh
