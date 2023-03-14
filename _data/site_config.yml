@@ -59,7 +59,7 @@ data_fields:
   units: UNIT_MEASURE
   series: SERIES
 date_formats: []
-dislaimer:
+disclaimer:
   phase: Beta
   message: This is a development website. We welcome your <a href="mailto:%email_contacts.suggestions">feedback</a>.
 email_contacts:
