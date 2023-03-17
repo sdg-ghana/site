@@ -41,10 +41,6 @@ var opensdg = {
   language: 'en',
 };
 
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
-
 </script>
 
         <script>
@@ -118,22 +114,18 @@ var translations = {
         <script src="/site/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
-
-
-
-
-<link rel="shortcut icon" type="image/ico" href="/site/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/site/assets/img/favicons/favicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/site/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/site/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/site/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/site/assets/img/favicons/favicon.ico" />
 
 
         
-        
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/site/assets/css/style.css?v=20230316103116">
+        <link rel="stylesheet" href="/site/assets/css/style.css?v=20230317015142">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -141,8 +133,12 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20230316103116">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/site/assets/css/custom.css?v=20230317015142">
         
+
+        <!--[if IE]>
+        <link rel="stylesheet" href="/site/assets/css/ie.css">
+        <![endif]-->
 
         
 
@@ -152,216 +148,102 @@ layout-goals
 ">
 <!-- <div class="container"> -->
 
-
-
 <script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
+    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.</p>
+</div>
 <div id="disclaimer">
-  
+    
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Alpha</strong>
+    <strong class="phase-tag">Beta</strong>
     
-    This is a development website. We welcome your <a href="mailto:%email_contacts.suggestions">feedback</a>.
+    This is a development website. We welcome your <a href="mailto:sdg.secretariat@statsghana.gov.gh">feedback</a>.
     
   </div>
 </div>
 
 </div>
 
-<header role="banner" class="header-default">
-  <div class="container">
-
-    <div class="logo-and-mobile-widgets">
-      <a class="navbar-brand" href="/site/" id="home">
+<header role="banner" class="">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
+            <a class="navbar-brand" href="/site/" id="home">
     <img src="/site/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
 </a>
-      <div class="mobile-widgets">
-    <ul id='accessibility-nav' class='contrast-switcher'>
-        
-
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
-
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="high"
-
-        >A</a>
-    </li>
-
-
-    </ul></div>
-    </div>
-
-    <nav class="navbar navbar-default" id="main-nav">
-      <ul class="top-level">
-    <li id="menuToggle"
-        aria-label="Menu toggle. Click to expand or collapse the menu."
-        aria-haspopup="true">
-        <button data-target="menu-mobile" aria-expanded="false">Menu</button>
-        <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
-    <a href="/site/">Frontpage</a>
-</li><li class="nav-link active">
-    <a href="/site/goals">Goals</a>
-</li><li class="nav-link ">
-    <a href="/site/reporting-status">Reporting Status</a>
-</li><li class="nav-link ">
-    <a href="/site/about">About</a>
-</li><li class="nav-link ">
-    <a href="/site/guidance">Guidance</a>
-</li><li class="nav-link ">
-    <a href="/site/faq">FAQ</a>
-</li><li class="nav-link ">
-    <a href="/site/publications">Publications</a>
-</li><li class="nav-link ">
-    <a href="/site/news">News</a>
-</li><li class="nav-link ">
-    <a href="/site/covid-indicators/">Covid indicators</a>
-</li><li class="nav-link ">
-    <a href="/site/gdp-indicators/">GDP indicators</a>
-</li>
-
-
-
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
-
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="high"
-
-        >A</a>
-    </li>
-
-
-
-</ul>
-
-    </li>
-    <li id="searchToggle"
-        aria-label="Search toggle. Click to expand or collapse the search bar."
-        aria-haspopup="true">
-        <button data-target="search-mobile" aria-expanded="false">Search</button>
-        <div id="search-mobile" class="menu-target">
-  <form action="/site/search/">
-    <label class="sr-only" for="indicator_search-mobile">Search</label>
-    <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
-    --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
-  </form>
-</div>
-
-    </li>
-</ul>
-      <div id="search" class="menu-target">
-  <form action="/site/search/">
-    <label class="sr-only" for="indicator_search">Search</label>
-    <input type="text" name="q" id="indicator_search" title="Search" /><!--
-    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
-  </form>
-</div>
-
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-    <a href="/site/">Frontpage</a>
-</li><li class="nav-link active">
-    <a href="/site/goals">Goals</a>
-</li><li class="nav-link ">
-    <a href="/site/reporting-status">Reporting Status</a>
-</li><li class="nav-link ">
-    <a href="/site/about">About</a>
-</li><li class="nav-link ">
-    <a href="/site/guidance">Guidance</a>
-</li><li class="nav-link ">
-    <a href="/site/faq">FAQ</a>
-</li><li class="nav-link ">
-    <a href="/site/publications">Publications</a>
-</li><li class="nav-link ">
-    <a href="/site/news">News</a>
-</li><li class="nav-link">
-            <div class="btn-group menu-dropdown">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex flex-wrap w-100 justify-content-between">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav" id="menu"><li class="nav-item ">
+    <a class="nav-link" href="/site/">Frontpage</a>
+</li><li class="nav-item active">
+    <a class="nav-link" href="/site/goals">Goals</a>
+</li><li class="nav-item ">
+    <a class="nav-link" href="/site/reporting-status">Reporting Status</a>
+</li><li class="nav-item ">
+    <a class="nav-link" href="/site/about">About</a>
+</li><li class="nav-item ">
+    <a class="nav-link" href="/site/guidance">Guidance</a>
+</li><li class="nav-item ">
+    <a class="nav-link" href="/site/faq">FAQ</a>
+</li><li class="nav-item ">
+    <a class="nav-link" href="/site/publications">Publications</a>
+</li><li class="nav-item ">
+    <a class="nav-link" href="/site/news">News</a>
+</li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-other-indicators" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Other indicators
-                    <i class="fa fa-chevron-down"></i>
-                </button>
-                <ul class="dropdown-menu"><li class="nav-link ">
-    <a href="/site/covid-indicators/">Covid indicators</a>
-</li><li class="nav-link ">
-    <a href="/site/gdp-indicators/">GDP indicators</a>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-other-indicators"><li class=" ">
+    <a class="dropdown-item" href="/site/covid-indicators/">Covid indicators</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="/site/gdp-indicators/">GDP indicators</a>
 </li></ul>
-            </div>
-        </li>
+            </li></ul>
+    
+                </div>
+                <div class="header-search-bar">
+                    <form class="align-self-lg-end" id="search" action="/site/search/">
+    <div class="input-group">
+        <label class="visually-hidden" for="indicator_search">Search</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary ms-n5" aria-label="Search" id="search-btn" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+</form>
 
-
-
-    <li class="nav-link contrast contrast-default contrast-type-default">
-        <a title="Disable high contrast"
-           aria-label="Disable high contrast"
-           data-contrast-switch-to="default"
-           href="javascript:void(0)"
-           data-on="click"
-data-event-category="Accessibility"
-data-event-action="Change contrast setting"
-data-event-label="default"
-
-        >A</a>
-    </li>
-    <li class="nav-link contrast contrast-high contrast-type-default">
-        <a title="Enable high contrast"
-           aria-label="Enable high contrast"
-           data-contrast-switch-to="high"
-           href="javascript:void(0)"
-           data-on="click"
+                </div>
+                <div class="header-toggles d-flex"><a title="Enable high contrast" aria-label="Enable high contrast"
+    data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
 data-event-label="high"
-
-        >A</a>
-    </li>
-
-
-
-</ul>
-
-    </nav>
-  </div>
-
+>A</a>
+                </div>
+            </div>
+        </nav>
+    </div>
 </header>
 <div id="top" tabindex=-1></div>
 
 
-
-
+<div class="container">
+    <nav>
+    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
+        <li class="breadcrumb-item" >
+            <a href="/site/">Home</a>
+        </li>
+        <li class="breadcrumb-item active"></li>
+    </ol>
+</nav>
+</div>
 <div id="main-content" class="container" role="main">
 
     <h1>
@@ -379,105 +261,105 @@ data-event-label="high"
 
 
     <div class="goal-tiles">
-        <div class="row no-gutters">
+        <div class="row g-2">
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/1">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/1.png" id="goal-1" alt="No poverty - Goal 1" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/2">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/2.png" id="goal-2" alt="Zero hunger - Goal 2" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/3">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/3.png" id="goal-3" alt="Good health and well-being - Goal 3" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/4">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/4.png" id="goal-4" alt="Quality education - Goal 4" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/5">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/5.png" id="goal-5" alt="Gender equality - Goal 5" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/6">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/6.png" id="goal-6" alt="Clean water and sanitation - Goal 6" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/7">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/7.png" id="goal-7" alt="Affordable and clean energy - Goal 7" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/8">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/8.png" id="goal-8" alt="Decent work and economic growth - Goal 8" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/9">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/9.png" id="goal-9" alt="Industry, innovation and infrastructure - Goal 9" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/10">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/10.png" id="goal-10" alt="Reduced inequalities - Goal 10" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/11">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/11.png" id="goal-11" alt="Sustainable cities and communities - Goal 11" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/12">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/12.png" id="goal-12" alt="Responsible consumption and production - Goal 12" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/13">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/13.png" id="goal-13" alt="Climate action - Goal 13" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/14">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/14.png" id="goal-14" alt="Life below water - Goal 14" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/15">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/15.png" id="goal-15" alt="Life on land - Goal 15" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/16">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/16.png" id="goal-16" alt="Peace, justice and strong institutions - Goal 16" class="goal-icon-image goal-icon-image-" />
                 </a>
             </div>
             
-            <div class="col-xs-4 col-md-2 goal-tile">
+            <div class="col-4 col-md-2 goal-tile">
                 <a href="/site/17">
                     <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/17.png" id="goal-17" alt="Partnerships for the goals - Goal 17" class="goal-icon-image goal-icon-image-" />
                 </a>
@@ -485,69 +367,68 @@ data-event-label="high"
             
             
             
-            <div class="col-xs-4 col-md-2 goal-tile global-goals-extra-icon">
+            <div class="col-4 col-md-2 goal-tile global-goals-extra-icon">
                 <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/18.png" id="goal-18" alt="The Global Goals for Sustainable Development" class="goal-icon-image goal-icon-image-" />
             </div>
             
         </div>
     </div>
 </div>
-
 <footer role="contentinfo">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="footerLinks">
-          <ul>
-            <li><a href="https://open-sdg.org">Built using Open SDG</a></li>
-            
-              <li>
-                
-                  <a href="mailto:sdg.secretariat@statsghana.gov.gh" target="_blank">Contact us</a>
-                
-                </li>
-              <li>
-                
-                  <a href="https://twitter.com/statsghana" target="_blank">Twitter</a>
-                
-                </li>
-              <li>
-                
-                  <a href="https://www.facebook.com/statsghana/" target="_blank">Facebook</a>
-                
-                </li>
-              <li>
-                
-                  <a href="https://www.youtube.com/channel/UCUaIIM-7yRwXHBYt1IFJIqw/playlists" target="_blank">YouTube</a>
-                
-                </li>
-              <li>
-                <a href="/site/about/cookies-and-privacy/">Cookies</a>
-                
-                </li>
-              
-            
-            
-            <li><a href="/site/config">Configuration</a></li>
-            </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="footerLinks">
+                    <ul>
+                        <li>
+                            <a href="https://open-sdg.org">Built using Open SDG</a>
+                        </li>
+                        
+                        <li>
+                            
+                            <a href="mailto:sdg.secretariat@statsghana.gov.gh" target="_blank">Contact us</a>
+                            
+                        </li>
+                        <li>
+                            
+                            <a href="https://twitter.com/statsghana" target="_blank">Twitter</a>
+                            
+                        </li>
+                        <li>
+                            
+                            <a href="https://www.facebook.com/statsghana/" target="_blank">Facebook</a>
+                            
+                        </li>
+                        <li>
+                            
+                            <a href="https://www.youtube.com/channel/UCUaIIM-7yRwXHBYt1IFJIqw/playlists" target="_blank">YouTube</a>
+                            
+                        </li>
+                        <li>
+                            <a href="/site/about/cookies-and-privacy/">Cookies</a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li>
+                            <a href="/site/config">Configuration</a>
+                        </li>
+                        </ul>
+                </div>
+            </div>
         </div>
-      </div>
+        
     </div>
-    
-  </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -584,12 +465,12 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/site/assets/js/sdg.js?v=20230316103116'></script>
+<script src='/site/assets/js/sdg.js?v=20230317015142'></script>
 <!-- Add any custom javascript here. -->
 
     
     
-    <script src="/site/assets/js/custom.js?v=20230316103116"></script><script>
+    <script src="/site/assets/js/custom.js?v=20230317015142"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -597,4 +478,3 @@ ga('send', 'pageview');
 
 </body>
 </html>
-
