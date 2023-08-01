@@ -256,6 +256,11 @@ news:
   category_links: false
 non_global_metadata: indicator.national_metadata
 remote_data_prefix: 'https://sdg-ghana.github.io/data/'
+progressive_web_app: 
+  enabled: true 
+  name: Ghana SDG Data App
+  short_name: SDG Ghana App 
+  precaching: true
 reporting_status:
   status_types:
     - value: complete
