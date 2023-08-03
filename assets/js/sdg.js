@@ -3153,7 +3153,7 @@ var mapView = function () {
     $('#map').sdgMap({
       indicatorId: indicatorId,
       mapOptions: {"minZoom":5,"maxZoom":10,"tileURL":"https://{s}.tile.jawg.io/{id}/{z}/{x}/{y}{r}.png?access-token={accessToken}","tileOptions":{"id":"jawg-light","accessToken":"lCtbMZiG4tbVWl7uq9EEch1yphnuLx9JyZL2qZwoQJ26wAu73oK1NkU4K50AALkp","attribution":"<a href=\"http://jawg.io\" title=\"Tiles Courtesy of Jawg Maps\" target=\"_blank\">&copy; <b>Jawg</b>Maps</a> &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"},"colorRange":"chroma.brewer.BuGn","noValueColor":"#ffffcc","styleNormal":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#888888","dashArray":""},"styleHighlighted":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#111111","dashArray":""},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":"5,5"}},
-      mapLayers: [{"subfolder":"regions_10","label":"2010 Regions","min_zoom":3,"max_zoom":8,"staticBorders":false},{"subfolder":"regions_16","label":"2016 Regions","min_zoom":3,"max_zoom":8,"staticBorders":false}],
+      mapLayers: [{"subfolder":"regions_10","label":"2010 Regions","min_zoom":5,"max_zoom":10,"staticBorders":false},{"subfolder":"regions_16","label":"2016 Regions","min_zoom":5,"max_zoom":10,"staticBorders":false}],
       precision: precision,
       precisionItems: precisionItems,
       decimalSeparator: decimalSeparator,
