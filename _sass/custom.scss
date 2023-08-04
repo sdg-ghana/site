@@ -26,4 +26,13 @@
         background-size: 180px;
         background-repeat: no-repeat;
     }
+
+    @media only screen and (max-width: 699px) {
+        min-height: 180px;
+        background: url("../img/SDG_Wheel_Transparent-01.png");
+        background-position-x: 50%;
+        background-size: 180px;
+        background-repeat: no-repeat;
+        padding-top: 180px;
+    }
 }
